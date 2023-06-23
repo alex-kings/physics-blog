@@ -40,8 +40,6 @@ export class Graph1D {
         // Set width and height - scale by DPI for proper rendering.
         this.canvas.height = Math.round(this.canvas.clientHeight * window.devicePixelRatio);
         this.canvas.width = Math.round(this.canvas.clientWidth * window.devicePixelRatio);
-
-        this.ctx.lineWidth = 1.3;
     }   
 
     setLimits(startX, endX, startY, endY) {
@@ -79,6 +77,7 @@ export class Graph1D {
      * Draw canvas axes.
      */
     drawAxes() {
+        this.ctx.lineWidth = 1.4
         // Draw axes
         this.ctx.strokeStyle = "black"
         this.ctx.beginPath();
@@ -124,10 +123,23 @@ export class Graph1D {
             let location = this.getCanvasCoordinates([0, iy.pos]);
             // Draw segment
             this.ctx.strokeStyle = iy.color;
+            this.ctx.fillStyle = iy.color;
             this.ctx.beginPath();
-            this.ctx.moveTo(location[0]-8, location[1]);
-            this.ctx.lineTo(location[0]+8, location[1]);
-            this.ctx.stroke();
+            if(iy.large) {
+                this.ctx.setLineDash([5,15]);
+                this.ctx.moveTo(0, location[1]);
+                this.ctx.lineTo(this.canvas.width, location[1]);
+                this.ctx.stroke();
+                this.ctx.setLineDash([]);
+                this.ctx.fillText(iy.name,location[0]-20, location[1]-5);
+            }
+            else {
+                this.ctx.moveTo(location[0]-8, location[1]);
+                this.ctx.lineTo(location[0]+8, location[1]);
+                this.ctx.stroke();
+                this.ctx.fillText(iy.name,location[0]-24, location[1]+10);
+            }
+            
         }
     }
 
@@ -135,6 +147,7 @@ export class Graph1D {
      * Draw the function given.
      */
     drawFunction() {
+        this.ctx.lineWidth = 2;
         this.ctx.strokeStyle = "red";
         this.ctx.beginPath();
         const increment = (this.endX - this.startX) / this.steps;
