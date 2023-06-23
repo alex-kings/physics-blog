@@ -13,6 +13,10 @@ export class Graph1D {
     startY;
     endY;
 
+    // Add axes indicators
+    indicatorsX = [1,2];
+    indicatorsY = [1];
+
     // Function plotted.
     func;
 
@@ -84,6 +88,24 @@ export class Graph1D {
         this.ctx.font = "24px sans-serif"
         this.ctx.fillText("x",center[0] - 18, 24);
         this.ctx.fillText("y",this.canvas.width - 24,center[1]+18);
+
+        // Add indicators
+        for(let ix of this.indicatorsX) {
+            let location = this.getCanvasCoordinates([ix, 0]);
+            // Draw segment
+            this.ctx.beginPath();
+            this.ctx.moveTo(location[0], location[1]-8);
+            this.ctx.lineTo(location[0], location[1]+8);
+            this.ctx.stroke();
+        }
+        for(let iy of this.indicatorsY) {
+            let location = this.getCanvasCoordinates([0, iy]);
+            // Draw segment
+            this.ctx.beginPath();
+            this.ctx.moveTo(location[0]-8, location[1]);
+            this.ctx.lineTo(location[0]+8, location[1]);
+            this.ctx.stroke();
+        }
     }
 
     /**
