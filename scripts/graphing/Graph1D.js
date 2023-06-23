@@ -25,9 +25,6 @@ export class Graph1D {
     // Rotation
     rotation = 0;
 
-    // Smoothness factor affects the render
-    smoothnessFactor = 1;
-
     constructor(containerId, func, startX, endX, startY, endY, steps) {
         this.container = document.getElementById(containerId);
         // Create a canvas in the container
@@ -39,20 +36,9 @@ export class Graph1D {
         this.func = func;
         this.steps = steps;
 
-        // Set width and height
-        this.canvas.width = this.canvas.clientWidth;
-        this.canvas.height = this.canvas.clientHeight;
-
-        //get DPI
-        let dpi = window.devicePixelRatio;//get canvas
-        // function fix_dpi() {
-        //get CSS height
-        //the + prefix casts it to an integer
-        //the slice method gets rid of "px"
-        let style_height = +getComputedStyle(this.canvas).getPropertyValue("height").slice(0, -2);//get CSS width
-        let style_width = +getComputedStyle(this.canvas).getPropertyValue("width").slice(0, -2);//scale the canvas
-        this.canvas.setAttribute('height', style_height * dpi);
-        this.canvas.setAttribute('width', style_width * dpi);
+        // Set width and height - scale by DPI for proper rendering.
+        this.canvas.height = Math.round(this.canvas.clientHeight * window.devicePixelRatio);
+        this.canvas.width = Math.round(this.canvas.clientWidth * window.devicePixelRatio);
 
         this.ctx.lineWidth = 1.3;
 
@@ -135,11 +121,11 @@ export class Graph1D {
      * Called at every time step to make sure the canvas has the right size.
      */
     resizeDisplay() {
-        if(this.smoothnessFactor*this.container.clientWidth !== this.canvas.width || 
-            this.smoothnessFactor*this.container.clientHeight !== this.canvas.height) {
-
-            this.canvas.height = this.smoothnessFactor*this.container.clientHeight;
-            this.canvas.width = this.smoothnessFactor*this.container.clientWidth;
+        if(Math.round(this.canvas.clientWidth * window.devicePixelRatio) !== this.canvas.width || 
+            Math.round(this.canvas.clientHeight * window.devicePixelRatio) !== this.canvas.height) {
+                console.log("resized")
+            this.canvas.height = Math.round(this.container.clientHeight * window.devicePixelRatio);
+            this.canvas.width = Math.round(this.container.clientWidth * window.devicePixelRatio);
         }
     }
 
@@ -149,7 +135,7 @@ export class Graph1D {
     animate() {
         this.clearCanvas();
         this.drawFunction();
-        // this.resizeDisplay();
+        this.resizeDisplay();
         requestAnimationFrame(this.animate.bind(this));
     }
 }
