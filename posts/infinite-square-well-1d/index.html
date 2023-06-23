@@ -138,19 +138,21 @@
       </p>
       <div id="plot1" style="height:20rem;"></div>
       <input id="sliderN" type="range" min="1" max="5" step="1">
-      <input id="sliderL" type="range" min="1" max="3" step="0.1">
+      <input id="sliderL" type="range" min="1" max="3" step="0.02">
       <script type="module">
-        import {Graph1D} from "../../scripts/graphing/Graph1D.js";
-        const graph = new Graph1D("plot1",
-        (x)=>{
+        import {Graph1D, Indicator} from "../../scripts/graphing/Graph1D.js";
+        const graph = new Graph1D("plot1");
+        graph.setLimits(-0.2, 3.4, -1.7, 1.7);
+        graph.setSteps(2000);
+        graph.setFunc((x)=>{
           let n = parseInt(document.getElementById("sliderN").value);
           let L = parseFloat(document.getElementById("sliderL").value);
+          graph.setIndicators([new Indicator(L, "L", true)],[new Indicator(Math.sqrt(2/L), "A")])
           if(x<0 || x>L)return null;
           return Math.sqrt(2/L) * Math.sin(n*Math.PI*x / L);
-        }
-        ,-0.2, 3 + 0.2, -3 -0.2,3+0.2,2000);
+        })
+        graph.animate();
 
-        graph.setIndicators([3],[3])
 
       </script>
     </div>

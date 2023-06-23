@@ -8,10 +8,10 @@ export class Graph1D {
     canvas;
     ctx;
     // Limits in the x and y directions.
-    startX;
-    endX;
-    startY;
-    endY;
+    startX = 0;
+    endX = 1;
+    startY = 0;
+    endY = 1;
 
     // Add axes indicators
     indicatorsX = [];
@@ -24,12 +24,12 @@ export class Graph1D {
     shapeFillColor = "rgb(240,240,240)";
 
     // Number of steps used.
-    steps;
+    steps = 100;
 
     // Rotation
     rotation = 0;
 
-    constructor(containerId, func, startX, endX, startY, endY, steps) {
+    constructor(containerId) {
         this.container = document.getElementById(containerId);
         // Create a canvas in the container
         this.canvas = document.createElement("canvas");
@@ -37,23 +37,27 @@ export class Graph1D {
         this.container.appendChild(this.canvas);
         this.ctx = this.canvas.getContext("2d");
 
-        this.func = func;
-        this.steps = steps;
-
         // Set width and height - scale by DPI for proper rendering.
         this.canvas.height = Math.round(this.canvas.clientHeight * window.devicePixelRatio);
         this.canvas.width = Math.round(this.canvas.clientWidth * window.devicePixelRatio);
 
         this.ctx.lineWidth = 1.3;
+    }   
 
-        // Set limits
+    setLimits(startX, endX, startY, endY) {
         this.startX = startX;
         this.endX = endX;
         this.startY = startY;
         this.endY = endY;
-        // Start animation
-        this.animate();
-    }   
+    }
+
+    setSteps(steps) {
+        this.steps = steps;
+    }
+
+    setFunc(func) {
+        this.func = func;
+    }
 
     /**
      * Set indicators.
@@ -94,18 +98,32 @@ export class Graph1D {
         this.ctx.fillText("x",center[0] - 18, 24);
         this.ctx.fillText("y",this.canvas.width - 24,center[1]+18);
 
-        // Add indicators
+        // Draw indicators
         for(let ix of this.indicatorsX) {
-            let location = this.getCanvasCoordinates([ix, 0]);
+            let location = this.getCanvasCoordinates([ix.pos, 0]);
             // Draw segment
+            this.ctx.strokeStyle = ix.color;
+            this.ctx.fillStyle = ix.color;
             this.ctx.beginPath();
-            this.ctx.moveTo(location[0], location[1]-8);
-            this.ctx.lineTo(location[0], location[1]+8);
-            this.ctx.stroke();
+            if(ix.large) {
+                this.ctx.setLineDash([5,15]);
+                this.ctx.moveTo(location[0], 0);
+                this.ctx.lineTo(location[0], this.canvas.height);
+                this.ctx.stroke();
+                this.ctx.setLineDash([]);
+                this.ctx.fillText(ix.name,location[0]+4, location[1]+24);
+            }
+            else {
+                this.ctx.moveTo(location[0], location[1]-8);
+                this.ctx.lineTo(location[0], location[1]+8);c
+                this.ctx.stroke(); 
+                this.ctx.fillText(ix.name,location[0]-10, location[1]+24);
+            }
         }
         for(let iy of this.indicatorsY) {
-            let location = this.getCanvasCoordinates([0, iy]);
+            let location = this.getCanvasCoordinates([0, iy.pos]);
             // Draw segment
+            this.ctx.strokeStyle = iy.color;
             this.ctx.beginPath();
             this.ctx.moveTo(location[0]-8, location[1]);
             this.ctx.lineTo(location[0]+8, location[1]);
@@ -141,13 +159,6 @@ export class Graph1D {
     }
 
     /**
-     * Change the function of this graph.
-     */
-    modifyFunc(newFunc) {
-        this.func = newFunc;
-    }
-
-    /**
      * Called at every time step to make sure the canvas has the right size.
      */
     resizeDisplay() {
@@ -168,5 +179,17 @@ export class Graph1D {
         this.drawAxes();
         this.resizeDisplay();
         requestAnimationFrame(this.animate.bind(this));
+    }
+}
+
+/**
+ * An indicator for a graph.
+ */
+export class Indicator {
+    constructor(pos, name, large, color) {
+        this.pos = pos;
+        this.name = name || pos.toString();
+        this.large = large || false;
+        this.color = color || "0x000000";
     }
 }
