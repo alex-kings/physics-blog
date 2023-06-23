@@ -14,8 +14,8 @@ export class Graph1D {
     endY;
 
     // Add axes indicators
-    indicatorsX = [1,2];
-    indicatorsY = [1];
+    indicatorsX = [];
+    indicatorsY = [];
 
     // Function plotted.
     func;
@@ -51,11 +51,17 @@ export class Graph1D {
         this.endX = endX;
         this.startY = startY;
         this.endY = endY;
-        // Initialise the canvas
-        this.clearCanvas();
         // Start animation
         this.animate();
     }   
+
+    /**
+     * Set indicators.
+     */
+    setIndicators(ix, iy) {
+        this.indicatorsX = ix;
+        this.indicatorsY = iy;
+    }
 
     /**
      * Clear the canvas contents
@@ -63,7 +69,6 @@ export class Graph1D {
     clearCanvas() {
         this.ctx.fillStyle = this.canvasBackgroundColor;
         this.ctx.fillRect(0,0,this.canvas.width, this.canvas.height);
-        this.drawAxes();
     }
 
     /**
@@ -160,6 +165,7 @@ export class Graph1D {
     animate() {
         this.clearCanvas();
         this.drawFunction();
+        this.drawAxes();
         this.resizeDisplay();
         requestAnimationFrame(this.animate.bind(this));
     }
