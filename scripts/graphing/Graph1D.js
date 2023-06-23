@@ -7,9 +7,6 @@ export class Graph1D {
     container;
     canvas;
     ctx;
-    // Width and height of the canvas element.
-    w;
-    h;
     // Limits in the x and y directions.
     startX;
     endX;
@@ -45,8 +42,20 @@ export class Graph1D {
         // Set width and height
         this.canvas.width = this.canvas.clientWidth;
         this.canvas.height = this.canvas.clientHeight;
-        this.w = this.canvas.width;
-        this.h = this.canvas.height;
+
+        //get DPI
+        let dpi = window.devicePixelRatio;//get canvas
+        // function fix_dpi() {
+        //get CSS height
+        //the + prefix casts it to an integer
+        //the slice method gets rid of "px"
+        let style_height = +getComputedStyle(this.canvas).getPropertyValue("height").slice(0, -2);//get CSS width
+        let style_width = +getComputedStyle(this.canvas).getPropertyValue("width").slice(0, -2);//scale the canvas
+        this.canvas.setAttribute('height', style_height * dpi);
+        this.canvas.setAttribute('width', style_width * dpi);
+
+        this.ctx.lineWidth = 1.3;
+
         // Set limits
         this.startX = startX;
         this.endX = endX;
@@ -86,9 +95,9 @@ export class Graph1D {
         this.ctx.stroke();
         // Axis labels
         this.ctx.fillStyle = "black"
-        this.ctx.font = "16px serif"
-        this.ctx.fillText("x",center[0] - 15, 12);
-        this.ctx.fillText("y",this.canvas.width - 15,center[1]+12);
+        this.ctx.font = "24px serif"
+        this.ctx.fillText("x",center[0] - 18, 24);
+        this.ctx.fillText("y",this.canvas.width - 24,center[1]+18);
     }
 
     /**
@@ -131,9 +140,6 @@ export class Graph1D {
 
             this.canvas.height = this.smoothnessFactor*this.container.clientHeight;
             this.canvas.width = this.smoothnessFactor*this.container.clientWidth;
-            this.w = this.canvas.width;
-            this.h = this.canvas.height;
-            this.ctx.translate(this.w*0.5, this.h*0.5);
         }
     }
 
@@ -143,7 +149,7 @@ export class Graph1D {
     animate() {
         this.clearCanvas();
         this.drawFunction();
-        this.resizeDisplay();
+        // this.resizeDisplay();
         requestAnimationFrame(this.animate.bind(this));
     }
 }
