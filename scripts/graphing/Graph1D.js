@@ -81,7 +81,7 @@ export class Graph1D {
         this.ctx.stroke();
         // Axis labels
         this.ctx.fillStyle = "black"
-        this.ctx.font = "24px serif"
+        this.ctx.font = "24px sans-serif"
         this.ctx.fillText("x",center[0] - 18, 24);
         this.ctx.fillText("y",this.canvas.width - 24,center[1]+18);
     }
@@ -90,13 +90,16 @@ export class Graph1D {
      * Draw the function given.
      */
     drawFunction() {
+        this.ctx.strokeStyle = "red";
         this.ctx.beginPath();
         const increment = (this.endX - this.startX) / this.steps;
         for(let i = 0; i < this.steps+1; i++) {
             let x = i*increment + this.startX;
             let y = this.func(x);
-            let canvasCoords = this.getCanvasCoordinates([x,y]);
-            this.ctx.lineTo(canvasCoords[0], canvasCoords[1]);
+            if(y!=null) {
+                let canvasCoords = this.getCanvasCoordinates([x,y]);
+                this.ctx.lineTo(canvasCoords[0], canvasCoords[1]);
+            }
         }
         this.ctx.stroke();
     }
