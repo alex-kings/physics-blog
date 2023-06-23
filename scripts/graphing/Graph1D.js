@@ -2,7 +2,7 @@
  * Create a spherical graph centered on the origin.
  */
 
-export class Spherical2dGraph {
+export class Graph1D {
     // Attributes
     container;
     canvas;
@@ -15,6 +15,7 @@ export class Spherical2dGraph {
     endX;
     startY;
     endY;
+
     // Function plotted.
     func;
 
@@ -51,8 +52,6 @@ export class Spherical2dGraph {
         this.endX = endX;
         this.startY = startY;
         this.endY = endY;
-        // Change the origin of canvas to center
-        this.ctx.translate(this.w*0.5, this.h*0.5);
         // Initialise the canvas
         this.clearCanvas();
         // Start animation
@@ -64,22 +63,32 @@ export class Spherical2dGraph {
      */
     clearCanvas() {
         this.ctx.fillStyle = this.canvasBackgroundColor;
-        this.ctx.fillRect(-this.w/2, -this.h/2, this.w, this.h);
+        this.ctx.fillRect(0,0,this.canvas.width, this.canvas.height);
+        this.drawAxes();
+    }
+
+    /**
+     * Draw canvas axes.
+     */
+    drawAxes() {
         // Draw axes
         this.ctx.strokeStyle = "black"
         this.ctx.beginPath();
-        this.ctx.moveTo(-this.w/2,0);
-        this.ctx.lineTo(this.w/2,0);
+
+        let center = this.getCanvasCoordinates([0,0]);
+
+        this.ctx.moveTo(center[0],0);
+        this.ctx.lineTo(center[0],this.canvas.height);
         this.ctx.stroke();
         this.ctx.beginPath();
-        this.ctx.moveTo(0,-this.h/2);
-        this.ctx.lineTo(0,this.h/2);
+        this.ctx.moveTo(0,center[1]);
+        this.ctx.lineTo(this.canvas.width, center[1]);
         this.ctx.stroke();
         // Axis labels
         this.ctx.fillStyle = "black"
-        this.ctx.font = "14px sans-serif"
-        this.ctx.fillText("x",this.w/2 - 15, -5);
-        this.ctx.fillText("z",3,-this.h/2+15)
+        this.ctx.font = "16px serif"
+        this.ctx.fillText("x",center[0] - 15, 12);
+        this.ctx.fillText("y",this.canvas.width - 15,center[1]+12);
     }
 
     /**
@@ -87,23 +96,23 @@ export class Spherical2dGraph {
      */
     drawFunction() {
         this.ctx.beginPath();
-        const increment = 2*Math.PI / this.steps;
-        for(let i = 0; i <= this.steps; i++) {
-            let theta = increment * i;
-            let r = this.func(theta);
-            let x = r * Math.sin(theta);
-            let z = r * Math.cos(theta);
-
-            // Transform using the limit values
-            x*=this.w/(2*this.endX);
-            z*=this.h/(2*this.endY);
-            // Make the new point (account for the z axis being reversed).
-            this.ctx.lineTo(x,-z);
+        const increment = (this.endX - this.startX) / this.steps;
+        for(let i = 0; i < this.steps+1; i++) {
+            let x = i*increment + this.startX;
+            let y = this.func(x);
+            let canvasCoords = this.getCanvasCoordinates([x,y]);
+            this.ctx.lineTo(canvasCoords[0], canvasCoords[1]);
         }
-        this.ctx.fillStyle = this.shapeFillColor;
-        this.ctx.fill();
-        this.ctx.strokeStyle = "red";
         this.ctx.stroke();
+    }
+
+    /**
+     * Pass x and y in the function coordinates and obtain the equivalent canvas coordinates.
+     */
+    getCanvasCoordinates([x,y]) {
+        let canvasX = (x-this.startX)*this.canvas.width / (this.endX - this.startX);
+        let canvasY = (this.endY - y)*this.canvas.height/ (this.endY - this.startY);
+        return [canvasX, canvasY];
     }
 
     /**
@@ -111,14 +120,6 @@ export class Spherical2dGraph {
      */
     modifyFunc(newFunc) {
         this.func = newFunc;
-    }
-    
-    /**
-     * Set the rotation angle around the X axis for this graph.
-     * @param {Number} a The new rotation angle
-     */
-    setRotation(a) {
-        this.rotation = a;
     }
 
     /**
@@ -141,10 +142,6 @@ export class Spherical2dGraph {
      */
     animate() {
         this.clearCanvas();
-        // Changes to the graph go here.
-
-        this.canvas.style.transform = `rotateY(15deg) rotateX(${this.rotation}deg)`
-
         this.drawFunction();
         this.resizeDisplay();
         requestAnimationFrame(this.animate.bind(this));

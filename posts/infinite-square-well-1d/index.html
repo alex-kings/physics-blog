@@ -136,8 +136,12 @@
         Here's a graph that will help you visualise the solutions of 
         the particle trapped in a 1-dimensional box.
       </p>
-      <canvas id="plot"></canvas>
+      <div id="plot1" style="height:20rem;"></div>
+      <script type="module">
+        import {Graph1D} from "../../scripts/graphing/Graph1D.js";
+        const graph = new Graph1D("plot1",(x)=>(Math.sin(2*x)),-0.2, Math.PI, -1.2,1.2,100)
+
+      </script>
     </div>
-    <script type="module" src="/main.js"></script>
   </body>
 </html>
