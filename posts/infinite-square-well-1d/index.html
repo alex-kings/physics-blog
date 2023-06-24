@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>infinite square well</title>
+    <title>Particle in a box</title>
     <link href="../../style/main.css" rel="stylesheet">
     <link href="../../style/navbar.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../style/post.css">
     
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -22,7 +23,7 @@
     </nav>
 
     <div class="main">
-			<h1>Particle trapped in an infinite square well</h1>
+			<h1>Quantum particle in an infinite square well</h1>
 			<p>
         In this post, we will explore the solutions to the standard quantum mechanics problem of a particle trapped in a 1D box, or infinite square well.
         We'll first have a look at how to derive these solutions, and then see what the solutions look like!
@@ -34,20 +35,22 @@
         the particle. Here's the standard recipe that we will apply in order to 
         obtain these solutions:
       </p>
-			<ol>
-				<li>Specify the potential energy \(V\).</li>
-				<li>Apply the time-independant Schrödinger equation.</li>
-				<li>Use boundary conditions.</li>
-        <li>Normalize to find the solutions.</li>
-			</ol>
+      <div class="wrap-center">
+        <ol>
+          <li>Specify the potential energy \(V\).</li>
+          <li>Apply the time-independant Schrödinger equation.</li>
+          <li>Use boundary conditions.</li>
+          <li>Normalize to find the solutions.</li>
+        </ol>
+      </div>
 
-			<h3>Specifying the potential</h3>
-			<p>
-				For a particle trapped in an infinite square well, the potential energy \(V\) is:
-			</p>
-			<p>
-				$$
-				V=\left\{\begin{matrix}
+      <h3>Specifying the potential</h3>
+      <p>
+        For a particle trapped in an infinite square well, the potential energy \(V\) is:
+      </p>
+      <p>
+        $$
+        V=\left\{\begin{matrix}
         \infty \\ 
         0\\ 
         \infty
@@ -58,16 +61,16 @@
         \qquad\textup{for}\quad 0\lt x\lt L\\ 
         \textup{for}\quad x\ge L
         \end{matrix}
-				$$
-			</p>
+        $$
+      </p>
       <p>The potential energy is shown in the following graph:</p>
       <i>graph</i>
-
+    
       <h3>Applying the time-independant Schrödinger equation</h3>
       <p>
         The <b>time-independant Schrödinger equation</b> is the form of the 
-        Schrödinger equation that we will use here to find the <b>energy eigenvalues <i>En</i></b> and 
-        <b>energy eigenfunctions <i>Phi n</i></b> of the trapped particle. We start with:
+        Schrödinger equation that we will use here to find the <b>energy eigenvalues \(E_n\)</b> and 
+        <b>energy eigenfunctions \(\psi_n\)</b> of the trapped particle. We start with:
       </p>
       <p>
         $$
@@ -78,22 +81,30 @@
         And insert the potential energy \(V\) that was specified in <i>1</i>. 
         We get the following, for the region inside the well \(0\lt x\lt L\):
       </p>
-      <p>$$
-        -\frac{\hbar ^2}{2m}\frac{\partial^2 \psi _n}{\partial x^2}=E_n\psi _n
-        $$</p>
+      <p>
+        $$
+          -\frac{\hbar ^2}{2m}\frac{\partial^2 \psi _n}{\partial x^2}=E_n\psi _n
+        $$
+      </p>
       <p>This can be rearranged as:</p>
-      <p>$$
+      <p>
+        $$
         \frac{\partial^2 \psi _n}{\partial x^2}=-\frac{2m E_n}{\hbar ^2}\psi _n
-        $$</p>
+        $$
+      </p>
       <p>This is a standard differential equation for which the general solutions are:</p>
-      <p>$$
+      <p>
+        $$
         \psi _n = A\;\textup{sin}(k_n x) + B\;\textup{cos}(k_n x)
-        $$</p>
-      <p>$$
+        $$
+      </p>
+      <p>
+        $$
         k_n=\frac{\sqrt{2mE_n}}{\hbar}
-        $$</p>
-      <p>It's now time to make use of the well's boundary conditions!</p>
-
+        $$
+      </p>
+      <p>It's now time to make use of the well's boundary conditions!</p>        
+    
       <h3>Using boundary conditions</h3>
       <p>
         Boundary conditions are the values that we expect for wavefunctions at the edges 
@@ -106,42 +117,54 @@
         deduce that \(k_n =\frac{n\pi}{L}\). Equating this with our previous formula for \(k_n\) 
         gives us the energy eigenvalues!
       </p>
-      <p>$$
+      <p>
+        $$
         \frac{\sqrt{2mE_n}}{\hbar} = \frac{n\pi}{L}
-        $$</p>
-      <p>$$
+        $$
+      </p>
+      <p>
+        $$
         E_n=\frac{n^2\pi ^2 \hbar ^2}{2mL^2}
-        $$</p>
-
+        $$
+      </p>
+    
       <h3>Normalization of the eigenfunctions</h3>
       <p>
         Normalization is a recurring technique in quantum mechanics to find the coefficients 
         of eigenfunctions. As we know, \(\psi ^2\) is a probability density function. This 
         means that integrating over all values of x must equal to \(1\).
       </p>
-      <p>$$
+      <p>
+        $$
         \int_{0}^{L}|\psi _n|^2 = 1
-        $$</p>
-      <p>$$
+        $$
+      </p>
+      <p>
+        $$
         A = \sqrt{\frac{2}{L}}
-        $$</p>
+        $$
+      </p>
       So the eigenfunctions are:
-      <p>$$
+      <p>
+        $$
         \psi_n = \sqrt{\frac{2}{L}}\textup{sin}\left (\frac {n\pi x}{L}  \right )
-        $$</p>
+        $$
+      </p>
       <p>Let's now have a look at the solutions we just derived!</p>
-
+      
       <h2>Visualisation of the solutions</h2>
       <p>
         Here's a graph that will help you visualise the solutions of 
         the particle trapped in a 1-dimensional box.
       </p>
-      <div id="plot1" style="height:20rem;"></div>
-      <div class="slider-container">
-        <input id="sliderN" type="range" min="1" max="5" step="1">
-      </div>
-      <div class="slider-container">
-        <input id="sliderL" type="range" min="1" max="3" step="0.02">
+      <div class="graph-container">
+        <div id="plot1" class="graph" style="height:20rem;"></div>
+        <div class="slider-container">
+          <input id="sliderN" type="range" min="1" max="5" step="1">
+        </div>
+        <div class="slider-container">
+          <input id="sliderL" type="range" min="1" max="3" step="0.02">
+        </div>
       </div>
       <script type="module">
         import {Graph1D, Indicator} from "../../scripts/graphing/Graph1D.js";

@@ -1,9 +1,10 @@
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 1.1em;
 
-    color-scheme: light dark;
+  color-scheme: light dark;
 	color: #213547;
 	background-color: #ffffff;
 
@@ -23,12 +24,12 @@ a:hover {
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-	  color: rgba(255, 255, 255, 0.87);
-	  background-color: #242424;
-    }
-    a:hover {
-		color:rgb(210, 210, 210);
-    }
+  :root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
   }
+  a:hover {
+    color:rgb(210, 210, 210);
+  }
+}
   

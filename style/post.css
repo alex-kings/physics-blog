@@ -1,0 +1,29 @@
+/* Styling for standard posts */
+h1 {
+    text-align: center;
+    color:rgb(0, 0, 95);
+}
+
+.wrap-center {
+    display: flex;
+    justify-content: center;
+}
+h2 {
+    margin-top:1.5rem;
+    margin-bottom: 0.8rem;
+    color:rgb(0, 0, 193);
+}
+h3 {
+    margin-top:1rem;
+    margin-bottom:0.6rem;
+    color:rgb(0, 0, 116);
+}
+p {
+    margin:.2rem 0;
+}
+.graph-container {
+    margin:1rem 0;
+}
+.slider-container {
+    
+}
