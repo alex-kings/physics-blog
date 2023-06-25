@@ -80,22 +80,32 @@ export class Graph1D {
         this.ctx.lineWidth = 1.4
         // Draw axes
         this.ctx.strokeStyle = "black"
-        this.ctx.beginPath();
-
+        
         let center = this.getCanvasCoordinates([0,0]);
-
-        this.ctx.moveTo(center[0],0);
-        this.ctx.lineTo(center[0],this.canvas.height);
+        
+        // x axis
+        this.ctx.beginPath();
+        this.ctx.moveTo(center[0],this.canvas.height);
+        this.ctx.lineTo(center[0],0);
+        this.ctx.lineTo(center[0] - 8, 12);
+        this.ctx.moveTo(center[0], 0);
+        this.ctx.lineTo(center[0] + 8, 12);
         this.ctx.stroke();
+        
+        // y axis
         this.ctx.beginPath();
         this.ctx.moveTo(0,center[1]);
         this.ctx.lineTo(this.canvas.width, center[1]);
+        this.ctx.lineTo(this.canvas.width - 12, center[1] - 8);
+        this.ctx.moveTo(this.canvas.width, center[1]);
+        this.ctx.lineTo(this.canvas.width - 12, center[1] + 8);
         this.ctx.stroke();
+
         // Axis labels
         this.ctx.fillStyle = "black"
         this.ctx.font = "24px sans-serif"
-        this.ctx.fillText("x",center[0] - 18, 24);
-        this.ctx.fillText("y",this.canvas.width - 24,center[1]+18);
+        this.ctx.fillText("x",center[0] - 18, 32);
+        this.ctx.fillText("y",this.canvas.width - 32,center[1]+18);
 
         // Draw indicators
         for(let ix of this.indicatorsX) {
