@@ -1,9 +1,17 @@
 /* Styling for standard posts */
+* {
+    --color-main: rgb(0, 0, 193);
+}
 h1 {
     text-align: center;
-    color:rgb(0, 0, 95);
+    color:var(--color-main);
 }
-
+.anchor {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
+}
 .wrap-center {
     display: flex;
     justify-content: center;
@@ -11,12 +19,12 @@ h1 {
 h2 {
     margin-top:1.5rem;
     margin-bottom: 0.8rem;
-    color:rgb(0, 0, 193);
+    color:var(--color-main);
 }
 h3 {
     margin-top:1rem;
     margin-bottom:0.6rem;
-    color:rgb(0, 0, 116);
+    color:var(--color-main);
 }
 p {
     margin:.2rem 0;
@@ -27,9 +35,15 @@ p {
 .slider-row{
     display: flex;
     gap:1rem;
+    margin:0 1rem;
 }
 .slider-container {
     flex-grow: 1;
     display:flex;
     flex-direction: column;
+    align-items: center;
+}
+.slider {
+    width:100%;
+    max-width: 12rem;
 }

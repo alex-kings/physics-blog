@@ -37,14 +37,15 @@
       </p>
       <div class="wrap-center">
         <ol>
-          <li>Specify the potential energy \(V\).</li>
-          <li>Apply the time-independant Schrödinger equation.</li>
-          <li>Use boundary conditions.</li>
-          <li>Normalize to find the solutions.</li>
+          <li><a href="#sub1">Specify the potential energy \(V\).</a></li>
+          <li><a href="#sub2">Apply the time-independant Schrödinger equation.</a></li>
+          <li><a href="#sub3">Use boundary conditions.</a></li>
+          <li><a href="#sub4">Normalize to find the solutions.</a></li>
         </ol>
       </div>
 
       <h3>Specifying the potential</h3>
+      <a class="anchor" id="sub1"></a>
       <p>
         For a particle trapped in an infinite square well, the potential energy \(V\) is:
       </p>
@@ -67,6 +68,7 @@
       <i>graph</i>
     
       <h3>Applying the time-independant Schrödinger equation</h3>
+      <a class="anchor" id="sub2"></a>
       <p>
         The <b>time-independant Schrödinger equation</b> is the form of the 
         Schrödinger equation that we will use here to find the <b>energy eigenvalues \(E_n\)</b> and 
@@ -106,6 +108,7 @@
       <p>It's now time to make use of the well's boundary conditions!</p>        
     
       <h3>Using boundary conditions</h3>
+      <a class="anchor" id="sub3"></a>
       <p>
         Boundary conditions are the values that we expect for wavefunctions at the edges 
         of the well. Because the potential is infinite at \(x=0\) and \(x=a\), the particle 
@@ -129,6 +132,7 @@
       </p>
     
       <h3>Normalization of the eigenfunctions</h3>
+      <a class="anchor" id="sub4"></a>
       <p>
         Normalization is a recurring technique in quantum mechanics to find the coefficients 
         of eigenfunctions. As we know, \(\psi ^2\) is a probability density function. This 
@@ -153,19 +157,23 @@
       <p>Let's now have a look at the solutions we just derived!</p>
       
       <h2>Visualisation of the solutions</h2>
+      <p>Let's now have a look at the solutions thanks to a couple graphs. </p>
+      <h3>Energy eigenfunction</h3>
       <p>
-        Here's a graph that will help you visualise the solutions of 
-        the particle trapped in a 1-dimensional box.
+        Here's a graph showing the energy eingenfunctions of a quantum particle 
+        in a 1-dimensional box. Use the sliders to modify the quantum number or 
+        the length of the well.
       </p>
       <div class="graph-container">
         <div id="plot1" class="graph" style="height:20rem;"></div>
         <div class="slider-row">
           <div class="slider-container">
             <label>Quantum number n=<span id="quantumNumber"></span></label>
-            <input id="sliderN" type="range" min="1" max="5" step="1">
+            <input class="slider" id="sliderN" type="range" min="1" max="5" step="1">
           </div>
           <div class="slider-container">
-            <input id="sliderL" type="range" min="1" max="3" step="0.02">
+            <label>Length of the well L</label>
+            <input class="slider" id="sliderL" type="range" min="1" max="3" step="0.02">
           </div>
         </div>
       </div>
@@ -186,6 +194,7 @@
         })
         graph.animate();
       </script>
+
     </div>
   </body>
 </html>
