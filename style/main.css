@@ -1,3 +1,9 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  --text-color: #213547;
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,14 +11,9 @@
   font-size: 1.1em;
 
   color-scheme: light dark;
-	color: #213547;
+	color: var(--text-color);
 	background-color: #ffffff;
 
-}
-*{
-    padding:0;
-    margin:0;
-    box-sizing: border-box;
 }
 a:hover {
 	color: #747bff;

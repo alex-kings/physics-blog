@@ -6,6 +6,10 @@ h1 {
     text-align: center;
     color:var(--color-main);
 }
+.anchor-link {
+    text-decoration: none;
+    color: var(--text-color);
+}
 .anchor {
     display: block;
     position: relative;
