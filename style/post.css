@@ -21,17 +21,17 @@ h1 {
     justify-content: center;
 }
 h2 {
-    margin-top:1.5rem;
-    margin-bottom: 0.8rem;
+    margin-top:1.8rem;
+    margin-bottom: 1.2rem;
     color:var(--color-main);
 }
 h3 {
-    margin-top:1rem;
-    margin-bottom:0.6rem;
+    margin-top:1.4rem;
+    margin-bottom:1rem;
     color:var(--color-main);
 }
 p {
-    margin:.2rem 0;
+    margin:.3rem 0;
 }
 .overlay {
     position:absolute;
@@ -39,7 +39,7 @@ p {
     height:100%;
 }
 .graph-container {
-    margin:1rem 0;
+    margin:1.5rem 0;
 }
 .graph {
     position:relative;
@@ -58,4 +58,13 @@ p {
 .slider {
     width:100%;
     max-width: 12rem;
+}
+.slider-col {
+    display: flex;
+    flex-direction: column;
+}
+.slider-container-line {
+    display: flex;
+    gap: 5px;
+    align-items: center;
 }

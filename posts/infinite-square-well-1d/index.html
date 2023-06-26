@@ -184,33 +184,47 @@
           </div>
         </div>
       </div>
-      <script type="module">
-        import {Graph1D, Indicator} from "../../scripts/graphing/Graph1D.js";
-        const nLabel = document.getElementById("quantumNumber")
-        const sliderN = document.getElementById("sliderN");
-        const sliderL = document.getElementById("sliderL");
-        const graph = new Graph1D("plot1");
-        graph.setLimits(-0.2, 3.4, -1.8, 1.8);
-        graph.setSteps(2000);
-        graph.setFunc((x)=>{
-          let n = parseInt(sliderN.value);
-          let L = parseFloat(sliderL.value);
-          graph.setIndicators([new Indicator(L, "L", true)],[new Indicator(Math.sqrt(2/L), "A")])
-          if(x<0 || x>L)return null;
-          return Math.sqrt(2/L) * Math.sin(n*Math.PI*x / L);
-        })
-        graph.redraw();
-        nLabel.innerText = sliderN.value;
+      
+      <h3>Superposition states</h3>
+      <p>
+        Valid wavefunctions in the well can be made up of a sum of 
+        energy eigenfunctions. A state obtained in such a way is called a 
+        <b>superposition state</b>. Note that it is important to normalize 
+        superposition states, in the same way as we normalized base states 
+        <a class="anchor-link" href="#sub4">here</a>.
+      </p>
 
-        // Sliders
-        sliderN.oninput = ()=>{
-          graph.redraw();
-          nLabel.innerText = sliderN.value;
-        }
-        sliderL.oninput = ()=>{graph.redraw();}
-        
-      </script>
-
+      <div class="graph-container">
+        <div id="plot2" class="graph" style="height:15rem">
+          <div class="overlay">
+            <div style="text-align: center; font-size: 0.8rem;">
+              \(\psi = A\left ( \,\textup{sin} \left ( \frac{\pi x}{L}\right ) 
+                + \left (a2 \, \textup{sin} \left( \frac{2\pi x}{L}\right) \right)
+                + \left (a3 \, \textup{sin} \left( \frac{3\pi x}{L} \right) \right)
+                \right )
+              \)
+            </div>
+          </div>
+        </div>
+        <div class="slider-col">
+          <div class="slider-container-line">
+            <label>-1</label>
+            <input class="slider" id="sliderA1" type="range" min="-1" max="1" step="0.05">
+            <label>1</label>
+          </div>
+          <div class="slider-container-line">
+            <label>-1</label>
+            <input class="slider" id="sliderA2" type="range" min="-1" max="1" step="0.05">
+            <label>1</label>
+          </div>
+          <div class="slider-container-line">
+            <label>-1</label>
+            <input class="slider" id="sliderA3" type="range" min="-1" max="1" step="0.05">
+            <label>1</label>
+          </div>
+        </div>
+      </div>
+      <script type="module" src="well-plot.js"></script>
     </div>
   </body>
 </html>
