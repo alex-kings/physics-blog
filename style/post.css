@@ -33,8 +33,12 @@ h3 {
 p {
     margin:.2rem 0;
 }
+.overlay {
+    position:absolute;
+}
 .graph-container {
     margin:1rem 0;
+    position:relative;
 }
 .slider-row{
     display: flex;

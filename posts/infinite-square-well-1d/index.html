@@ -168,6 +168,9 @@
         the length of the well.
       </p>
       <div class="graph-container">
+        <div class="overlay">
+          <span style="margin:auto">\(\psi_n = A\textup{sin}\left (\frac {n\pi x}{L}  \right )\)</span>
+        </div>
         <div id="plot1" class="graph" style="height:20rem;"></div>
         <div class="slider-row">
           <div class="slider-container">
@@ -183,19 +186,28 @@
       <script type="module">
         import {Graph1D, Indicator} from "../../scripts/graphing/Graph1D.js";
         const nLabel = document.getElementById("quantumNumber")
+        const sliderN = document.getElementById("sliderN");
+        const sliderL = document.getElementById("sliderL");
         const graph = new Graph1D("plot1");
         graph.setLimits(-0.2, 3.4, -1.8, 1.8);
         graph.setSteps(2000);
         graph.setFunc((x)=>{
-          let n = parseInt(document.getElementById("sliderN").value);
-          let L = parseFloat(document.getElementById("sliderL").value);
-          // Change text
-          if(nLabel.innerText != n.toString()) nLabel.innerText = n;
+          let n = parseInt(sliderN.value);
+          let L = parseFloat(sliderL.value);
           graph.setIndicators([new Indicator(L, "L", true)],[new Indicator(Math.sqrt(2/L), "A")])
           if(x<0 || x>L)return null;
           return Math.sqrt(2/L) * Math.sin(n*Math.PI*x / L);
         })
-        graph.animate();
+        graph.redraw();
+        nLabel.innerText = sliderN.value;
+
+        // Sliders
+        sliderN.oninput = ()=>{
+          graph.redraw();
+          nLabel.innerText = sliderN.value;
+        }
+        sliderL.oninput = ()=>{graph.redraw();}
+        
       </script>
 
     </div>

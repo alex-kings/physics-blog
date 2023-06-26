@@ -203,6 +203,14 @@ export class Graph1D {
         this.resizeDisplay();
         requestAnimationFrame(this.animate.bind(this));
     }
+
+    // Redraw the entire graph.
+    redraw() {
+        this.resizeDisplay();
+        this.clearCanvas();
+        this.drawFunction();
+        this.drawAxes();
+    }
 }
 
 /**
