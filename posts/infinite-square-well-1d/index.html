@@ -8,18 +8,6 @@
     <link href="../../style/main.css" rel="stylesheet">
     <link href="../../style/navbar.css" rel="stylesheet">
     <link rel="stylesheet" href="../../style/post.css">
-
-    <!-- <script type="text/javascript">
-      window.MathJax = {
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          processEscapes: true
-        }
-      };
-    </script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
-
   </head>
   <body>
     <nav class="navbar">
@@ -57,23 +45,12 @@
       <h3>Specifying the potential</h3>
       <a class="anchor" id="sub1"></a>
       <p>
-        For a particle trapped in an infinite square well, the potential energy \(V\) is:
+        For a particle trapped in an infinite square well, the potential 
+        energy <math><mi>V</mi></math> is:
       </p>
-      <p>
-        $$
-        V=\left\{\begin{matrix}
-        \infty \\ 
-        0\\ 
-        \infty
-        \end{matrix}
-        \right.
-        \begin{matrix}
-        \textup{for}\quad x\le 0\\ 
-        \qquad\textup{for}\quad 0\lt x\lt L\\ 
-        \textup{for}\quad x\ge L
-        \end{matrix}
-        $$
-      </p>
+
+      <math display="block" style="display:block math;"><mrow><mi>V</mi><mo>=</mo><mrow><mo fence="true" form="prefix">{</mo><mtable columnalign="center"><mtr><mtd><mi>∞</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mi>∞</mi></mtd></mtr></mtable><mo fence="true" form="postfix"></mo></mrow><mspace width="1em"></mspace><mtable columnalign="left left" class="tml-array"><mtr><mtd style="text-align:-webkit-left;"><mrow><mtext>for</mtext><mspace width="0.2778em"></mspace><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd style="text-align:-webkit-left;"><mrow><mtext>for</mtext><mspace width="0.2778em"></mspace><mn>0</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mi>L</mi></mrow></mtd></mtr><mtr><mtd style="text-align:-webkit-left;"><mrow><mtext>for</mtext><mspace width="0.2778em"></mspace><mi>x</mi><mo>&gt;</mo><mi>L</mi></mrow></mtd></mtr></mtable></mrow></math>
+
       <p>The potential energy is shown in the following graph:</p>
       <i>graph</i>
     
