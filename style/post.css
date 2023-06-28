@@ -2,9 +2,13 @@
 * {
     --color-main: rgb(0, 0, 193);
 }
-math{
-    font-family: Cambria, sans-serif;
+@font-face {
+    font-family: "myfont";
+    src: url("/fonts/STIXTwoMath-Regular.woff2") format('woff');
 }
+math{
+    /* font-family: 'STIX Two Text', Cambria, sans-serif; */
+    font-family: 'myfont', sans-serif;}
 .math-display {
     font-size: 1.1em;
     display: block;

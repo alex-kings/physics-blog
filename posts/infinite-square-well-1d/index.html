@@ -9,6 +9,10 @@
     <link href="../../style/navbar.css" rel="stylesheet">
     <link rel="stylesheet" href="../../style/post.css">
     <link rel="stylesheet" href="./well.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=PT+Sans&display=swap" rel="stylesheet"> 
   </head>
   <body>
     <nav class="navbar">
@@ -36,10 +40,10 @@
       </p>
       <div class="wrap-center">
         <ol>
-          <li><a class="anchor-link" href="#sub1">Specify the potential energy \(V\).</a></li>
-          <li><a class="anchor-link" href="#sub2">Apply the time-independant Schrödinger equation.</a></li>
-          <li><a class="anchor-link" href="#sub3">Use boundary conditions.</a></li>
-          <li><a class="anchor-link" href="#sub4">Normalize to find the solutions.</a></li>
+          <li><a class="anchor-link" href="#sub1">Specify the potential energy <math><mi>V</mi></math></a></li>
+          <li><a class="anchor-link" href="#sub2">Apply the time-independant Schrödinger equation</a></li>
+          <li><a class="anchor-link" href="#sub3">Use boundary conditions</a></li>
+          <li><a class="anchor-link" href="#sub4">Normalize to find the solutions</a></li>
         </ol>
       </div>
 
@@ -63,8 +67,9 @@
       </p>
       <math display="block" style="display:block math;"><mrow><mo>−</mo><mfrac><msup><mi>ℏ</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><msub><mi>ψ</mi><mi>n</mi></msub></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mi>V</mi><msub><mi>ψ</mi><mi>n</mi></msub><mo>=</mo><msub><mi>E</mi><mi>n</mi></msub><msub><mi>ψ</mi><mi>n</mi></msub></mrow></math>
       <p>
-        And insert the potential energy \(V\) that was specified in <i>1</i>. 
-        We get the following, for the region inside the well \(0\lt x\lt L\):
+        And insert the potential energy <math><mi>V</mi></math> 
+        that we previously specified. 
+        We get the following, for the region inside the well <math><mrow><mn>0</mn><mo>&le;</mo></mrow><mrow><mi>x</mi><mo>&le;</mo></mrow><mrow><mi>L</mi></mrow></math>:
       </p>
       <math display="block" style="display:block math;"><mrow><mo>−</mo><mfrac><msup><mi>ℏ</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><msub><mi>ψ</mi><mi>n</mi></msub></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><msub><mi>E</mi><mi>n</mi></msub><msub><mi>ψ</mi><mi>n</mi></msub></mrow></math>
       <p>This can be rearranged as:</p>
@@ -78,14 +83,16 @@
       <a class="anchor" id="sub3"></a>
       <p>
         Boundary conditions are the values that we expect for wavefunctions at the edges 
-        of the well. Because the potential is infinite at \(x=0\) and \(x=a\), the particle 
+        of the well. Because the potential is infinite at <math><mrow><mi>x</mi><mo>=</mo></mrow><mrow><mn>0</mn></mrow></math> and <math><mrow><mi>x</mi><mo>=</mo></mrow><mrow><mi>a</mi></mrow></math>, the particle 
         can not possibly be found at the well's edges. We get:
       </p>
       <math display="block" style="display:block math;"><mrow><msub><mi>ψ</mi><mi>n</mi></msub><mo form="prefix" stretchy="false">(</mo><mn>0</mn><mo form="postfix" stretchy="false">)</mo><mo>=</mo><msub><mi>ψ</mi><mi>n</mi></msub><mo form="prefix" stretchy="false">(</mo><mi>L</mi><mo form="postfix" stretchy="false">)</mo><mo>=</mo><mn>0</mn></mrow></math>
       <p>
-        This means that the eigenfunctions can not contain a cosine term, so \(B=0\). We also 
-        deduce that \(k_n =\frac{n\pi}{L}\). Equating this with our previous formula for \(k_n\) 
-        gives us the energy eigenvalues!
+        This means that the eigenfunctions can not contain a cosine term, so <math><mrow><mi>B</mi><mo>=</mo></mrow><mrow><mn>0</mn></mrow></math>. We also 
+        deduce that 
+        <math><mrow><msub><mi>k</mi><mi>n</mi></msub><mo>=</mo></mrow><mrow><mfrac><mrow><mi>n</mi><mi>π</mi></mrow><mi>L</mi></mfrac></mrow></math>
+        . Equating this with our previous formula for <math><msub><mi>k</mi><mi>n</mi></msub></math>
+        gives us the energy eigenvalues.
       </p>
       <math display="block" style="display:block math;"><mrow><mfrac><msqrt><mrow><mn>2</mn><mi>m</mi><msub><mi>E</mi><mi>n</mi></msub></mrow></msqrt><mi>ℏ</mi></mfrac><mo>=</mo><mfrac><mrow><mi>n</mi><mi>π</mi></mrow><mi>L</mi></mfrac></mrow></math>
       <math display="block" style="display:block math;"><mrow><msub><mi>E</mi><mi>n</mi></msub><mo>=</mo><mfrac><mrow><msup><mi>n</mi><mn>2</mn></msup><msup><mi>π</mi><mn>2</mn></msup><msup><mi>ℏ</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi><msup><mi>L</mi><mn>2</mn></msup></mrow></mfrac></mrow></math>
@@ -93,8 +100,8 @@
       <a class="anchor" id="sub4"></a>
       <p>
         Normalization is a recurring technique in quantum mechanics to find the coefficients 
-        of eigenfunctions. As we know, \(\psi ^2\) is a probability density function. This 
-        means that integrating over all values of x must equal to \(1\).
+        of eigenfunctions. As we know, <math><mrow><mi>|</mi><mi>ψ</mi><msup><mi>|</mi><mn>2</mn></msup></mrow></math> is a probability density function. This 
+        means that integrating over all values of x must equal to 1.
       </p>
       <math display="block" style="display:block math;"><mrow><msubsup><mo movablelimits="false">∫</mo><mn>0</mn><mi>L</mi></msubsup><mi>|</mi><msub><mi>ψ</mi><mi>n</mi></msub><msup><mi>|</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow></math>
       <math display="block" style="display:block math;"><mrow><mi>A</mi><mo>=</mo><msqrt><mfrac><mn>2</mn><mi>L</mi></mfrac></msqrt></mrow></math>
