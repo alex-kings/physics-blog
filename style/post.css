@@ -2,6 +2,9 @@
 * {
     --color-main: rgb(0, 0, 193);
 }
+math{
+    font-family: Cambria, sans-serif;
+}
 h1 {
     text-align: center;
     color:var(--color-main);

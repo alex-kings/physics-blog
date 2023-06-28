@@ -57,6 +57,11 @@ graph2.setFunc((x)=>{
 graph2.setIndicators([new Indicator(a, "L", true)],[])
 graph2.redraw();
 
-sliderA1.oninput = ()=>{ graph2.redraw();}
+sliderA1.oninput = ()=>{ 
+    graph2.redraw();
+
+    // Update maths
+    // document.getElementById("superposition-maths").innerHTML = "$$lambda$$";
+}
 sliderA2.oninput = ()=>{ graph2.redraw();}
 sliderA3.oninput = ()=>{ graph2.redraw();}
