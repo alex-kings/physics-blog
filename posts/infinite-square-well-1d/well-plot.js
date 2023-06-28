@@ -54,7 +54,7 @@ graph2.setFunc((x)=>{
     if(x < 0 || x > a) return null;
     return A*(a1*Math.sin(n1*Math.PI*x/a) + a2*Math.sin(n2*Math.PI*x/a) + a3*Math.sin(n3*Math.PI*x/a))
 })
-graph2.setIndicators([new Indicator(a, "L", true)],[])
+graph2.setIndicators([new Indicator(a, "L")],[])
 graph2.redraw();
 
 sliderA1.oninput = ()=>{ 
@@ -65,3 +65,12 @@ sliderA1.oninput = ()=>{
 }
 sliderA2.oninput = ()=>{ graph2.redraw();}
 sliderA3.oninput = ()=>{ graph2.redraw();}
+
+
+/**
+ * Window resize
+ */
+window.onresize = ()=>{
+    graph.redraw();
+    graph2.redraw();
+}

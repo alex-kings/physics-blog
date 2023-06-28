@@ -124,7 +124,7 @@ export class Graph1D {
             }
             else {
                 this.ctx.moveTo(location[0], location[1]-8);
-                this.ctx.lineTo(location[0], location[1]+8);c
+                this.ctx.lineTo(location[0], location[1]+8);
                 this.ctx.stroke(); 
                 this.ctx.fillText(ix.name,location[0]-10, location[1]+24);
             }
@@ -187,7 +187,6 @@ export class Graph1D {
     resizeDisplay() {
         if(Math.round(this.canvas.clientWidth * window.devicePixelRatio) !== this.canvas.width || 
             Math.round(this.canvas.clientHeight * window.devicePixelRatio) !== this.canvas.height) {
-                console.log("resized")
             this.canvas.height = Math.round(this.container.clientHeight * window.devicePixelRatio);
             this.canvas.width = Math.round(this.container.clientWidth * window.devicePixelRatio);
         }

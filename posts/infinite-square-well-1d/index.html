@@ -8,6 +8,7 @@
     <link href="../../style/main.css" rel="stylesheet">
     <link href="../../style/navbar.css" rel="stylesheet">
     <link rel="stylesheet" href="../../style/post.css">
+    <link rel="stylesheet" href="./well.css">
   </head>
   <body>
     <nav class="navbar">
@@ -138,17 +139,8 @@
       </p>
 
       <div class="graph-container">
-        <div id="plot2" class="graph" style="height:15rem">
-          <div class="overlay">
-            <div id="superposition-maths" style="text-align: center; font-size: 0.8rem;">
-              \(\psi = A\left ( \,\textup{sin} \left ( \frac{\pi x}{L}\right ) 
-                + \left (a2 \, \textup{sin} \left( \frac{2\pi x}{L}\right) \right)
-                + \left (a3 \, \textup{sin} \left( \frac{3\pi x}{L} \right) \right)
-                \right )
-              \)
-            </div>
-          </div>
-        </div>
+        <div id="plot2" class="graph" style="height:15rem"></div>
+        <math class="graph-expression" display="block" style="display:block math;"><mrow><mi>ψ</mi><mo>=</mo><mi>A</mi><mrow><mo fence="true" form="prefix">(</mo><mspace width="0.1667em"></mspace><mtext>sin</mtext><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo fence="true" form="prefix">(</mo><mi>a</mi><mn>2</mn><mspace width="0.1667em"></mspace><mtext>sin</mtext><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mn>2</mn><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo fence="true" form="prefix">(</mo><mi>a</mi><mn>3</mn><mspace width="0.1667em"></mspace><mtext>sin</mtext><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mn>3</mn><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow></mrow></math>    
         <div class="slider-col">
           <div class="slider-container-line">
             <label>-1</label>
@@ -167,33 +159,6 @@
           </div>
         </div>
       </div>
-
-      <!-- TEST -->
-      <math id="maths" display="block" style="display:block math;">
-        <mfrac id="b">
-          <mi >x</mi>
-          <mn>2</mn>
-        </mfrac>
-      </math>
-
-      <button id="test">test</button>
-      <script>
-        const btn = document.getElementById("test")
-        btn.onclick = ()=>{
-          document.getElementById("b").innerHTML = `<msqrt>
-      <mn>3</mn>
-    </msqrt>
-    <mn>2</mn>`
-    console.log("called")
-        }
-      </script>
-
-      
-
-<math display="block" style="display:block math;"><mrow><mi>ψ</mi><mo>=</mo><mi>A</mi><mrow><mo fence="true" form="prefix">(</mo><mspace width="0.1667em"></mspace><mtext>sin</mtext><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo fence="true" form="prefix">(</mo><mi>a</mi><mn>2</mn><mspace width="0.1667em"></mspace><mtext>sin</mtext><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mn>2</mn><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo fence="true" form="prefix">(</mo><mi>a</mi><mn>3</mn><mspace width="0.1667em"></mspace><mtext>sin</mtext><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mn>3</mn><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
-
-
-
       <script type="module" src="well-plot.js"></script>
     </div>
   </body>
