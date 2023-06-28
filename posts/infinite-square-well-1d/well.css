@@ -1,4 +1,3 @@
-/* .graph-expression {
-    font-size: 0.8rem;
-
-} */
+.expression-container {
+    min-height: 3rem;
+}
