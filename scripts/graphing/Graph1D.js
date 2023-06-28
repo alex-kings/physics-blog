@@ -105,7 +105,7 @@ export class Graph1D {
         this.ctx.fillStyle = "black"
         this.ctx.font = "24px sans-serif"
         this.ctx.fillText("x",center[0] - 18, 32);
-        this.ctx.fillText("y",this.canvas.width - 32,center[1]+18);
+        this.ctx.fillText("y",this.canvas.width - 28,center[1]+18);
 
         // Draw indicators
         for(let ix of this.indicatorsX) {

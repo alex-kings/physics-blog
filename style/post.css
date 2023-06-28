@@ -51,6 +51,7 @@ p {
 }
 .graph {
     position:relative;
+    height: 15rem;
 }
 .slider-row{
     display: flex;
@@ -62,6 +63,9 @@ p {
     display:flex;
     flex-direction: column;
     align-items: center;
+}
+.txt-center {
+    text-align: center;
 }
 .slider {
     width:100%;

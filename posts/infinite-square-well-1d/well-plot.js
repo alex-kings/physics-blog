@@ -7,7 +7,7 @@ const nLabel = document.getElementById("quantumNumber")
 const sliderN = document.getElementById("sliderN");
 const sliderL = document.getElementById("sliderL");
 const graph = new Graph1D("plot1");
-graph.setLimits(-0.2, 3.4, -1.8, 1.8);
+graph.setLimits(-0.2, 3.4, -1.6, 1.8);
 graph.setSteps(1000);
 graph.setFunc((x)=>{
     let n = parseInt(sliderN.value);
