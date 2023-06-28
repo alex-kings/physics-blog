@@ -50,7 +50,6 @@
       </p>
 
       <math display="block" style="display:block math;"><mrow><mi>V</mi><mo>=</mo><mrow><mo fence="true" form="prefix">{</mo><mtable columnalign="center"><mtr><mtd><mi>∞</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mi>∞</mi></mtd></mtr></mtable><mo fence="true" form="postfix"></mo></mrow><mspace width="1em"></mspace><mtable columnalign="left left" class="tml-array"><mtr><mtd style="text-align:-webkit-left;"><mrow><mtext>for</mtext><mspace width="0.2778em"></mspace><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd style="text-align:-webkit-left;"><mrow><mtext>for</mtext><mspace width="0.2778em"></mspace><mn>0</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mi>L</mi></mrow></mtd></mtr><mtr><mtd style="text-align:-webkit-left;"><mrow><mtext>for</mtext><mspace width="0.2778em"></mspace><mi>x</mi><mo>&gt;</mo><mi>L</mi></mrow></mtd></mtr></mtable></mrow></math>
-
       <p>The potential energy is shown in the following graph:</p>
       <i>graph</i>
     
@@ -58,42 +57,22 @@
       <a class="anchor" id="sub2"></a>
       <p>
         The <b>time-independant Schrödinger equation</b> is the form of the 
-        Schrödinger equation that we will use here to find the <b>energy eigenvalues \(E_n\)</b> and 
-        <b>energy eigenfunctions \(\psi_n\)</b> of the trapped particle. We start with:
+        Schrödinger equation that we will use here to find the <b>energy eigenvalues <math><msub><mi>E</mi><mi>n</mi></msub></math></b> and 
+        <b>energy eigenfunctions <math><msub><mi>ψ</mi><mi>n</mi></msub></math></b> of the trapped particle. We start with:
       </p>
-      <p>
-        $$
-        -\frac{\hbar ^2}{2m}\frac{\partial^2 \psi _n}{\partial x^2}+V\psi _n=E_n\psi _n
-        $$
-      </p>
+      <math display="block" style="display:block math;"><mrow><mo>−</mo><mfrac><msup><mi>ℏ</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><msub><mi>ψ</mi><mi>n</mi></msub></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mi>V</mi><msub><mi>ψ</mi><mi>n</mi></msub><mo>=</mo><msub><mi>E</mi><mi>n</mi></msub><msub><mi>ψ</mi><mi>n</mi></msub></mrow></math>
       <p>
         And insert the potential energy \(V\) that was specified in <i>1</i>. 
         We get the following, for the region inside the well \(0\lt x\lt L\):
       </p>
-      <p>
-        $$
-          -\frac{\hbar ^2}{2m}\frac{\partial^2 \psi _n}{\partial x^2}=E_n\psi _n
-        $$
-      </p>
+      <math display="block" style="display:block math;"><mrow><mo>−</mo><mfrac><msup><mi>ℏ</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><msub><mi>ψ</mi><mi>n</mi></msub></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><msub><mi>E</mi><mi>n</mi></msub><msub><mi>ψ</mi><mi>n</mi></msub></mrow></math>
       <p>This can be rearranged as:</p>
-      <p>
-        $$
-        \frac{\partial^2 \psi _n}{\partial x^2}=-\frac{2m E_n}{\hbar ^2}\psi _n
-        $$
-      </p>
+      <math display="block" style="display:block math;"><mrow><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><msub><mi>ψ</mi><mi>n</mi></msub></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mo>−</mo><mfrac><mrow><mn>2</mn><mi>m</mi><msub><mi>E</mi><mi>n</mi></msub></mrow><msup><mi>ℏ</mi><mn>2</mn></msup></mfrac><msub><mi>ψ</mi><mi>n</mi></msub></mrow></math>
       <p>This is a standard differential equation for which the general solutions are:</p>
-      <p>
-        $$
-        \psi _n = A\,\textup{sin}(k_n x) + B\,\textup{cos}(k_n x)
-        $$
-      </p>
-      <p>
-        $$
-        k_n=\frac{\sqrt{2mE_n}}{\hbar}
-        $$
-      </p>
+      <math display="block" style="display:block math;"><mrow><msub><mi>ψ</mi><mi>n</mi></msub><mo>=</mo><mi>A</mi><mspace width="0.1667em"></mspace><mtext>sin</mtext><mo form="prefix" stretchy="false">(</mo><msub><mi>k</mi><mi>n</mi></msub><mi>x</mi><mo form="postfix" stretchy="false">)</mo><mo>+</mo><mi>B</mi><mspace width="0.1667em"></mspace><mtext>cos</mtext><mo form="prefix" stretchy="false">(</mo><msub><mi>k</mi><mi>n</mi></msub><mi>x</mi><mo form="postfix" stretchy="false">)</mo></mrow></math>
+      <math display="block" style="display:block math;"><mrow><msub><mi>k</mi><mi>n</mi></msub><mo>=</mo><mfrac><msqrt><mrow><mn>2</mn><mi>m</mi><msub><mi>E</mi><mi>n</mi></msub></mrow></msqrt><mi>ℏ</mi></mfrac></mrow></math>
       <p>It's now time to make use of the well's boundary conditions!</p>        
-    
+
       <h3>Using boundary conditions</h3>
       <a class="anchor" id="sub3"></a>
       <p>
@@ -101,23 +80,14 @@
         of the well. Because the potential is infinite at \(x=0\) and \(x=a\), the particle 
         can not possibly be found at the well's edges. We get:
       </p>
-      <p>$$\psi _n (0) = \psi _n (L) = 0$$</p>
+      <math display="block" style="display:block math;"><mrow><msub><mi>ψ</mi><mi>n</mi></msub><mo form="prefix" stretchy="false">(</mo><mn>0</mn><mo form="postfix" stretchy="false">)</mo><mo>=</mo><msub><mi>ψ</mi><mi>n</mi></msub><mo form="prefix" stretchy="false">(</mo><mi>L</mi><mo form="postfix" stretchy="false">)</mo><mo>=</mo><mn>0</mn></mrow></math>
       <p>
         This means that the eigenfunctions can not contain a cosine term, so \(B=0\). We also 
         deduce that \(k_n =\frac{n\pi}{L}\). Equating this with our previous formula for \(k_n\) 
         gives us the energy eigenvalues!
       </p>
-      <p>
-        $$
-        \frac{\sqrt{2mE_n}}{\hbar} = \frac{n\pi}{L}
-        $$
-      </p>
-      <p>
-        $$
-        E_n=\frac{n^2\pi ^2 \hbar ^2}{2mL^2}
-        $$
-      </p>
-    
+      <math display="block" style="display:block math;"><mrow><mfrac><msqrt><mrow><mn>2</mn><mi>m</mi><msub><mi>E</mi><mi>n</mi></msub></mrow></msqrt><mi>ℏ</mi></mfrac><mo>=</mo><mfrac><mrow><mi>n</mi><mi>π</mi></mrow><mi>L</mi></mfrac></mrow></math>
+      <math display="block" style="display:block math;"><mrow><msub><mi>E</mi><mi>n</mi></msub><mo>=</mo><mfrac><mrow><msup><mi>n</mi><mn>2</mn></msup><msup><mi>π</mi><mn>2</mn></msup><msup><mi>ℏ</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi><msup><mi>L</mi><mn>2</mn></msup></mrow></mfrac></mrow></math>
       <h3>Normalization of the eigenfunctions</h3>
       <a class="anchor" id="sub4"></a>
       <p>
@@ -125,22 +95,10 @@
         of eigenfunctions. As we know, \(\psi ^2\) is a probability density function. This 
         means that integrating over all values of x must equal to \(1\).
       </p>
-      <p>
-        $$
-        \int_{0}^{L}|\psi _n|^2 = 1
-        $$
-      </p>
-      <p>
-        $$
-        A = \sqrt{\frac{2}{L}}
-        $$
-      </p>
+      <math display="block" style="display:block math;"><mrow><msubsup><mo movablelimits="false">∫</mo><mn>0</mn><mi>L</mi></msubsup><mi>|</mi><msub><mi>ψ</mi><mi>n</mi></msub><msup><mi>|</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow></math>
+      <math display="block" style="display:block math;"><mrow><mi>A</mi><mo>=</mo><msqrt><mfrac><mn>2</mn><mi>L</mi></mfrac></msqrt></mrow></math>
       So the eigenfunctions are:
-      <p>
-        $$
-        \psi_n = \sqrt{\frac{2}{L}}\textup{sin}\left (\frac {n\pi x}{L}  \right )
-        $$
-      </p>
+      <math display="block" style="display:block math;"><mrow><msub><mi>ψ</mi><mi>n</mi></msub><mo>=</mo><msqrt><mfrac><mn>2</mn><mi>L</mi></mfrac></msqrt><mtext>sin</mtext><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>n</mi><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
       <p>Let's now have a look at the solutions we just derived!</p>
       
       <h2>Visualisation of the solutions</h2>

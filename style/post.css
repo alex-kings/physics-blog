@@ -5,6 +5,11 @@
 math{
     font-family: Cambria, sans-serif;
 }
+.math-display {
+    font-size: 1.1em;
+    display: block;
+    text-align: center;
+}
 h1 {
     text-align: center;
     color:var(--color-main);
