@@ -9,10 +9,10 @@
 math{
     /* font-family: 'STIX Two Text', Cambria, sans-serif; */
     font-family: 'myfont', sans-serif;}
-.math-display {
+.math-block {
     font-size: 1.1em;
-    display: block;
-    text-align: center;
+    padding-top:0.5rem;
+    padding-bottom:0.2rem;
 }
 h1 {
     text-align: center;
