@@ -63,7 +63,7 @@ p {
 }
 .graph {
     position:relative;
-    height: 20rem;
+    height: 16rem;
 }
 .slider-row{
     display: flex;
@@ -95,6 +95,6 @@ p {
 
 @media screen and (max-width:700px){
     .graph {
-        height:15rem;
+        height:12rem;
     }
 }
