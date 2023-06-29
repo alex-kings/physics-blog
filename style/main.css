@@ -15,6 +15,9 @@
 	background-color: #ffffff;
 
 }
+a {
+  color:inherit;
+}
 a:hover {
 	color: #747bff;
 }

@@ -14,6 +14,14 @@ math{
     padding-top:0.5rem;
     padding-bottom:0.2rem;
 }
+.illustration {
+    max-width:100%;
+    text-align: center;
+}
+.illustration>label {
+    font-size: .8em;
+    color: gray;
+}
 h1 {
     text-align: center;
     color:var(--color-main);
