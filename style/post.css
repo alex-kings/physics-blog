@@ -1,6 +1,7 @@
 /* Styling for standard posts */
 * {
     --color-main: rgb(0, 0, 138);
+    --color-secondary: rgb(0,0,200);
 }
 @font-face {
     font-family: "myfont";
