@@ -55,7 +55,13 @@ graph2.addFunc(new Function((x)=>{
     let a3 = parseFloat(sliderA3.value);
     let A = 1/Math.sqrt(a1**2 + a2**2 + a3**2);
     if(x < 0 || x > a) return null;
-    return A*(a1*Math.sin(n1*Math.PI*x/a) + a2*Math.sin(n2*Math.PI*x/a) + a3*Math.sin(n3*Math.PI*x/a))
+    return A**2*(
+        a1**2*Math.sin(Math.PI*x/a)**2 + 
+        a2**2*Math.sin(2*Math.PI*x/a)**2 + 
+        a3**2*Math.sin(3*Math.PI*x/a)**2 +
+        a1*a2*Math.sin(Math.PI*x/a)*Math.sin(2*Math.PI*x/a)*Math.cos((n1**2-n2**2)*graph2.t/2) +
+        a2*a3*Math.sin(2*Math.PI*x/a)*Math.sin(3*Math.PI*x/a)*Math.cos((n2**2-n3**2)*graph2.t/2) +
+        a1*a3*Math.sin(Math.PI*x/a)*Math.sin(3*Math.PI*x/a)*Math.cos((n1**2-n3**2)*graph2.t/2))
 }))
 graph2.setIndicators([new Indicator(a, "L")],[])
 // Animate the plot
