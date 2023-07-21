@@ -13,6 +13,12 @@ export class Graph1D {
     startY = 0;
     endY = 1;
 
+    // Main axis labels
+    xLabel = "x";
+    yLabel = "y";
+    xLabelDist = 0;
+    yLabelDist = 0;
+
     // Add axes indicators
     indicatorsX = [];
     indicatorsY = [];
@@ -104,8 +110,8 @@ export class Graph1D {
         // Axis labels
         this.ctx.fillStyle = "black"
         this.ctx.font = "24px sans-serif"
-        this.ctx.fillText("x",center[0] - 18, 32);
-        this.ctx.fillText("y",this.canvas.width - 28,center[1]+18);
+        this.ctx.fillText(this.yLabel,center[0] - 18 + this.yLabelDist, 32);
+        this.ctx.fillText(this.xLabel,this.canvas.width - 28 + this.xLabelDist,center[1]+18);
 
         // Draw indicators
         for(let ix of this.indicatorsX) {
@@ -151,6 +157,26 @@ export class Graph1D {
             }
             
         }
+    }
+    
+    /**
+     * Set the x label.
+     * @param {String} xLabel The new label.
+     * @param {Number} xLabelDist (optional) The new dist value for this label.
+     */
+    setLabelX(xLabel, xLabelDist) {
+        this.xLabel = xLabel;
+        this.xLabelDist = xLabelDist || 0;
+    }
+
+    /**
+     * Set the y label.
+     * @param {String} yLabel The new label.
+     * @param {Number} yLabelDist (optional) The new dist value for this label.
+     */
+    setLabelY(yLabel, yLabelDist) {
+        this.yLabel = yLabel;
+        this.yLabelDist = yLabelDist || 0;
     }
 
     /**

@@ -7,6 +7,8 @@ const nLabel = document.getElementById("quantumNumber")
 const sliderN = document.getElementById("sliderN");
 const sliderL = document.getElementById("sliderL");
 const graph = new Graph1D("plot1");
+graph.setLabelX("x");
+graph.setLabelY("Ψ", -5);
 graph.setLimits(-0.2, 3.4, -1.6, 1.8);
 graph.setSteps(1000);
 graph.setFunc((x)=>{
@@ -37,6 +39,8 @@ sliderL.oninput = ()=>{
  * Plot 2
  */
 const graph2 = new Graph1D("plot2");
+graph2.setLabelX("x");
+graph2.setLabelY("Ψ", -5);
 const sliderA1 = document.getElementById("sliderA1")
 const sliderA2 = document.getElementById("sliderA2")
 const sliderA3 = document.getElementById("sliderA3")
