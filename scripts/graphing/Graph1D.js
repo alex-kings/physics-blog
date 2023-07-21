@@ -38,6 +38,12 @@ export class Graph1D {
     // Rotation
     rotation = 0;
 
+    // Legend
+    legendVisible = false;
+    legendX;
+    legendY;
+    legendFontSize = 20;
+
     constructor(containerId) {
         this.container = document.getElementById(containerId);
         // Create a canvas in the container
@@ -49,6 +55,10 @@ export class Graph1D {
         // Set width and height - scale by DPI for proper rendering.
         this.canvas.height = Math.round(this.canvas.clientHeight * window.devicePixelRatio);
         this.canvas.width = Math.round(this.canvas.clientWidth * window.devicePixelRatio);
+
+        // Legend parameters
+        this.legendX = this.canvas.width*2/3;
+        this.legendY = 0;
     }   
 
     setLimits(startX, endX, startY, endY) {
@@ -80,6 +90,13 @@ export class Graph1D {
     clearCanvas() {
         this.ctx.fillStyle = this.canvasBackgroundColor;
         this.ctx.fillRect(0,0,this.canvas.width, this.canvas.height);
+    }
+
+    /**
+     * Make the legend visible.
+     */
+    showLegend() {
+        this.legendVisible = true;
     }
 
     /**
@@ -206,6 +223,24 @@ export class Graph1D {
     }
 
     /**
+     * Draw this graph's legend.
+     */
+    drawLegend() { 
+        let height = 0;
+        this.ctx.font = `${this.legendFontSize}px sans-serif`;
+        for(let func of this.funcs) {
+            this.ctx.strokeStyle = func.color;
+            this.ctx.beginPath();
+            this.ctx.moveTo(this.legendX, this.legendY + this.legendFontSize/2 + height);
+            this.ctx.lineTo(this.legendX+20, this.legendY + this.legendFontSize/2 + height);
+            this.ctx.stroke();
+            this.ctx.fillStyle = "black";
+            this.ctx.fillText(func.name, this.legendX+25, this.legendY + this.legendFontSize + height)
+            height += this.legendFontSize;
+        }
+    }
+
+    /**
      * Pass x and y in the function coordinates and obtain the equivalent canvas coordinates.
      */
     getCanvasCoordinates([x,y]) {
@@ -229,10 +264,11 @@ export class Graph1D {
      * Animation loop
      */
     animate(time) {
+        this.resizeDisplay();
         this.clearCanvas();
+        if(this.legendVisible) this.drawLegend();
         this.drawFunctions();
         this.drawAxes();
-        this.resizeDisplay();
         this.t=time/1000; // In seconds
         requestAnimationFrame(this.animate.bind(this));
     }
@@ -241,6 +277,7 @@ export class Graph1D {
     redraw() {
         this.resizeDisplay();
         this.clearCanvas();
+        if(this.legendVisible) this.drawLegend();
         this.drawFunctions();
         this.drawAxes();
     }
@@ -262,8 +299,9 @@ export class Indicator {
  * Class representing a mathematical function to plot on the graph.
  */
 export class Function {
-    constructor(func, color) {
+    constructor(func, color, name) {
         this.func = func;
         this.color = color || "red";
+        this.name = name || "";
     }
 }
