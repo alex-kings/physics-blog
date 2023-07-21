@@ -26,6 +26,9 @@ export class Graph1D {
     // Function plotted.
     func;
 
+    // Functions
+    funcs = [];
+
     canvasBackgroundColor = "rgb(255,255,255)";
     shapeFillColor = "rgb(240,240,240)";
 
@@ -59,8 +62,8 @@ export class Graph1D {
         this.steps = steps;
     }
 
-    setFunc(func) {
-        this.func = func;
+    addFunc(func) {
+        this.funcs.push(func);
     }
 
     /**
@@ -180,22 +183,26 @@ export class Graph1D {
     }
 
     /**
-     * Draw the function given.
+     * Draw all the functions
      */
-    drawFunction() {
+    drawFunctions() {
         this.ctx.lineWidth = 2;
-        this.ctx.strokeStyle = "red";
-        this.ctx.beginPath();
         const increment = (this.endX - this.startX) / this.steps;
-        for(let i = 0; i < this.steps+1; i++) {
-            let x = i*increment + this.startX;
-            let y = this.func(x);
-            if(y!=null) {
-                let canvasCoords = this.getCanvasCoordinates([x,y]);
-                this.ctx.lineTo(canvasCoords[0], canvasCoords[1]);
+
+        // Draw all the functions
+        for(let func of this.funcs) {
+            this.ctx.strokeStyle = func.color;
+            this.ctx.beginPath();
+            for(let i = 0; i < this.steps+1; i++) {
+                let x = i*increment + this.startX;
+                let y = func.func(x);
+                if(y!=null) {
+                    let canvasCoords = this.getCanvasCoordinates([x,y]);
+                    this.ctx.lineTo(canvasCoords[0], canvasCoords[1]);
+                }
             }
+            this.ctx.stroke();
         }
-        this.ctx.stroke();
     }
 
     /**
@@ -223,7 +230,7 @@ export class Graph1D {
      */
     animate() {
         this.clearCanvas();
-        this.drawFunction();
+        this.drawFunctions();
         this.drawAxes();
         this.resizeDisplay();
         requestAnimationFrame(this.animate.bind(this));
@@ -233,7 +240,7 @@ export class Graph1D {
     redraw() {
         this.resizeDisplay();
         this.clearCanvas();
-        this.drawFunction();
+        this.drawFunctions();
         this.drawAxes();
     }
 }
@@ -247,5 +254,15 @@ export class Indicator {
         this.name = name || pos.toString();
         this.large = large || false;
         this.color = color || "0x000000";
+    }
+}
+
+/**
+ * Class representing a mathematical function to plot on the graph.
+ */
+export class Function {
+    constructor(func, color) {
+        this.func = func;
+        this.color = color || "red";
     }
 }

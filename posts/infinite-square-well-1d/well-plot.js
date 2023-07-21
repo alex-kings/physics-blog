@@ -1,4 +1,4 @@
-import {Graph1D, Indicator} from "../../scripts/graphing/Graph1D.js";
+import {Graph1D, Indicator, Function} from "../../scripts/graphing/Graph1D.js";
 
 /**
  * Plot 1
@@ -11,12 +11,12 @@ graph.setLabelX("x");
 graph.setLabelY("Ψ", -5);
 graph.setLimits(-0.2, 3.4, -1.6, 1.8);
 graph.setSteps(1000);
-graph.setFunc((x)=>{
+graph.addFunc(new Function((x)=>{
     let n = parseInt(sliderN.value);
     let L = parseFloat(sliderL.value);
     if(x<0 || x>L)return null;
     return Math.sqrt(2/L) * Math.sin(n*Math.PI*x / L);
-})
+}))
 nLabel.innerText = sliderN.value;
 
 let L = parseFloat(sliderL.value);
@@ -50,14 +50,14 @@ let n1 = 1;
 let n2 = 2;
 let n3 = 3;
 let a = 3;
-graph2.setFunc((x)=>{
+graph2.addFunc(new Function((x)=>{
     let a1 = parseFloat(sliderA1.value);
     let a2 = parseFloat(sliderA2.value);
     let a3 = parseFloat(sliderA3.value);
     let A = 1/Math.sqrt(a1**2 + a2**2 + a3**2);
     if(x < 0 || x > a) return null;
     return A*(a1*Math.sin(n1*Math.PI*x/a) + a2*Math.sin(n2*Math.PI*x/a) + a3*Math.sin(n3*Math.PI*x/a))
-})
+}))
 graph2.setIndicators([new Indicator(a, "L")],[])
 graph2.redraw();
 
