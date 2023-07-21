@@ -13,6 +13,9 @@ export class Graph1D {
     startY = 0;
     endY = 1;
 
+    // Time
+    t = 0;
+
     // Main axis labels
     xLabel = "x";
     yLabel = "y";
@@ -22,9 +25,6 @@ export class Graph1D {
     // Add axes indicators
     indicatorsX = [];
     indicatorsY = [];
-
-    // Function plotted.
-    func;
 
     // Functions
     funcs = [];
@@ -228,11 +228,12 @@ export class Graph1D {
     /**
      * Animation loop
      */
-    animate() {
+    animate(time) {
         this.clearCanvas();
         this.drawFunctions();
         this.drawAxes();
         this.resizeDisplay();
+        this.t=time/1000; // In seconds
         requestAnimationFrame(this.animate.bind(this));
     }
 
