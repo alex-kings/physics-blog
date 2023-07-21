@@ -257,6 +257,7 @@ export class Graph1D {
             Math.round(this.canvas.clientHeight * window.devicePixelRatio) !== this.canvas.height) {
             this.canvas.height = Math.round(this.container.clientHeight * window.devicePixelRatio);
             this.canvas.width = Math.round(this.container.clientWidth * window.devicePixelRatio);
+            this.legendX = 2*this.canvas.width/3;
         }
     }
 
