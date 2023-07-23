@@ -49,7 +49,15 @@
         <math><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mi>i</mi><msub><mi>E</mi><mi>n</mi></msub><mi>t</mi></mrow><mi>ℏ</mi></mfrac></mrow></msup></math>
         :
       </p>
-      <math display="block" style="display:block math;"><mrow><msub><mi>ψ</mi><mi>n</mi></msub><mrow><mo fence="true" form="prefix">(</mo><mi>t</mi><mo fence="true" form="postfix">)</mo></mrow><mo>=</mo><msqrt><mfrac><mn>2</mn><mi>L</mi></mfrac></msqrt><mspace width="0.1667em"></mspace><mrow><mspace width="0.1667em"></mspace><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>n</mi><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><mspace width="0.1667em"></mspace><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mi>i</mi><msub><mi>E</mi><mi>n</mi></msub><mi>x</mi></mrow><mi>ℏ</mi></mfrac></mrow></msup></mrow></math>
+      <math class="math-block" display="block" style="display:block math;"><mrow><msub><mi>ψ</mi><mi>n</mi></msub><mrow><mo fence="true" form="prefix">(</mo><mi>t</mi><mo fence="true" form="postfix">)</mo></mrow><mo>=</mo><msqrt><mfrac><mn>2</mn><mi>L</mi></mfrac></msqrt><mspace width="0.1667em"></mspace><mrow><mspace width="0.1667em"></mspace><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>n</mi><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><mspace width="0.1667em"></mspace><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mi>i</mi><msub><mi>E</mi><mi>n</mi></msub><mi>x</mi></mrow><mi>ℏ</mi></mfrac></mrow></msup></mrow></math>
+      <p>
+        An important thing to notice is that, by appending this time-dependant 
+        coefficient, the energy eigenfunctions become <b>complex functions</b>.
+      </p>
+      <p>
+        The graph below shows how the real and imaginary parts of energy eigenfunctions 
+        of the particle in a 1D box of length L change with time.
+      </p>
       <div class="graph-container">
 
         <div id="plot1" class="graph"></div>
@@ -61,14 +69,10 @@
         </div>
       </div>
       <p>
-        The graph above shows how the real and imaginary parts of energy eigenfunctions 
-        of the particle in a 1D box of length L change with time.
-      </p>
-      <p>
         The probability density function associated with energy eigenfunctions is given by the 
         following:
       </p>
-      <math display="block" style="display:block math;"><mrow><msup><mrow><mo fence="true" form="prefix">|</mo><msub><mi>ψ</mi><mi>n</mi></msub><mrow><mo fence="true" form="prefix">(</mo><mi>t</mi><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">|</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mi>ψ</mi><mo>*</mo></msup><mi>ψ</mi><mo>=</mo><mfrac><mn>2</mn><mi>L</mi></mfrac><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>n</mi><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      <math class="math-block" display="block" style="display:block math;"><mrow><msup><mrow><mo fence="true" form="prefix">|</mo><msub><mi>ψ</mi><mi>n</mi></msub><mrow><mo fence="true" form="prefix">(</mo><mi>t</mi><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">|</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mi>ψ</mi><mo>*</mo></msup><mi>ψ</mi><mo>=</mo><mfrac><mn>2</mn><mi>L</mi></mfrac><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>n</mi><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
       <p>
         Where <math><msup><mi>ψ</mi><mo>*</mo></msup></math> represents the complex conjugate 
         of <math><mi>ψ</mi></math>. As you can see, the time dependance has vanished!
@@ -78,11 +82,15 @@
         time! We'll have a look now.
       </p>
       <h2>Time evolution of superposition states</h2>
+      <p>
+        The following graph shows how the probability density functions 
+        of <b>mixed states</b> changes with time.
+      </p>
       <a id="superpositions" class="anchor"></a>
       <div class="graph-container">
         <div id="plot2" class="graph"></div>
-        <div id="expression-container" class="expression-container">
-          <math id="graph-expression" class="graph-expression" display="block" style="display:block math;"><mrow><mi>ψ</mi><mo>=</mo><mn id="aTot"></mn><mrow><mo fence="true" form="prefix">(</mo><mn id="a1"></mn><mspace width="0.1667em"></mspace><mtext>sin</mtext><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo fence="true" form="prefix">(</mo><mn id="a2"></mn><mspace width="0.1667em"></mspace><mtext>sin</mtext><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mn>2</mn><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo fence="true" form="prefix">(</mo><mn id="a3"></mn><mspace width="0.1667em"></mspace><mtext>sin</mtext><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mn>3</mn><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow></mrow></math>    
+        <div id="expression-container" class="expression-container">          
+          <math id="graph-expression" display="block" class="graph-expression" style="display:block math;"><mrow><mi>ψ</mi><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo>=</mo><mn id="aTot"></mn><mrow><mo fence="true" form="prefix">(</mo><mn id="a1"></mn><mrow><mspace width="0.1667em"></mspace><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mn>1</mn></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup><mo>+</mo><mn id="a2"></mn><mrow><mspace width="0.1667em"></mspace><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mn>2</mn><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mn>2</mn></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup><mo>+</mo><mn id="a3"></mn><mrow><mspace width="0.1667em"></mspace><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mn>3</mn><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mn>3</mn></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
           <div id="invalid-expression" style="text-align: center;display: none;color: red; padding:10px 0;">Invalid expression</div>
         </div>
         <div class="slider-container">

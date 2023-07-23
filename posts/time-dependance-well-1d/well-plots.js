@@ -39,7 +39,7 @@ sliderN.oninput = ()=>{
 
 const graph2 = new Graph1D("plot2");
 graph2.setLabelX("x");
-graph2.setLabelY("|Ψ|", -18);
+graph2.setLabelY("|Ψ|"+String.fromCharCode(178), -25);
 const sliderA1 = document.getElementById("sliderA1")
 const sliderA2 = document.getElementById("sliderA2")
 const sliderA3 = document.getElementById("sliderA3")

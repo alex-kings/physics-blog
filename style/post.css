@@ -12,8 +12,8 @@ math{
     font-family: 'myfont', sans-serif;}
 .math-block {
     font-size: 1.1em;
-    padding-top:0.5rem;
-    padding-bottom:0.2rem;
+    padding-top:0.6rem;
+    padding-bottom:0.3rem;
 }
 .illustration {
     max-width:100%;
