@@ -93,6 +93,11 @@ p {
     gap: 5px;
     align-items: center;
 }
+.post-date {
+    font-size: .9em;
+    color: rgb(93, 93, 93);
+    text-align: center;
+}
 
 @media screen and (max-width:700px){
     .graph {
