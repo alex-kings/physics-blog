@@ -91,15 +91,27 @@ function setA1() {
 }
 function setA2() {
     let amplitude = sliderA2.value;
-    if(amplitude === "1") amplitude = "";
-    else if(amplitude === "-1") amplitude = "-";
-    a2.innerHTML = amplitude;
+    if(amplitude < 0) {
+        plus1.innerHTML = "-";
+    }
+    else plus1.innerHTML = "+";
+    if(amplitude === "1" || amplitude === "-1") {
+        a2.innerHTML = "";
+        return;
+    }
+    a2.innerHTML = Math.abs(parseFloat(amplitude));
 }
 function setA3() {
     let amplitude = sliderA3.value;
-    if(amplitude === "1") amplitude = "";
-    else if(amplitude === "-1") amplitude = "-";
-    a3.innerHTML = amplitude;
+    if(amplitude < 0) {
+        plus2.innerHTML = "-";
+    }
+    else plus2.innerHTML = "+";
+    if(amplitude === "1" || amplitude === "-1") {
+        a3.innerHTML = "";
+        return;
+    }
+    a3.innerHTML = Math.abs(parseFloat(amplitude));
 }
 
 
