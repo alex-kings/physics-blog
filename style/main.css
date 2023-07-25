@@ -41,6 +41,7 @@ math{
   font-size: 1.1em;
   padding-top:0.6rem;
   padding-bottom:0.3rem;
+  overflow-y: scroll;
 }
 .illustration {
   max-width:100%;
@@ -124,6 +125,9 @@ p {
   font-size: .9em;
   color: var(--date-color);
   text-align: center;
+}
+.expression-container {
+  overflow-x: scroll;
 }
 
 @media screen and (max-width:700px){
