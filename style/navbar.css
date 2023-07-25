@@ -1,12 +1,23 @@
 .navbar {
-    background-color: rgb(211, 221, 231);
+    background-color: rgb(13, 56, 99);
     position:fixed;
     width:100%;
     top:0;
     z-index: 10;
+    color:white;
     display: flex;
     align-items: center;
-    padding: 0 1rem;
+    /* justify-content: right; */
+}
+#website-name-label {
+    padding:0 1rem;
+}
+.navbar-main {
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    padding:0 1rem;
+    flex-grow: 1;
 }
 .logo {
     display:block;
@@ -19,7 +30,11 @@
 }
 .nav-a {
     text-decoration: none;
-    color:rgb(66, 66, 66);
+    /* color:rgb(66, 66, 66); */
+    color:white;
+}
+.nav-a:hover {
+    color:rgb(164, 164, 239);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,5 +46,10 @@
     }
     .nav-a:hover {
         color: #b3b3b3;
+    }
+}
+@media screen and (max-width:500px){
+    #website-name-label {
+        display:none;
     }
 }
