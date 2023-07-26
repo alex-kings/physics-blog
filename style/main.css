@@ -2,6 +2,7 @@
 @font-face {
   font-family: "myfont";
   src: url("/fonts/STIXTwoMath-Regular.woff2") format('woff');
+  font-display: swap;
 }
 *{
   --color-main: rgb(0, 0, 138);
@@ -45,7 +46,7 @@ math{
   justify-content: center;
 }
 .illustration {
-  max-width:100%;
+  width:100%;
 }
 .illustration-container {
   padding:1rem 0;
