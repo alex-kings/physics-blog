@@ -46,9 +46,12 @@ math{
 }
 .illustration {
   max-width:100%;
+}
+.illustration-container {
+  padding:1rem 0;
   text-align: center;
 }
-.illustration>label {
+.illustration-label {
   font-size: .8em;
   color: gray;
 }
@@ -144,10 +147,6 @@ p {
   .graph {
       height:12rem;
   }
-}
-
-@media screen and (max-width:400px) {
-  
 }
 
 @media (prefers-color-scheme: dark) {

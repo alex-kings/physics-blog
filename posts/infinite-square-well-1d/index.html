@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Particle in a box</title>
     <meta name="description" content="In this post, we'll derive energy levels and 
     eigenfunctions for a particle trapped in a box, starting from the Schrödinger equation. 
     We'll then have a look at these solutions with a couple of graphs.">
-    <title>Particle in a box</title>
     <meta property="og:title" content="Particle in a box">
     <meta property="og:description" content="In this post, we'll derive energy levels and 
     eigenfunctions for a particle trapped in a box, starting from the Schrödinger equation. 
@@ -48,9 +48,9 @@
         We'll first have a look at <a class="anchor-link" href="#derivation">how to derive these solutions</a>, and then see <a class="anchor-link" href="#graphs">what the solutions look like</a>, 
         thanks to interactive graphs.
       </p>
-      <div class="illustration">
+      <div class="illustration-container">
         <img src="./Particle-in-a-box-wave-functions.png" alt="Energy eigenfunctions of a particle in a box." class="illustration">
-        <label>Energy eigenfunctions of a particle in a box. Image from <a class="illustration-link" href="https://commons.wikimedia.org/wiki/File:Particle-in-a-box-wave-functions.svg">wikimedia commons</a>.</label>
+        <label class="illustration-label">Energy eigenfunctions of a particle in a box. Image from <a class="illustration-link" href="https://commons.wikimedia.org/wiki/File:Particle-in-a-box-wave-functions.svg">wikimedia commons</a>.</label>
       </div>
 
       <h2>Derivation</h2>
@@ -79,9 +79,9 @@
         <math display="block" style="display:block math;"><mrow><mi>V</mi><mo>=</mo><mrow><mo fence="true" form="prefix">{</mo><mtable columnalign="center"><mtr><mtd><mi>∞</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mi>∞</mi></mtd></mtr></mtable><mo fence="true" form="postfix"></mo></mrow><mspace width="1em"></mspace><mtable columnalign="left left" class="tml-array"><mtr><mtd style="text-align:-webkit-left;"><mrow><mtext>for</mtext><mspace width="0.2778em"></mspace><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd style="text-align:-webkit-left;"><mrow><mtext>for</mtext><mspace width="0.2778em"></mspace><mn>0</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mi>L</mi></mrow></mtd></mtr><mtr><mtd style="text-align:-webkit-left;"><mrow><mtext>for</mtext><mspace width="0.2778em"></mspace><mi>x</mi><mo>&gt;</mo><mi>L</mi></mrow></mtd></mtr></mtable></mrow></math>
       </div>
       <p>The potential energy is shown in the following graph:</p>
-      <div class="illustration">
+      <div class="illustration-container">
         <img src="./Infinite_potential_well.webp" alt="Infinite square well potential." class="illustration">
-        <label>Plot of the 1D infinite square well potential. Image from <a class="illustration-link" href="https://commons.wikimedia.org/wiki/File:Infinite_potential_well-en.svg">wikimedia commons</a>.</label>
+        <label class="illustration-label">Plot of the 1D infinite square well potential. Image from <a class="illustration-link" href="https://commons.wikimedia.org/wiki/File:Infinite_potential_well-en.svg">wikimedia commons</a>.</label>
       </div>
     
       <h3>Applying the time-independant Schrödinger equation</h3>
