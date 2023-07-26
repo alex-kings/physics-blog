@@ -41,8 +41,8 @@ math{
   font-size: 1.1em;
   padding-top:0.6rem;
   padding-bottom:0.3rem;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
 }
 .illustration {
   max-width:100%;
@@ -127,12 +127,16 @@ p {
   color: var(--date-color);
   text-align: center;
 }
-.expression-container {
-  overflow-x: scroll;
-}
 
 @media screen and (max-width:700px){
-  
+  .math-block {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .expression-container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }  
   .graph {
       height:12rem;
   }
