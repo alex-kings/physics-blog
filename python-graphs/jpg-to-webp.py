@@ -1,9 +1,9 @@
 from PIL import Image
 
 
-imgName = "Particle-in-a-box-wave-functions"
+imgName = "clock"
 folder = "./graphs/"
-format = ".png"
+format = ".jpg"
 
 im = Image.open(folder + imgName + format).convert("RGB")
 im.save(folder + imgName + ".webp", "webp")
