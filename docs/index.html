@@ -2,34 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/banana.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     
     
     
-    
     <link rel="stylesheet" href="/assets/index-16f1f416.css">
-    <link rel="stylesheet" href="/assets/post-3d39c99a.css">
+    <link rel="stylesheet" href="/assets/navbar-dc364e3a.css">
   </head>
   <body>
     <nav class="navbar">
-      <ul class="nav-ul">
-        <li class="nav-li"><a class="nav-a" href="./index.html">Home</a></li>
-        <li class="nav-li"><a class="nav-a" href="./about/index.html">About</a></li>
-        <li class="nav-li"><a class="nav-a" href="./contact/index.html">Contact</a></li>
-      </ul>
+      <div class="navbar-main">
+        <a href="./index.html">
+          <img alt="PhysicsMonkey.com" height="48" class="logo" src="/banana.svg">
+        </a>
+        <ul class="nav-ul">
+          <li class="nav-li"><a class="nav-a" href="./index.html">Home</a></li>
+          <li class="nav-li"><a class="nav-a" href="./about/index.html">About</a></li>
+          <li class="nav-li"><a class="nav-a" href="./contact/index.html">Contact</a></li>
+        </ul>
+      </div>
+      <a href="./index.html" class="nav-a" id="website-name-label">
+        PhysicsMonkey.com
+      </a>
     </nav>
 
     <div class="main">
-      <h1>Quantum mechanics posts</h1>
-      <a class="post-link" href="./posts/infinite-square-well-1d/">
-        <img src="thumbnails/post_1.webp" alt="1D infinite square well.">
-        <div>Solutions of the 1D infinite square well</div>
-      </a>
+      <p style="text-align:center">Welcome to</p>
+      <h1><img src="/banana.svg" height="30"/> Physics Monkey <img src="/banana.svg" height="30"/></h1>
+      <p style="text-align:center">The best place to learn about physics in the jungle!</p>
+
+      <h2>Quantum mechanics posts</h2>
       <ul>
         <li><a href="./posts/time-dependance-well-1d/">Time dependance of a particle in an infinite square well</a></li>
-        <li><a href="./posts/infinite-square-well-1d/">Quantum particle in an infinte square well</a></li>
+        <li><a href="./posts/infinite-square-well-1d/">Eigenfunctions and energy levels of a quantum particle in an infinite square well</a></li>
       </ul>
     </div>
   </body>
