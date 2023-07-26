@@ -54,7 +54,7 @@ math{
 }
 .illustration-label {
   font-size: .8em;
-  color: gray;
+  color: var(--date-color);
 }
 h1 {
   text-align: center;
