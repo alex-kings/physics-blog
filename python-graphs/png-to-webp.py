@@ -1,7 +1,7 @@
 from PIL import Image
 
 
-imgName = "Particle-in-a-box-wave-functions"
+imgName = "SchrodingerEquation"
 folder = "./graphs/"
 format = ".png"
 
