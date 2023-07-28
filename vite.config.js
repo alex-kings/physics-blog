@@ -12,6 +12,7 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact/index.html'),
         post1: resolve(__dirname, 'posts/infinite-square-well-1d/index.html'),
         post2: resolve(__dirname, 'posts/time-dependance-well-1d/index.html'),
+        post3: resolve(__dirname, 'posts/schrodinger-equation/index.html'),
       },
     },
   },
