@@ -13,14 +13,14 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/banana.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Time evolution of a particle in a box</title>
+    <title>Time evolution of wavefunctions in a harmonic oscillator</title>
 
-    <meta name="description" content="Overlook of the time dependance of pure and mixed states of a particle trapped in a box.">
-    <meta property="og:title" content="Time evolution of a particle in a box">
-    <meta property="og:description" content="Overlook of the time dependance of pure and mixed states of a particle trapped in a box.">
-    <meta property="og:image" content="https://physicsmonkey.com/posts/time-dependance-well-1d/clock.webp">
-    <meta property="og:url" content="https://physicsmonkey.com/posts/time-dependance-well-1d/">
-    <link rel="canonical" href="https://physicsmonkey.com/posts/time-dependance-well-1d/">
+    <meta name="description" content="Diving into the time evolution of a particle in a quantum harmonic oscillator.">
+    <meta property="og:title" content="Time evolution of wavefunctions in a harmonic oscillator">
+    <meta property="og:description" content="Diving into the time evolution of a particle in a quantum harmonic oscillator.">
+    <meta property="og:image" content="https://physicsmonkey.com/posts/time-evolution-harmonic-oscillator/clock.webp">
+    <meta property="og:url" content="https://physicsmonkey.com/posts/time-evolution-harmonic-oscillator/">
+    <link rel="canonical" href="https://physicsmonkey.com/posts/time-evolution-harmonic-oscillator/">
 
     <link href="../../style/main.css" rel="stylesheet">
     <link href="../../style/navbar.css" rel="stylesheet">
@@ -47,14 +47,17 @@
     </nav>
 
     <div class="main">
-			<h1>Time dependance of a particle in an infinite square well</h1>
-      <p class="post-date">Posted on <time datetime="2023-07-23">23/07/2023</time></p>
+			<h1>Time evolution of wavefunctions in a harmonic oscillator</h1>
+      <p class="post-date">Posted on <time datetime="2023-07-30">30/07/2023</time></p>
 			<p>
-        In this post, we'll see how the wavefunction of a particle in a 1D 
-        infinite square well evolves with time. We'll first have a look at 
-        the <a class="anchor-link" href="#eigenfunctions">time evolution of energy eigenfunctions</a>. Then, we'll examine the 
-        <a class="anchor-link" href="#superpositions">evolution of superposition states</a>.
+        We've all seen graphs of the first few eigenkets in the quantum simple 
+				harmonic oscillator, but how do pure and mixes state wavefunctions 
+				evolve with time in a SHO potential? Let's have a look!
       </p>
+			<p>
+				We'll first have a look at <a class="anchor-link" href="#eigenfunctions">the time evolution of eigenfunctions</a>. Then, we'll see how 
+        <a class="anchor-link" href="#superpositions">superposition states change with time</a>.
+			</p>
       <div class="illustration-container">
         <img src="./clock.webp" width="512" alt="Artist's view of the time evolution of wavefunctions." class="illustration">
         <label class="illustration-label">Image from <a class="illustration-link" href="https://pixabay.com/fr/illustrations/horloge-vagues-lignes-sylvestre-331174/">pixabay.com</a>.</label>
