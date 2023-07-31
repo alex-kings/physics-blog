@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEFVBN2ML1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SEFVBN2ML1');
+    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/banana.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time evolution of wavefunctions in a harmonic oscillator</title>
+
+    <meta name="description" content="Diving into the time evolution of a particle in a quantum harmonic oscillator.">
+    <meta property="og:title" content="Time evolution of wavefunctions in a harmonic oscillator">
+    <meta property="og:description" content="Diving into the time evolution of a particle in a quantum harmonic oscillator.">
+    <meta property="og:image" content="https://physicsmonkey.com/posts/time-evolution-harmonic-oscillator/harmonic-oscillator-wavefunctions.webp">
+    <meta property="og:url" content="https://physicsmonkey.com/posts/time-evolution-harmonic-oscillator/">
+    <link rel="canonical" href="https://physicsmonkey.com/posts/time-evolution-harmonic-oscillator/">
+
+    
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=PT+Sans&display=swap" rel="stylesheet"> 
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-main">
+        <a href="../../">
+          <img alt="PhysicsMonkey.com logo" height="48" width="48" class="logo" src="/banana.svg">
+        </a>
+        <ul class="nav-ul">
+          <li class="nav-li"><a class="nav-a" href="../../">Home</a></li>
+          <li class="nav-li"><a class="nav-a" href="../../about/">About</a></li>
+          <li class="nav-li"><a class="nav-a" href="../../contact/">Contact</a></li>
+        </ul>
+      </div>
+      <a href="../../" class="nav-a" id="website-name-label">
+        PhysicsMonkey.com
+      </a>
+    </nav>
+
+    <div class="main">
+			<h1>Time evolution of wavefunctions in a harmonic oscillator</h1>
+      <p class="post-date">Posted on <time datetime="2023-07-30">30/07/2023</time></p>
+			<p>
+        We've all seen graphs of the first few eigenkets in the quantum simple 
+				harmonic oscillator, but how do pure and mixes state wavefunctions 
+				evolve with time in a SHO potential? Let's see!
+      </p>
+			<p>
+				We'll first have a look at the <a class="anchor-link" href="#time-independant">time-independant solutions</a>, a necessary step before diving deeper. 
+        Then, we'll see how 
+        <a class="anchor-link" href="#eigenfunctions">eigenfunctions evolve with time</a>, and finish with the most interesting case,
+        the <a class="anchor-link" href="#superpositions">time dependance of superposition states</a>.
+			</p>
+      <div class="illustration-container">
+        <img src="/assets/harmonic-oscillator-wavefunctions-f9966571.webp" width="512" alt="Wavefunctions in a harmonic oscillator." class="illustration">
+        <label class="illustration-label">Eigenfunctions and probability density functions. Image from <a class="illustration-link" href="https://commons.wikimedia.org/wiki/File:Harmonic-oscillator-eigenstates.svg">Wikimedia Commons</a>.</label>
+      </div>
+
+      <h2>Time-independant solutions</h2>
+      <div class="anchor" id="time-independant"></div>
+      <p>
+        The classical simple harmonic oscillator is characterised by a 
+        <a href="https://en.wikipedia.org/wiki/Hooke%27s_law">Hooke's law</a> 
+        potential:
+      </p>
+      <div class="math-block">
+        <math display="block" style="display:block math;"><mrow><mi>V</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>k</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></math>
+      </div>
+      <p>
+        With <math><mi>k</mi></math> the spring constant. Simple harmonic 
+        oscillators are often studied in classical physics through 
+        pendulums and springs. The 
+        quantum version of such an oscillator has the same potential, 
+        usually rewritten as:
+      </p>
+      <div class="math-block">
+        <math display="block" style="display:block math;"><mrow><mi>V</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><msup><mi>x</mi><mn>2</mn></msup></mrow></math>
+      </div>
+      <p>
+        With angular frequency <math><mi>ω</mi></math>. One can use the 
+        <a href="../schrodinger-equation/">Schrödinger equation</a> 
+        to find the energy eigenvalues 
+        <math><msub><mi>E</mi><mi>n</mi></msub></math>
+        and eigenfunctions 
+        <math><msub><mi>ψ</mi><mi>n</mi></msub></math>
+        of this potential. The energy eigenvalues have a beautifully 
+        simple formula:
+      </p>
+      <div class="math-block">
+        <math display="block" style="display:block math;"><mrow><msub><mi>E</mi><mi>n</mi></msub><mo>=</mo><mi>ℏ</mi><mi>ω</mi><mrow><mo fence="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      </div>
+      <p>
+        There is something remarkable about this: energy levels in the 
+        quantum harmonic oscillator are <b>evenly spaced</b>, with a 
+        separation of <math><mrow><mi>ℏ</mi><mi>ω</mi></mrow></math>.      
+      </p>
+      <p>
+        However, we're not so lucky with energy eigenfunctions, there's no 
+        analytical solution for them. But fear not! There's a relatively 
+        simple recurrence relation for them that uses 
+        <b>ladder operators</b>:
+      </p>
+      <div class="math-block">
+        <math display="block" style="display:block math;"><mrow><mi>|</mi><msub><mi>ψ</mi><mi>n</mi></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><mfrac><msup><mi>A</mi><mi>n</mi></msup><msqrt><mrow><mi>n</mi><mo form="postfix" stretchy="false">!</mo></mrow></msqrt></mfrac><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo></mrow></math>
+      </div>
+      <p>
+        With the ground-state wavefunction:
+      </p>
+      <div class="math-block">
+        <math display="block" style="display:block math;"><mrow><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><msup><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mrow><mi>π</mi><mi>ℏ</mi></mrow></mfrac><mo fence="true" form="postfix">)</mo></mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></msup><msup><mi>e</mi><mrow><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mrow><mn>2</mn><mi>ℏ</mi></mrow></mfrac><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow></math>
+      </div>
+      <p>
+        <math><mi>A</mi></math> is the so-called <b>raising operator</b>, 
+        and has the following effect on an eigenket:
+      </p>
+      <div class="math-block">
+        <math display="block" style="display:block math;"><mrow><mi>A</mi><mi>|</mi><msub><mi>ψ</mi><mi>n</mi></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><msqrt><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msqrt><mi>|</mi><msub><mi>ψ</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo form="postfix" stretchy="false">⟩</mo></mrow></math>
+      </div>
+      <p>
+        The first few eigenket are displayed in the graph below.
+      </p>
+      <div class="illustration-container">
+        <img src="/assets/harmonic-eigenfunctions-30cc5768.webp" width="512" alt="Harmonic oscillator eigenfunctions" class="illustration">
+        <label class="illustration-label">First eight energy eigenfunctions, from <a href="https://en.wikipedia.org/wiki/Quantum_harmonic_oscillator">Wikipedia</a>.</label>
+      </div>
+      <p>
+        We can now move on to time considerations!
+      </p>
+      <h2>Time evolution of eigenkets</h2>
+      <div class="anchor" id="eigenfunctions"></div>
+      <p>
+        As always, the probability density function that describes base 
+        states is independant of time. But that doesn't mean that 
+        energy eigenfunctions themselves don't vary with time! Their factor of 
+        <math><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mi>n</mi></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup></math>
+         makes them complex functions, with real and complex parts that 
+        oscillate with time. The following graph shows what it looks like:
+      </p>
+
+      <h2>Superpositions</h2>
+      <div class="anchor" id="superpositions"></div>
+
+      <!-- <script type="module" src="sho-plots.js"></script> -->
+    </div>
+  </body>
+</html>
