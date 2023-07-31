@@ -1,7 +1,7 @@
 from PIL import Image
 
 
-imgName = "harmonicWavefunctions"
+imgName = "harmonic-wavefunctions"
 folder = "./graphs/"
 format = ".png"
 
