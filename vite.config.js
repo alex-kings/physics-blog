@@ -13,6 +13,7 @@ export default defineConfig({
         post1: resolve(__dirname, 'posts/infinite-square-well-1d/index.html'),
         post2: resolve(__dirname, 'posts/time-dependance-well-1d/index.html'),
         post3: resolve(__dirname, 'posts/schrodinger-equation/index.html'),
+        post4: resolve(__dirname, 'posts/time-evolution-harmonic-oscillator/index.html'),
       },
     },
   },

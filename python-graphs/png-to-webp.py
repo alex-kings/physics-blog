@@ -1,7 +1,7 @@
 from PIL import Image
 
 
-imgName = "SchrodingerEquation"
+imgName = "harmonic-wavefunctions"
 folder = "./graphs/"
 format = ".png"
 
