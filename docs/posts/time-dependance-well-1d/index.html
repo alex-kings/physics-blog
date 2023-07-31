@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEFVBN2ML1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SEFVBN2ML1');
+    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/banana.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time evolution of a particle in a box</title>
+
+    <meta name="description" content="Overlook of the time dependance of pure and mixed states of a particle trapped in a box.">
+    <meta property="og:title" content="Time evolution of a particle in a box">
+    <meta property="og:description" content="Overlook of the time dependance of pure and mixed states of a particle trapped in a box.">
+    <meta property="og:image" content="https://physicsmonkey.com/posts/time-dependance-well-1d/clock.webp">
+    <meta property="og:url" content="https://physicsmonkey.com/posts/time-dependance-well-1d/">
+    <link rel="canonical" href="https://physicsmonkey.com/posts/time-dependance-well-1d/">
+
+    
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=PT+Sans&display=swap" rel="stylesheet"> 
+    <script type="module" crossorigin src="/assets/post2-1e72a596.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/Graph1D-d51cf5c0.js">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-main">
+        <a href="../../">
+          <img alt="PhysicsMonkey.com logo" height="48" width="48" class="logo" src="/banana.svg">
+        </a>
+        <ul class="nav-ul">
+          <li class="nav-li"><a class="nav-a" href="../../">Home</a></li>
+          <li class="nav-li"><a class="nav-a" href="../../about/">About</a></li>
+          <li class="nav-li"><a class="nav-a" href="../../contact/">Contact</a></li>
+        </ul>
+      </div>
+      <a href="../../" class="nav-a" id="website-name-label">
+        PhysicsMonkey.com
+      </a>
+    </nav>
+
+    <div class="main">
+			<h1>Time dependance of a particle in an infinite square well</h1>
+      <p class="post-date">Posted on <time datetime="2023-07-23">23/07/2023</time></p>
+			<p>
+        In this post, we'll see how the wavefunction of a particle in a 1D 
+        infinite square well evolves with time. We'll first have a look at 
+        the <a class="anchor-link" href="#eigenfunctions">time evolution of energy eigenfunctions</a>. Then, we'll examine the 
+        <a class="anchor-link" href="#superpositions">evolution of superposition states</a>.
+      </p>
+      <div class="illustration-container">
+        <img src="/assets/clock-17e3bb9f.webp" width="512" alt="Artist's view of the time evolution of wavefunctions." class="illustration">
+        <label class="illustration-label">Image from <a class="illustration-link" href="https://pixabay.com/fr/illustrations/horloge-vagues-lignes-sylvestre-331174/">pixabay.com</a>.</label>
+      </div>
+      <h2>Time evolution of energy eigenfunctions</h2>
+      <div class="anchor" id="eigenfunctions"></div>
+      <p>
+        As we derived in <a href="../infinite-square-well-1d/index.html">this post</a>,
+        the energy eigenvalues <math><msub><mi>E</mi><mi>n</mi></msub></math> and 
+        energy eigenfunctions <math><msub><mi>ψ</mi><mi>n</mi></msub></math> of a particle 
+        trapped in a box of length <math><mi>L</mi></math> are the following:
+      </p>
+      <div class="math-block">
+        <math display="block" style="display:block math;"><mrow><msub><mi>E</mi><mi>n</mi></msub><mo>=</mo><mfrac><mrow><msup><mi>n</mi><mn>2</mn></msup><msup><mi>π</mi><mn>2</mn></msup><msup><mi>ℏ</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi><msup><mi>L</mi><mn>2</mn></msup></mrow></mfrac></mrow></math>
+      </div>
+      <div class="math-block">
+        <math display="block" style="display:block math;"><mrow><msub><mi>ψ</mi><mi>n</mi></msub><mo>=</mo><msqrt><mfrac><mn>2</mn><mi>L</mi></mfrac></msqrt><mtext>sin</mtext><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>n</mi><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      </div>
+
+      <p>
+        To find how time affects eigenfunctions, we simply append the usual time-dependant 
+        coefficient 
+        <math><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mi>i</mi><msub><mi>E</mi><mi>n</mi></msub><mi>t</mi></mrow><mi>ℏ</mi></mfrac></mrow></msup></math>
+        :
+      </p>
+      <div class="math-block">
+        <math display="block" style="display:block math;"><mrow><msub><mi>ψ</mi><mi>n</mi></msub><mrow><mo fence="true" form="prefix">(</mo><mi>t</mi><mo fence="true" form="postfix">)</mo></mrow><mo>=</mo><msqrt><mfrac><mn>2</mn><mi>L</mi></mfrac></msqrt><mspace width="0.1667em"></mspace><mrow><mspace width="0.1667em"></mspace><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>n</mi><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><mspace width="0.1667em"></mspace><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mi>i</mi><msub><mi>E</mi><mi>n</mi></msub><mi>x</mi></mrow><mi>ℏ</mi></mfrac></mrow></msup></mrow></math>
+      </div>
+      <p>
+        An important thing to notice is that, by appending this time-dependant 
+        coefficient, the energy eigenfunctions become <b>complex functions</b>.
+      </p>
+      <p>
+        The graph below shows how the real and imaginary parts of energy eigenfunctions 
+        of the particle in a 1D box of length L change with time.
+      </p>
+      <div class="graph-container">
+
+        <div id="plot1" class="graph"></div>
+        <div class="slider-row">
+          <div class="slider-container">
+            <label class="txt-center">Quantum number n=<span id="nLabel"></span></label>
+            <input type="range" min="1" max="4" step="1" id="sliderN">
+          </div>
+        </div>
+      </div>
+      <p>
+        The probability density function associated with energy eigenfunctions is given by the 
+        following:
+      </p>
+      <div class="math-block">
+        <math display="block" style="display:block math;"><mrow><msup><mrow><mo fence="true" form="prefix">|</mo><msub><mi>ψ</mi><mi>n</mi></msub><mrow><mo fence="true" form="prefix">(</mo><mi>t</mi><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">|</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mi>ψ</mi><mo>*</mo></msup><mi>ψ</mi><mo>=</mo><mfrac><mn>2</mn><mi>L</mi></mfrac><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>n</mi><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      </div>
+      <p>
+        Where <math><msup><mi>ψ</mi><mo>*</mo></msup></math> represents the complex conjugate 
+        of <math><mi>ψ</mi></math>. As you can see, the time dependance has vanished!
+      </p>
+      <p>
+        The probability density functions associated with superposition states, however, does change with 
+        time! We'll have a look now.
+      </p>
+      <h2>Time evolution of superposition states</h2>
+      <p>
+        The following graph shows how the <b>probability density functions 
+        of mixed states</b> changes with time.
+      </p>
+      <div id="superpositions" class="anchor"></div>
+      <div class="graph-container">
+        <div id="plot2" class="graph"></div>
+        <div id="expression-container" class="expression-container">          
+          <math id="graph-expression" display="block" class="graph-expression" style="display:block math;"><mrow><mi>ψ</mi><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo>=</mo><mn id="aTot"></mn><mrow><mo fence="true" form="prefix">(</mo><mn id="a1"></mn><mrow><mspace width="0.1667em"></mspace><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mn>1</mn></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup><mo id="plus1">+</mo><mn id="a2"></mn><mrow><mspace width="0.1667em"></mspace><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mn>2</mn><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mn>2</mn></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup><mo id="plus2">+</mo><mn id="a3"></mn><mrow><mspace width="0.1667em"></mspace><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mn>3</mn><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mn>3</mn></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+          <div id="invalid-expression" style="text-align: center;display: none;color: red; padding:10px 0;">Invalid expression</div>
+        </div>
+        <div class="slider-container">
+          <label>Change amplitudes:</label>
+          <div class="slider-col">
+            <div class="slider-container-line">
+              <label>-1</label>
+              <input class="slider" id="sliderA1" type="range" min="-1" max="1" step="0.1" value="0.3">
+              <label>1</label>
+            </div>
+            <div class="slider-container-line">
+              <label>-1</label>
+              <input class="slider" id="sliderA2" type="range" min="-1" max="1" step="0.1" value="-0.8">
+              <label>1</label>
+            </div>
+            <div class="slider-container-line">
+              <label>-1</label>
+              <input class="slider" id="sliderA3" type="range" min="-1" max="1" step="0.1" value="0.7">
+              <label>1</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>
+        Try setting two of the three sliders on 0. The function then represents a pure state, which's 
+        probability density function is time-independant! However, as soon as you set multiple sliders 
+        to non-zero values, the function starts wiggling: the probability function associated with 
+        mixed states is time-dependant!
+      </p>
+
+      
+    </div>
+  </body>
+</html>
