@@ -106,12 +106,15 @@
       <p>
         However, we're not so lucky with energy eigenfunctions, there's no 
         analytical solution for them. But fear not! There's a relatively 
-        simple recurrence relation that defines them using 
+        simple recurrence relation for them that uses 
         <b>ladder operators</b>:
       </p>
       <div class="math-block">
         <math display="block" style="display:block math;"><mrow><mi>|</mi><msub><mi>ψ</mi><mi>n</mi></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><mfrac><msup><mi>A</mi><mi>n</mi></msup><msqrt><mrow><mi>n</mi><mo form="postfix" stretchy="false">!</mo></mrow></msqrt></mfrac><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo></mrow></math>
       </div>
+      <p>
+        With the ground-state wavefunction:
+      </p>
       <div class="math-block">
         <math display="block" style="display:block math;"><mrow><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><msup><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mrow><mi>π</mi><mi>ℏ</mi></mrow></mfrac><mo fence="true" form="postfix">)</mo></mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></msup><msup><mi>e</mi><mrow><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mrow><mn>2</mn><mi>ℏ</mi></mrow></mfrac><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow></math>
       </div>
@@ -134,6 +137,14 @@
       </p>
       <h2>Time evolution of eigenkets</h2>
       <div class="anchor" id="eigenfunctions"></div>
+      <p>
+        As always, the probability density function that describes base 
+        states is independant of time. But that doesn't mean that 
+        energy eigenfunctions themselves don't vary with time! Their factor of 
+        <math><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mi>n</mi></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup></math>
+         makes them complex functions, with real and complex parts that 
+        oscillate with time. The following graph shows what it looks like:
+      </p>
       
       <script type="module" src="well-plots.js"></script>
     </div>
