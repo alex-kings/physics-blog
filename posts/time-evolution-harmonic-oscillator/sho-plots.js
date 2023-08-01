@@ -8,7 +8,7 @@ const sliderN = document.getElementById("sliderN");
 
 graph1.setLabelX("x");
 graph1.setLabelY("Ψ", -5);
-graph1.setLimits(-5,5, -1.6, 1.8);
+graph1.setLimits(-4.5,4.5, -1, 1);
 graph1.setSteps(1000);
 graph1.showLegend();
 graph1.addFunc(new Function((x)=>{
