@@ -7,9 +7,8 @@ const sliderN = document.getElementById("sliderN");
 
 const eigenfunction = () => {
     const n = parseInt(sliderN.value);
-    
-    for(let i = 0; i < n; i++) {
-
+    if(n == 0) {
+        return 
     }
 }
 
