@@ -174,29 +174,14 @@ sliderA3.oninput = ()=>{
     setAtot();
 }
 
-
-
-
-
-// const eigenfunction = () => {
-//     const n = parseInt(sliderN.value);
-//     let A = 0.751;
-//     if(n == 0) {
-//         return A*Math.exp(-(x**2)/2);
-//     }
-//     else if(n == 1) {
-//         return A*Math.SQRT2*x*Math.exp(-(x**2)/2);
-//     }
-//     else if(n == 2) {
-//         return A*(1/Math.SQRT2)*(2*x**2-1)*Math.exp(-(x**2)/2);
-//     }
-//     else if(n == 3) {
-//         return A*0.577*(2*x**3-3*x)*Math.exp(-(x**2)/2);
-//     }
-// }
-
-
-
+document.getElementById("btnT0").onclick=()=>{
+    graph2.t = 0;
+}
+const btnStop = document.getElementById("btnStopStart");
+btnStop.onclick=()=>{
+    graph2.stopped = !graph2.stopped;
+    btnStop.innerHTML = graph2.stopped? "Restart" : "Stop";
+}
 
 
 

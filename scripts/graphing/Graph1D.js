@@ -14,6 +14,7 @@ export class Graph1D {
     endY = 1;
 
     // Time
+    stopped = false; // Whether the animation is on.
     t = 0;
 
     // Main axis labels
@@ -264,13 +265,19 @@ export class Graph1D {
     /**
      * Animation loop
      */
-    animate(time) {
+    prevFrame = performance.now();
+    animate() {
+        const now = performance.now();
+        const dt = (now - this.prevFrame)/1000; // In seconds
+        this.prevFrame = now;
+        if(!this.stopped) {
+            this.t+=dt;
+        }
         this.resizeDisplay();
         this.clearCanvas();
         if(this.legendVisible) this.drawLegend();
         this.drawFunctions();
         this.drawAxes();
-        this.t=time/1000; // In seconds
         requestAnimationFrame(this.animate.bind(this));
     }
 
