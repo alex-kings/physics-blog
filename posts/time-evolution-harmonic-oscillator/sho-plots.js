@@ -61,6 +61,23 @@ sliderN.oninput = ()=>{
 const sliderA1 = document.getElementById("sliderA1");
 const sliderA2 = document.getElementById("sliderA2");
 const sliderA3 = document.getElementById("sliderA3");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Change expression.
+ */
 const aTot = document.getElementById("aTot");
 const a1 = document.getElementById("a1");
 const a2 = document.getElementById("a2");
