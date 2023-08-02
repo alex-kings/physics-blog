@@ -189,6 +189,32 @@
       </p>
       <h2>Superpositions</h2>
       <div class="anchor" id="superpositions"></div>
+      <p>
+        Superposition states are a <b>normalized sum of eigenkets</b>, with 
+        potentially different coefficients for each eigenket. For example, 
+        a simple superposition state 
+        <math><mrow><mi>|</mi><mi>ψ</mi><mo form="postfix" stretchy="false">⟩</mo></mrow></math>
+        could be made with an equal weight of 
+        <math><mrow><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo></mrow></math>
+        and 
+        <math><mrow><mi>|</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo form="postfix" stretchy="false">⟩</mo></mrow></math>:
+      </p>
+      
+      <div class="math-block">
+        <math display="block" style="display:block math;"><mrow><mi>|</mi><mi>ψ</mi><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mrow><mo fence="true" form="prefix">(</mo><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo><mo>+</mo><mi>|</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo form="postfix" stretchy="false">⟩</mo><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      </div>
+      <p>
+        To find the time-dependance of superposition states, just 
+        add to each eigenket a factor of 
+        <math><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mi>n</mi></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup></math>.
+        For our superposition state 
+        <math><mrow><mi>|</mi><mi>ψ</mi><mo form="postfix" stretchy="false">⟩</mo></mrow></math>
+        in a harmonic oscillator, this results in:
+      </p>
+      <div class="math-block">
+        <math display="block" style="display:block math;"><mrow><mi>|</mi><mi>ψ</mi><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mrow><mo fence="true" form="prefix">(</mo><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><mrow><mi>ω</mi><mi>t</mi></mrow><mn>2</mn></mfrac></mrow></msup><mo>+</mo><mi>|</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo form="postfix" stretchy="false">⟩</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><mrow><mn>3</mn><mi>ω</mi><mi>t</mi></mrow><mn>2</mn></mfrac></mrow></msup><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      </div>
+
 
       <script type="module" src="sho-plots.js" defer></script>
     </div>

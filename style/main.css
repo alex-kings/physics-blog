@@ -36,14 +36,11 @@ a:hover {
 	max-width: 600px;
 }
 math{
-  /* font-family: 'STIX Two Text', Cambria, sans-serif; */
   font-family: 'myfont', sans-serif;}
 .math-block {
-  font-size: 1.1em;
+  font-size: 1.3em;
   padding-top:0.6rem;
   padding-bottom:0.3rem;
-  display: flex;
-  justify-content: center;
 }
 .illustration {
   width:100%;
