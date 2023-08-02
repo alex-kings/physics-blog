@@ -91,53 +91,78 @@ function setAtot() {
     s = 1/s;
     aTot.innerHTML = Number(s).toFixed(2);
 }
-function setA1() {
-    let amplitude = sliderA1.value;
-    if(amplitude === "1") amplitude = "";
-    else if(amplitude === "-1") amplitude = "-";
-    a1.innerHTML = amplitude;
-}
-function setA2() {
-    let amplitude = sliderA2.value;
-    if(amplitude < 0) {
-        plus1.innerHTML = "−";
+
+// Display the amplitude labels
+function displayLabels() {
+    const amp1 = parseFloat(sliderA1.value);
+    const amp2 = parseFloat(sliderA2.value);
+    const amp3 = parseFloat(sliderA3.value);
+
+    // Display expressions
+    if(amp1 === 0) expr1.style.display = "none";
+    else expr1.style.display = "block";
+    if(amp2 === 0) expr2.style.display = "none";
+    else expr2.style.display = "block";
+    if(amp3 === 0) expr3.style.display = "none";
+    else expr3.style.display = "block";
+
+    // Display sign of "plus" signs
+    if(amp2 === 0) plus1.innerHTML = (amp3 < 0 ? "−" : "+");
+    else plus1.innerHTML = (amp2 < 0 ? "−" : "+");
+    plus2.innerHTML = (amp3 < 0 ? "−" : "+");
+
+    // Display "plus" signs
+    if(amp1 === 0) plus1.style.display = "none";
+    else plus1.style.display = "block";
+    if(amp2 === 0) plus2.style.display = "none";
+    else plus2.style.display = "block";
+    if(amp3 === 0) {
+        if(amp2 === 0) plus1.style.display = "none";
+        else plus2.style.display = "none";
     }
-    else plus1.innerHTML = "+";
-    if(amplitude === "1" || amplitude === "-1") {
-        a2.innerHTML = "";
-        return;
+
+    // Display amplitudes
+    // a1
+    if(amp1 === 1) a1.innerHTML = "";
+    else if(amp1 === -1) a1.innerHTML = "-";
+    else a1.innerHTML = amp1;
+    // a2
+    if(amp1 === 0) {
+        if(amp2 === 1) a2.innerHTML = "";
+        else if (amp2 === -1) a2.innerHTML = "-";
+        else a2.innerHTML = amp2;
     }
-    a2.innerHTML = Math.abs(parseFloat(amplitude));
-}
-function setA3() {
-    let amplitude = sliderA3.value;
-    if(amplitude < 0) {
-        plus2.innerHTML = "−";
+    else {
+        if(amp2 === 1 || amp2 === -1) a2.innerHTML = ""; 
+        else a2.innerHTML = Math.abs(amp2);
     }
-    else plus2.innerHTML = "+";
-    if(amplitude === "1" || amplitude === "-1") {
-        a3.innerHTML = "";
-        return;
+    // a3
+    if(amp2 === 0 && amp1 === 0) {
+        if(amp3 === 1) a3.innerHTML = "";
+        else if(amp3 === -1) a3.innerHTML = "-";
+        else a3.innerHTML = amp3;
     }
-    a3.innerHTML = Math.abs(parseFloat(amplitude));
+    else {
+        if(amp3 === 1 || amp3 === -1) a3.innerHTML = "";
+        else a3.innerHTML = Math.abs(amp3);
+    }
 }
 
+
 // Initialise values
-setA1();
-setA2();
-setA3();
+displayLabels();
 setAtot();
 
 // Initialise formula
 sliderA1.oninput = ()=>{ 
-    setA1();
+    displayLabels();
     setAtot();
 }
 sliderA2.oninput = ()=>{ 
-    setA2();
+    displayLabels();
     setAtot();
 }
 sliderA3.oninput = ()=>{ 
-    setA3();
+    displayLabels();
     setAtot();
 }
