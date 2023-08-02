@@ -76,3 +76,6 @@ sliderN.oninput = ()=>{
 
 
 
+
+
+

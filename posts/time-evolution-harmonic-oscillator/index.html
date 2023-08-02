@@ -51,7 +51,7 @@
       <p class="post-date">Posted on <time datetime="2023-07-30">30/07/2023</time></p>
 			<p>
         We've all seen graphs of the first few eigenkets in the quantum simple 
-				harmonic oscillator, but how do pure and mixes state wavefunctions 
+				harmonic oscillator, but how do pure and superposition state wavefunctions 
 				evolve with time in a SHO potential? Let's see!
       </p>
 			<p>
@@ -154,8 +154,8 @@
       <h2>Time evolution of eigenkets</h2>
       <div class="anchor" id="eigenfunctions"></div>
       <p>
-        As always, the probability density function that describes base 
-        states is independant of time. But that doesn't mean that 
+        As always, probability density functions that describes base 
+        states are independant of time. But it doesn't mean that 
         energy eigenfunctions themselves don't vary with time! Their factor of 
         <math><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mi>n</mi></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup></math>
          makes them complex functions, with real and complex parts that 
@@ -171,7 +171,22 @@
           </div>
         </div>
       </div>
-
+      <p>
+        You can see that the higher the excited state, the 
+        faster the oscillation! This is 
+        due to the fact that energy eigenvalues 
+        <math><msub><mi>E</mi><mi>n</mi></msub></math>
+        grow linearly with <math><mi>n</mi></math>. However, 
+        in comparison, eigenkets in the infinitely deep square well 
+        oscillate much faster, due the factor of 
+        <math><msup><mi>n</mi><mn>2</mn></msup></math> 
+        in the energy eigenvalues of the well. You can compare the 
+        oscillation of eigenkets in the harmonic oscillator with 
+        <a href="../time-dependance-well-1d/">the time-dependance of eigenkets for a particle in a box</a>.    
+      </p>
+      <p>
+        We can now have a look at superposition states.
+      </p>
       <h2>Superpositions</h2>
       <div class="anchor" id="superpositions"></div>
 
