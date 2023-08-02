@@ -239,6 +239,37 @@
         of superposition states in a harmonic oscillator:
       </p>
 
+      <div class="graph-container">
+        <div id="plot2" class="graph"></div>
+        <div id="expression-container" class="expression-container">          
+          <!-- <math id="graph-expression" class="graph-expression" display="block" style="display:block math;"><mrow><mo form="prefix" stretchy="false">⟨</mo><mi>ψ</mi><mi>|</mi><mi>ψ</mi><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><msup><mrow><mo fence="true" form="prefix">|</mo><mn id="aTot"></mn><mrow><mo fence="true" form="prefix">(</mo><mn id="a1"></mn><msub><mi>ψ</mi><mn>0</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo id="plus1">+</mo><mn id="a2"></mn><msub><mi>ψ</mi><mn>1</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo id="plus2">+</mo><mn id="a3"></mn><msub><mi>ψ</mi><mn>2</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">|</mo></mrow><mn>2</mn></msup></mrow></math> -->
+          <div class="math-block">
+            <math id="graph-expression" display="block" style="display:block math;"><mrow><mo form="prefix" stretchy="false">⟨</mo><mi>ψ</mi><mi>|</mi><mi>ψ</mi><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><msup><mrow><mo fence="true" form="prefix">|</mo><mn id="aTot"></mn><mrow><mo fence="true" form="prefix">(</mo><mn id="a1"></mn><msub><mi>ψ</mi><mn>0</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo id="plus1">+</mo><mn id="a2"></mn><msub><mi>ψ</mi><mn>1</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo id="plus2">+</mo><mn id="a3"></mn><msub><mi>ψ</mi><mn>2</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">|</mo></mrow><mn>2</mn></msup></mrow></math>
+          </div>
+          <div id="invalid-expression" style="text-align: center;display: none;color: red; padding:10px 0;">Invalid expression</div>
+        </div>
+        <div class="slider-container">
+          <label>Change amplitudes:</label>
+          <div class="slider-col">
+            <div class="slider-container-line">
+              <label>-1</label>
+              <input class="slider" id="sliderA1" type="range" min="-1" max="1" step="0.1" value="0.3">
+              <label>1</label>
+            </div>
+            <div class="slider-container-line">
+              <label>-1</label>
+              <input class="slider" id="sliderA2" type="range" min="-1" max="1" step="0.1" value="-0.8">
+              <label>1</label>
+            </div>
+            <div class="slider-container-line">
+              <label>-1</label>
+              <input class="slider" id="sliderA3" type="range" min="-1" max="1" step="0.1" value="0.7">
+              <label>1</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <script type="module" src="sho-plots.js" defer></script>
     </div>
