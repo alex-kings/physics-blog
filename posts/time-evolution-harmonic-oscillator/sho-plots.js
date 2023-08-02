@@ -115,11 +115,11 @@ function setA3() {
     a3.innerHTML = Math.abs(parseFloat(amplitude));
 }
 
-// // Initialise values
-// setA1();
-// setA2();
-// setA3();
-// setAtot();
+// Initialise values
+setA1();
+setA2();
+setA3();
+setAtot();
 
 // Initialise formula
 sliderA1.oninput = ()=>{ 
