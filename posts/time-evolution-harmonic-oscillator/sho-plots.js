@@ -6,6 +6,7 @@ const graph1 = new Graph1D("plot1");
 const nLabel = document.getElementById("nLabel")
 const sliderN = document.getElementById("sliderN");
 
+graph1.setIndicators([new Indicator(1, "x₀")],[])
 graph1.setLabelX("x");
 graph1.setLabelY("Ψ", -5);
 graph1.setLimits(-4.5,4.5, -1, 1);
