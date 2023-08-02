@@ -77,7 +77,7 @@ function setAtot() {
     }
     else {
         invalidExpr.style.display = "none";
-        graphExpr.style.display = "block math";
+        graphExpr.style.display = "block";
     }
     let s = Math.sqrt(parseFloat(sliderA1.value)**2 + parseFloat(sliderA2.value)**2 + parseFloat(sliderA3.value)**2);
     s = 1/s;

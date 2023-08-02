@@ -64,16 +64,6 @@ const sliderA2 = document.getElementById("sliderA2");
 const sliderA3 = document.getElementById("sliderA3");
 let coef = 0.751;
 
-function psi0(x) {
-    return ;
-}
-function psi1(x) {
-    return ;
-}
-function psi2(x) {
-    return ;
-}
-
 const graph2 = new Graph1D("plot2");
 graph2.setLabelX("x");
 graph2.setLabelY("|Ψ|"+String.fromCharCode(178), -25);
@@ -120,7 +110,7 @@ function setAtot() {
     }
     else {
         invalidExpr.style.display = "none";
-        graphExpr.style.display = "block math";
+        graphExpr.style.display = "block";
     }
     let s = Math.sqrt(parseFloat(sliderA1.value)**2 + parseFloat(sliderA2.value)**2 + parseFloat(sliderA3.value)**2);
     s = 1/s;
