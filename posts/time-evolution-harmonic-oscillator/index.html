@@ -243,7 +243,6 @@
         <div id="plot2" class="graph"></div>
         <div id="expression-container" class="expression-container">          
           <div class="math-block">
-            <!-- <math id="graph-expression" display="block" style="display:block math;"><mrow><mo form="prefix" stretchy="false">⟨</mo><mi>ψ</mi><mi>|</mi><mi>ψ</mi><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><msup><mrow><mo fence="true" form="prefix">|</mo><mn id="aTot"></mn><mrow><mo fence="true" form="prefix">(</mo><mn id="a1"></mn><msub><mi>ψ</mi><mn>0</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo id="plus1">+</mo><mn id="a2"></mn><msub><mi>ψ</mi><mn>1</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo id="plus2">+</mo><mn id="a3"></mn><msub><mi>ψ</mi><mn>2</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">|</mo></mrow><mn>2</mn></msup></mrow></math> -->
             <math id="graph-expression" display="block" style="display:block math;"><mrow><msup><mi>ψ</mi><mo>*</mo></msup><mi>ψ</mi><mo>=</mo><msup><mrow><mo fence="true" form="prefix">|</mo><mn id="aTot"></mn><mrow><mo fence="true" form="prefix">(</mo><mn id="a1"></mn><msub><mi>ψ</mi><mn>0</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo id="plus1">+</mo><mn id="a2"></mn><msub><mi>ψ</mi><mn>1</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo id="plus2">+</mo><mn id="a3">9</mn><msub><mi>ψ</mi><mn>2</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">|</mo></mrow><mn>2</mn></msup></mrow></math>
           </div>
           <div id="invalid-expression" style="text-align: center;display: none;color: red; padding:10px 0;">Invalid expression</div>
@@ -253,15 +252,15 @@
           <div class="slider-col">
             <div class="slider-container-line">
               <label for="sliderA1">A<sub>0</sub></label>
-              <input class="slider" id="sliderA1" type="range" min="-1" max="1" step="0.1" value="0.3">
+              <input class="slider" value="1" id="sliderA1" type="range" min="-1" max="1" step="0.1" value="0.3">
             </div>
             <div class="slider-container-line">
               <label for="sliderA2">A<sub>1</sub></label>
-              <input class="slider" id="sliderA2" type="range" min="-1" max="1" step="0.1" value="-0.8">
+              <input class="slider" value="-0.5" id="sliderA2" type="range" min="-1" max="1" step="0.1" value="-0.8">
             </div>
             <div class="slider-container-line">
               <label for="sliderA3">A<sub>2</sub></label>
-              <input class="slider" id="sliderA3" type="range" min="-1" max="1" step="0.1" value="0.7">
+              <input class="slider" value="0" id="sliderA3" type="range" min="-1" max="1" step="0.1" value="0.7">
             </div>
           </div>
         </div>
