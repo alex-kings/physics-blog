@@ -61,19 +61,41 @@ sliderN.oninput = ()=>{
 const sliderA1 = document.getElementById("sliderA1");
 const sliderA2 = document.getElementById("sliderA2");
 const sliderA3 = document.getElementById("sliderA3");
+let coef = 0.751;
 
+function psi0(x) {
+    return ;
+}
+function psi1(x) {
+    return ;
+}
+function psi2(x) {
+    return ;
+}
 
+const graph2 = new Graph1D("plot2");
+graph2.setLabelX("x");
+graph2.setLabelY("|Ψ|"+String.fromCharCode(178), -25);
+graph2.setLimits(-4.5,4.5, -1, 1);
+graph2.setSteps(600);
 
+graph2.addFunc(new Function((x)=>{
+    let a1 = parseFloat(sliderA1.value);
+    let a2 = parseFloat(sliderA2.value);
+    let a3 = parseFloat(sliderA3.value);
+    let A = 1/Math.sqrt(a1**2 + a2**2 + a3**2);
+    let psi0 = a1*coef*Math.exp(-(x**2)/2);
+    let psi1 = a2*coef*Math.SQRT2*x*Math.exp(-(x**2)/2)
+    let psi2 = a3*coef*(1/Math.SQRT2)*(2*x**2-1)*Math.exp(-(x**2)/2);
+    return A**2*(psi0**2+psi1**2+psi2**2
+    +2*psi0*psi1*Math.cos(graph2.t)
+    +2*psi0*psi2*Math.cos(2*graph2.t)
+    +2*psi1*psi2*Math.cos(graph2.t)
+    );
+}))
 
-
-
-
-
-
-
-
-
-
+// Animate the plot
+graph2.animate();
 
 /**
  * Change expression.
