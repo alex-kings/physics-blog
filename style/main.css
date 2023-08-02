@@ -126,7 +126,18 @@ p {
   display: flex;
   gap: 5px;
   align-items: center;
+  justify-content:center;
 }
+.btn {
+  border:2px solid var(--color-main);
+  border-radius:3px;
+  padding:.3rem;
+  font-size: 0.9rem;
+}
+.btn:active {
+  background-color: #a3b3ff;
+}
+
 .post-date {
   font-size: .9em;
   color: var(--date-color);
