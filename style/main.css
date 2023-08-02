@@ -38,7 +38,7 @@ a:hover {
 math{
   font-family: 'myfont', sans-serif;}
 .math-block {
-  font-size: 1.3em;
+  font-size: 1.4em;
   padding-top:0.6rem;
   padding-bottom:0.3rem;
 }
@@ -135,6 +135,7 @@ p {
 
 @media screen and (max-width:700px){
   .math-block {
+    font-size: 1.3rem;
     overflow-x: scroll;
     overflow-y: hidden;
   }
