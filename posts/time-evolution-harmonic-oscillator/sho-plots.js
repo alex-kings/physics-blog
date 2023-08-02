@@ -79,6 +79,8 @@ graph2.setLabelY("|Ψ|"+String.fromCharCode(178), -25);
 graph2.setLimits(-4.5,4.5, -1, 1);
 graph2.setSteps(600);
 
+graph2.setIndicators([new Indicator(1, "x₀")],[])
+
 graph2.addFunc(new Function((x)=>{
     let a1 = parseFloat(sliderA1.value);
     let a2 = parseFloat(sliderA2.value);
