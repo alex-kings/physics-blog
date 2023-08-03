@@ -86,63 +86,6 @@ function setAtot() {
     aTot.innerHTML = Number(s).toFixed(2);
 }
 
-// Display the amplitude labels
-function displayLabels() {
-    const amp1 = parseFloat(sliderA1.value);
-    const amp2 = parseFloat(sliderA2.value);
-    const amp3 = parseFloat(sliderA3.value);
-
-    // Display expressions
-    if(amp1 === 0) expr1.style.display = "none";
-    else expr1.style.display = "block";
-    if(amp2 === 0) expr2.style.display = "none";
-    else expr2.style.display = "block";
-    if(amp3 === 0) expr3.style.display = "none";
-    else expr3.style.display = "block";
-
-    // Display sign of "plus" signs
-    if(amp2 === 0) plus1.innerHTML = (amp3 < 0 ? "−" : "+");
-    else plus1.innerHTML = (amp2 < 0 ? "−" : "+");
-    plus2.innerHTML = (amp3 < 0 ? "−" : "+");
-
-    // Display "plus" signs
-    if(amp1 === 0) plus1.style.display = "none";
-    else plus1.style.display = "block";
-    if(amp2 === 0) plus2.style.display = "none";
-    else plus2.style.display = "block";
-    if(amp3 === 0) {
-        if(amp2 === 0) plus1.style.display = "none";
-        else plus2.style.display = "none";
-    }
-
-    // Display amplitudes
-    // a1
-    if(amp1 === 1) a1.innerHTML = "";
-    else if(amp1 === -1) a1.innerHTML = "-";
-    else a1.innerHTML = amp1;
-    // a2
-    if(amp1 === 0) {
-        if(amp2 === 1) a2.innerHTML = "";
-        else if (amp2 === -1) a2.innerHTML = "-";
-        else a2.innerHTML = amp2;
-    }
-    else {
-        if(amp2 === 1 || amp2 === -1) a2.innerHTML = ""; 
-        else a2.innerHTML = Math.abs(amp2);
-    }
-    // a3
-    if(amp2 === 0 && amp1 === 0) {
-        if(amp3 === 1) a3.innerHTML = "";
-        else if(amp3 === -1) a3.innerHTML = "-";
-        else a3.innerHTML = amp3;
-    }
-    else {
-        if(amp3 === 1 || amp3 === -1) a3.innerHTML = "";
-        else a3.innerHTML = Math.abs(amp3);
-    }
-}
-
-
 // Initialise values
 // displayLabels();
 // setAtot();
@@ -168,11 +111,23 @@ sliderA3.oninput = ()=>{
 }
 
 function drawExpression() {
+    // Rest
     const amp1 = parseFloat(sliderA1.value);
     const amp2 = parseFloat(sliderA2.value);
     const amp3 = parseFloat(sliderA3.value);
 
-    const container = document.getElementById("graph-expression");
+    // Atot
+    if(sliderA1.value === "0" && sliderA2.value === "0" && sliderA3.value === "0"){
+        invalidExpr.style.display = "block";
+        graphExpr.style.display = "none";
+        return;
+    }
+    else {
+        invalidExpr.style.display = "none";
+        graphExpr.style.display = "block";
+    }
+    let s = 1/(Math.sqrt(amp1**2 + amp2**2 + amp3**2));
+    let aTot = Number(s).toFixed(2);
 
     let plus1 = "+";
     let plus2 = "+";
@@ -227,7 +182,8 @@ function drawExpression() {
         else a3 = Math.abs(amp3);
     }
     // Render expression
-    katex.render(`\\psi=A\\left(${show1?`${a1}\\sin\\left(\\frac{\\pi x}{L}\\right)`:""}${plus1}${show2?`${a2}\\sin\\left(\\frac{2\\pi x}{L}\\right)`:""}${plus2}${show3?`${a3}\\sin\\left(\\frac{3\\pi x}{L}\\right)`:""}\\right)`,container,{
+    katex.render(`\\psi=${aTot}\\left(${show1?`${a1}\\sin\\left(\\frac{\\pi x}{L}\\right)`:""}${plus1}${show2?`${a2}\\sin\\left(\\frac{2\\pi x}{L}\\right)`:""}${plus2}${show3?`${a3}\\sin\\left(\\frac{3\\pi x}{L}\\right)`:""}\\right)`,
+    document.getElementById("graph-expression"),{
         throwOnError:false,
         displayMode:true
     })
