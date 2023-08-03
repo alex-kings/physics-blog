@@ -62,12 +62,12 @@ graph2.setIndicators([new Indicator(a, "L")],[])
 graph2.redraw();
 
 // Amplitude values
-const aTot = document.getElementById("aTot");
-const a1 = document.getElementById("a1");
-const a2 = document.getElementById("a2");
-const a3 = document.getElementById("a3");
-const plus1 = document.getElementById("plus1");
-const plus2 = document.getElementById("plus2");
+// const aTot = document.getElementById("aTot");
+// const a1 = document.getElementById("a1");
+// const a2 = document.getElementById("a2");
+// const a3 = document.getElementById("a3");
+// const plus1 = document.getElementById("plus1");
+// const plus2 = document.getElementById("plus2");
 const graphExpr = document.getElementById("graph-expression");
 const invalidExpr = document.getElementById("invalid-expression");
 
@@ -173,7 +173,17 @@ function drawExpression() {
     const amp3 = parseFloat(sliderA3.value);
 
     const container = document.getElementById("graph-expression");
-    katex.render(`\\psi=A\\left(${amp1}\\psi_1+${amp2}\\psi_2+${amp3}\\psi_3\\right)`,container,{
+
+    let plus1 = "+";
+    let plus2 = "+";
+    let a1 = amp1;
+    let a2 = amp2;
+    let a3 = amp3;
+    let show1 = true;
+    let show2 = true;
+    let show3 = true;
+
+    katex.render(`\\psi=A\\left(${show1?`${a1}\\sin\\left(\\frac{\\pi x}{L}\\right)`:""}${plus1}${show2?`${a2}\\sin\\left(\\frac{2\\pi x}{L}\\right)`:""}${plus2}${show3?`${a3}\\sin\\left(\\frac{3\\pi x}{L}\\right)\\right)`:""}`,container,{
         throwOnError:false,
         displayMode:true
     })
