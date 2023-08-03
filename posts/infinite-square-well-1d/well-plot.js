@@ -61,13 +61,6 @@ graph2.addFunc(new Function((x)=>{
 graph2.setIndicators([new Indicator(a, "L")],[])
 graph2.redraw();
 
-// Amplitude values
-// const aTot = document.getElementById("aTot");
-// const a1 = document.getElementById("a1");
-// const a2 = document.getElementById("a2");
-// const a3 = document.getElementById("a3");
-// const plus1 = document.getElementById("plus1");
-// const plus2 = document.getElementById("plus2");
 const graphExpr = document.getElementById("graph-expression");
 const invalidExpr = document.getElementById("invalid-expression");
 
@@ -86,27 +79,17 @@ function setAtot() {
     aTot.innerHTML = Number(s).toFixed(2);
 }
 
-// Initialise values
-// displayLabels();
-// setAtot();
-
-// Initialise formula
+// Inputs
 sliderA1.oninput = ()=>{ 
     graph2.redraw();
-    // displayLabels();
-    // setAtot();
     drawExpression();
 }
 sliderA2.oninput = ()=>{ 
     graph2.redraw();
-    // displayLabels();
-    // setAtot();
     drawExpression();
 }
 sliderA3.oninput = ()=>{ 
     graph2.redraw();
-    // displayLabels();
-    // setAtot();
     drawExpression();
 }
 
@@ -188,6 +171,7 @@ function drawExpression() {
         displayMode:true
     })
 }
+// Initialise
 drawExpression();
 
 
