@@ -143,6 +143,10 @@ p {
   color: var(--date-color);
   text-align: center;
 }
+.math{
+  overflow: auto hidden;
+  font-size:1.1em;
+}
 
 @media screen and (max-width:700px){
   .math-block {

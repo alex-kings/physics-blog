@@ -10,6 +10,12 @@
 
       gtag('config', 'G-SEFVBN2ML1');
     </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/banana.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,10 +37,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=PT+Sans&display=swap" rel="stylesheet"> 
-    <script type="module" crossorigin src="/assets/post1-1f541170.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/about-74137ef6.js">
+    <script type="module" crossorigin src="/assets/post1-a437c706.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/about-05d1cbe5.js">
     <link rel="modulepreload" crossorigin href="/assets/Graph1D-612edaa8.js">
-    <link rel="stylesheet" href="/assets/navbar-eb240331.css">
+    <link rel="stylesheet" href="/assets/navbar-4574fb70.css">
   </head>
   <body>
     <nav class="navbar">
@@ -88,14 +94,23 @@
         For a particle trapped in an infinite square well, the potential 
         energy <math><mi>V</mi></math> is:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>V</mi><mo>=</mo><mrow><mo fence="true" form="prefix">{</mo><mtable columnalign="center"><mtr><mtd><mi>∞</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mi>∞</mi></mtd></mtr></mtable><mo fence="true" form="postfix"></mo></mrow><mspace width="1em"></mspace><mtable columnalign="left left" class="tml-array"><mtr><mtd style="text-align:-webkit-left;"><mrow><mtext>for</mtext><mspace width="0.2778em"></mspace><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd style="text-align:-webkit-left;"><mrow><mtext>for</mtext><mspace width="0.2778em"></mspace><mn>0</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mi>L</mi></mrow></mtd></mtr><mtr><mtd style="text-align:-webkit-left;"><mrow><mtext>for</mtext><mspace width="0.2778em"></mspace><mi>x</mi><mo>&gt;</mo><mi>L</mi></mrow></mtd></mtr></mtable></mrow></math>
+      <div class="math">
+        $$V=\left\{
+          \begin{array}{ccc}
+          \infty & \textup{for} & x\lt0 \\
+          0 & \textup{for} & 0\le x\le L \\
+          \infty & \textup{for} & x>L\end{array}\right. $$
       </div>
+
       <p>The potential energy is shown in the following graph:</p>
       <div class="illustration-container">
         <img src="/assets/Infinite_potential_well-8dc62e60.webp" alt="Infinite square well potential." width="512" class="illustration">
         <label class="illustration-label">Plot of the 1D infinite square well potential. Image from <a class="illustration-link" href="https://commons.wikimedia.org/wiki/File:Infinite_potential_well-en.svg">wikimedia commons</a>.</label>
       </div>
+      <p>
+        Now that our potential is set up, we can move on to 
+        the next step!
+      </p>
     
       <h3>Applying the time-independant Schrödinger equation</h3>
       <div class="anchor" id="sub2"></div>
@@ -104,27 +119,27 @@
         Schrödinger equation that we will use here to find the <b>energy eigenvalues <math><msub><mi>E</mi><mi>n</mi></msub></math></b> and 
         <b>energy eigenfunctions <math><msub><mi>ψ</mi><mi>n</mi></msub></math></b> of the trapped particle. We start with:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mo>−</mo><mfrac><msup><mi>ℏ</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><msub><mi>ψ</mi><mi>n</mi></msub></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mi>V</mi><msub><mi>ψ</mi><mi>n</mi></msub><mo>=</mo><msub><mi>E</mi><mi>n</mi></msub><msub><mi>ψ</mi><mi>n</mi></msub></mrow></math>
+      <div class="math">
+        $$-\frac{\hbar^2}{2m}\frac{\partial^2 \psi_n}{\partial x^2}+V\psi_n=E_n\psi_n$$
       </div>
       <p>
-        And insert the potential energy <math><mi>V</mi></math> 
+        And insert the potential energy \(V\)
         that we previously specified. 
         We get the following, for the region inside the well <math><mrow><mn>0</mn><mo>&le;</mo></mrow><mrow><mi>x</mi><mo>&le;</mo></mrow><mrow><mi>L</mi></mrow></math>:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mo>−</mo><mfrac><msup><mi>ℏ</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><msub><mi>ψ</mi><mi>n</mi></msub></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><msub><mi>E</mi><mi>n</mi></msub><msub><mi>ψ</mi><mi>n</mi></msub></mrow></math>
+      <div class="math">
+        $$-\frac{\hbar^2}{2m}\frac{\partial^2 \psi_n}{\partial x^2}=E_n\psi_n$$
       </div>
       <p>This can be rearranged as:</p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><msub><mi>ψ</mi><mi>n</mi></msub></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mo>−</mo><mfrac><mrow><mn>2</mn><mi>m</mi><msub><mi>E</mi><mi>n</mi></msub></mrow><msup><mi>ℏ</mi><mn>2</mn></msup></mfrac><msub><mi>ψ</mi><mi>n</mi></msub></mrow></math>
+      <div class="math">
+        $$\frac{\partial^2 \psi_n}{\partial x^2}=-\frac{2mE_n}{\hbar^2}\psi_n$$
       </div>
       <p>This is a standard differential equation for which the general solutions are:</p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><msub><mi>ψ</mi><mi>n</mi></msub><mo>=</mo><mi>A</mi><mspace width="0.1667em"></mspace><mtext>sin</mtext><mo form="prefix" stretchy="false">(</mo><msub><mi>k</mi><mi>n</mi></msub><mi>x</mi><mo form="postfix" stretchy="false">)</mo><mo>+</mo><mi>B</mi><mspace width="0.1667em"></mspace><mtext>cos</mtext><mo form="prefix" stretchy="false">(</mo><msub><mi>k</mi><mi>n</mi></msub><mi>x</mi><mo form="postfix" stretchy="false">)</mo></mrow></math>
+      <div class="math">
+        $$\psi_n=A\sin\left(k_n x\right)+B\cos\left(k_n x\right)$$
       </div>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><msub><mi>k</mi><mi>n</mi></msub><mo>=</mo><mfrac><msqrt><mrow><mn>2</mn><mi>m</mi><msub><mi>E</mi><mi>n</mi></msub></mrow></msqrt><mi>ℏ</mi></mfrac></mrow></math>
+      <div class="math">
+        $$k_n=\frac{\sqrt{2mE_n}}{\hbar}$$
       </div>
       <p>It's now time to make use of the well's boundary conditions!</p>        
 
@@ -135,21 +150,21 @@
         of the well. Because the potential is infinite at <math><mrow><mi>x</mi><mo>=</mo></mrow><mrow><mn>0</mn></mrow></math> and <math><mrow><mi>x</mi><mo>=</mo></mrow><mrow><mi>a</mi></mrow></math>, the particle 
         can not possibly be found at the well's edges. We get:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><msub><mi>ψ</mi><mi>n</mi></msub><mo form="prefix" stretchy="false">(</mo><mn>0</mn><mo form="postfix" stretchy="false">)</mo><mo>=</mo><msub><mi>ψ</mi><mi>n</mi></msub><mo form="prefix" stretchy="false">(</mo><mi>L</mi><mo form="postfix" stretchy="false">)</mo><mo>=</mo><mn>0</mn></mrow></math>
+      <div class="math">
+        $$\psi_n(0)=\psi_n(L)=0$$
       </div>
       <p>
-        This means that the eigenfunctions can not contain a cosine term, so <math><mrow><mi>B</mi><mo>=</mo></mrow><mrow><mn>0</mn></mrow></math>. We also 
+        This means that the eigenfunctions can not contain a cosine term, so \(B=0\). We also 
         deduce that 
-        <math><mrow><msub><mi>k</mi><mi>n</mi></msub><mo>=</mo></mrow><mrow><mfrac><mrow><mi>n</mi><mi>π</mi></mrow><mi>L</mi></mfrac></mrow></math>
-        . Equating this with our previous formula for <math><msub><mi>k</mi><mi>n</mi></msub></math>
+        \(k_n=\frac{n\pi}{L}\)
+        . Equating this with our previous formula for \(k_n\)
         gives us the energy eigenvalues.
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mfrac><msqrt><mrow><mn>2</mn><mi>m</mi><msub><mi>E</mi><mi>n</mi></msub></mrow></msqrt><mi>ℏ</mi></mfrac><mo>=</mo><mfrac><mrow><mi>n</mi><mi>π</mi></mrow><mi>L</mi></mfrac></mrow></math>
+      <div class="math">
+        $$\frac{\sqrt{2mE_n}}{\hbar}=\frac{n\pi}{L}$$
       </div>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><msub><mi>E</mi><mi>n</mi></msub><mo>=</mo><mfrac><mrow><msup><mi>n</mi><mn>2</mn></msup><msup><mi>π</mi><mn>2</mn></msup><msup><mi>ℏ</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi><msup><mi>L</mi><mn>2</mn></msup></mrow></mfrac></mrow></math>
+      <div class="math">
+        $$E_n=\frac{n^2\pi^2\hbar^2}{2mL^2}$$
       </div>
       <h3>Normalization of the eigenfunctions</h3>
       <div class="anchor" id="sub4"></div>
@@ -158,15 +173,15 @@
         of eigenfunctions. As we know, <math><mrow><mi>|</mi><mi>ψ</mi><msup><mi>|</mi><mn>2</mn></msup></mrow></math> is a probability density function. This 
         means that integrating over all values of x must equal to 1.
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><msubsup><mo movablelimits="false">∫</mo><mn>0</mn><mi>L</mi></msubsup><mi>|</mi><msub><mi>ψ</mi><mi>n</mi></msub><msup><mi>|</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow></math>
+      <div class="math">
+        $$\int_{0}^{L}|\psi_n|^2=1$$
       </div>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>A</mi><mo>=</mo><msqrt><mfrac><mn>2</mn><mi>L</mi></mfrac></msqrt></mrow></math>
+      <div class="math">
+        $$A=\sqrt{\frac{2}{L}}$$
       </div>
       <p>So the eigenfunctions are:</p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><msub><mi>ψ</mi><mi>n</mi></msub><mo>=</mo><msqrt><mfrac><mn>2</mn><mi>L</mi></mfrac></msqrt><mtext>sin</mtext><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>n</mi><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      <div class="math">
+        $$\psi_n=\sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right)$$
       </div>
       <p>Let's now have a look at the solutions we just derived!</p>
       
@@ -183,8 +198,8 @@
         <div id="plot1" class="graph">
         </div>
         <div style="min-height: 3.5rem;">
-          <div class="math-block">
-            <math display="block" style="display:block math;"><mrow><msub><mi>ψ</mi><mi>n</mi></msub><mo>=</mo><mi>A</mi><mspace width="0.1667em"></mspace><mtext>sin</mtext><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>n</mi><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow></math>        
+          <div class="math">
+            $$\psi_n=A\sin\left(\frac{n\pi x}{L}\right)$$
           </div>
         </div>
         <div class="slider-row">
@@ -215,8 +230,11 @@
       <div class="graph-container">
         <div id="plot2" class="graph"></div>
         <div id="expression-container" class="expression-container">
-            <div class="math-block" id="graph-expression">
+            <!-- <div class="math-block" id="graph-expression">
               <math display="block" style="display:block math;"><mrow><mi>ψ</mi><mo>=</mo><mn id="aTot"></mn><mrow><mo fence="true" form="prefix">(</mo><mrow id="expr1"><mn id="a1"></mn><mrow><mspace width="0.1667em"></mspace><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow><mo id="plus1">+</mo><mrow id="expr2"><mn id="a2"></mn><mrow><mspace width="0.1667em"></mspace><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mn>2</mn><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow><mo id="plus2">+</mo><mrow id="expr3"><mn id="a3"></mn><mrow><mspace width="0.1667em"></mspace><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mn>3</mn><mi>π</mi><mi>x</mi></mrow><mi>L</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+            </div> -->
+            <div class="math" id="graph-expression">
+              
             </div>
           <div id="invalid-expression" style="text-align: center;display: none;color: red; padding:10px 0;">Invalid expression</div>
         </div>
