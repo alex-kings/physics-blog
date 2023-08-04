@@ -10,6 +10,14 @@
 
       gtag('config', 'G-SEFVBN2ML1');
     </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/banana.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -72,36 +80,34 @@
         <a href="https://en.wikipedia.org/wiki/Hooke%27s_law">Hooke's law</a> 
         potential:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>V</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>k</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></math>
+      <div class="math">
+        $$V=\frac{1}{2}kx^2$$
       </div>
       <p>
-        With <math><mi>k</mi></math> the spring constant. Simple harmonic 
+        With \(k\) the spring constant. Simple harmonic 
         oscillators are often studied in classical physics through 
         pendulums and springs. The 
         quantum version of such an oscillator has the same potential, 
         usually rewritten as:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>V</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><msup><mi>x</mi><mn>2</mn></msup></mrow></math>
+      <div class="math">
+        $$V=\frac{1}{2}m\omega^2x^2$$
       </div>
       <p>
-        With angular frequency <math><mi>ω</mi></math>. One can use the 
+        With angular frequency \(\omega\). One can use the 
         <a href="../schrodinger-equation/">Schrödinger equation</a> 
-        to find the energy eigenvalues 
-        <math><msub><mi>E</mi><mi>n</mi></msub></math>
-        and eigenfunctions 
-        <math><msub><mi>ψ</mi><mi>n</mi></msub></math>
+        to find the energy eigenvalues \(E_n\)
+        and eigenfunctions \(\psi_n\)
         of this potential. The energy eigenvalues have a beautifully 
         simple formula:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><msub><mi>E</mi><mi>n</mi></msub><mo>=</mo><mi>ℏ</mi><mi>ω</mi><mrow><mo fence="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      <div class="math">
+        $$E_n=\hbar\omega\left(n+\frac{1}{2}\right)$$
       </div>
       <p>
         There is something remarkable about this: energy levels in the 
         quantum harmonic oscillator are <b>evenly spaced</b>, with a 
-        separation of <math><mrow><mi>ℏ</mi><mi>ω</mi></mrow></math>.      
+        separation of \(\hbar\omega\).      
       </p>
       <p>
         However, we're not so lucky with energy eigenfunctions, there's no 
@@ -109,31 +115,31 @@
         simple recurrence relation for them that uses 
         <b>ladder operators</b>:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>|</mi><msub><mi>ψ</mi><mi>n</mi></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><mfrac><msup><mi>A</mi><mi>n</mi></msup><msqrt><mrow><mi>n</mi><mo form="postfix" stretchy="false">!</mo></mrow></msqrt></mfrac><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo></mrow></math>
+      <div class="math">
+        $$|\psi_n\rangle=\frac{A^n}{\sqrt{n!}}|\psi_0\rangle$$
       </div>
       <p>
-        <math><mi>A</mi></math> is the so-called <b>raising operator</b>, 
+        \(A\) is the so-called <b>raising operator</b>, 
         with formula:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>A</mi><mo>=</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mrow><mo fence="true" form="prefix">(</mo><msqrt><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mi>ℏ</mi></mfrac></msqrt><mi>x</mi><mo>−</mo><msqrt><mfrac><mi>ℏ</mi><mrow><mi>m</mi><mi>ω</mi></mrow></mfrac></msqrt><mfrac><mrow><mi mathvariant="normal">d</mi></mrow><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi></mrow></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      <div class="math">
+        $$A=\frac{1}{\sqrt{2}}\left(\sqrt{\frac{m\omega}{\hbar}}x-\sqrt{\frac{\hbar}{m\omega}}\frac{\mathrm{d}}{\mathrm{d}x}\right)$$
       </div>
       <p>
         Starting from the ground-state wavefunction and using the 
         formulae above, we can calculate the first few energy eigenkets:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><msup><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mrow><mi>π</mi><mi>ℏ</mi></mrow></mfrac><mo fence="true" form="postfix">)</mo></mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></msup><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mi>m</mi><mi>ω</mi><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>ℏ</mi></mrow></mfrac></mrow></msup></mrow></math>
+      <div class="math">
+        $$|\psi_0\rangle=\left(\frac{m\omega}{\pi\hbar}\right)^{\frac{1}{4}}e^{-\frac{m\omega x^2}{2\hbar}}$$
       </div>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>|</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><msup><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mrow><mi>π</mi><mi>ℏ</mi></mrow></mfrac><mo fence="true" form="postfix">)</mo></mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></msup><msqrt><mfrac><mrow><mn>2</mn><mi>m</mi><mi>ω</mi></mrow><mi>ℏ</mi></mfrac></msqrt><mi>x</mi><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mi>m</mi><mi>ω</mi><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>ℏ</mi></mrow></mfrac></mrow></msup></mrow></math>
+      <div class="math">
+        $$|\psi_1\rangle=\left(\frac{m\omega}{\pi\hbar}\right)^{\frac{1}{4}}\sqrt{\frac{2m\omega}{\hbar}}xe^{-\frac{m\omega x^2}{2\hbar}}$$
       </div>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>|</mi><msub><mi>ψ</mi><mn>2</mn></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><msup><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mrow><mi>π</mi><mi>ℏ</mi></mrow></mfrac><mo fence="true" form="postfix">)</mo></mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></msup><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mn>2</mn><mi>m</mi><mi>ω</mi></mrow><mi>ℏ</mi></mfrac><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn><mo fence="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mi>m</mi><mi>ω</mi><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>ℏ</mi></mrow></mfrac></mrow></msup></mrow></math>
+      <div class="math">
+        $$|\psi_2\rangle=\left(\frac{m\omega}{\pi\hbar}\right)^{\frac{1}{4}}\frac{1}{\sqrt{2}}\left(\frac{2m\omega}{\hbar}x^2-1\right)e^{-\frac{m\omega x^2}{2\hbar}}$$
       </div>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>|</mi><msub><mi>ψ</mi><mn>3</mn></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><msup><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mrow><mi>π</mi><mi>ℏ</mi></mrow></mfrac><mo fence="true" form="postfix">)</mo></mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></msup><mfrac><mn>1</mn><msqrt><mn>3</mn></msqrt></mfrac><mrow><mo fence="true" form="prefix">(</mo><mn>2</mn><msup><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mi>ℏ</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><mfrac><mn>3</mn><mn>2</mn></mfrac></msup><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>3</mn><msqrt><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mi>ℏ</mi></mfrac></msqrt><mi>x</mi><mo fence="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mi>m</mi><mi>ω</mi><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>ℏ</mi></mrow></mfrac></mrow></msup></mrow></math>
+      <div class="math">
+        $$|\psi_3\rangle=\left(\frac{m\omega}{\pi\hbar}\right)^{\frac{1}{4}}\frac{1}{\sqrt{3}}\left(2\left(\frac{m\omega}{\hbar}\right)^{\frac{3}{2}}x^3-3\sqrt{\frac{m\omega}{\hbar}}x\right)e^{-\frac{m\omega x^2}{2\hbar}}$$
       </div>
       <p>
         It's important to note that every even eigenket is an even function, 
