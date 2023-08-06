@@ -37,10 +37,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=PT+Sans&display=swap" rel="stylesheet"> 
-    <script type="module" crossorigin src="/assets/post1-791e4cb9.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/about-87a2c365.js">
+    <script type="module" crossorigin src="/assets/post1-c0ccac02.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/about-d901c400.js">
     <link rel="modulepreload" crossorigin href="/assets/Graph1D-612edaa8.js">
-    <link rel="stylesheet" href="/assets/navbar-b8d1aea4.css">
+    <link rel="stylesheet" href="/assets/navbar-7f9d5153.css">
   </head>
   <body>
     <nav class="navbar">
@@ -81,7 +81,7 @@
       </p>
       <div class="wrap-center">
         <ol class="link-list">
-          <li><a class="anchor-link" href="#sub1">Specify the potential energy <math><mi>V</mi></math></a></li>
+          <li><a class="anchor-link" href="#sub1">Specify the potential energy \(V\)</li>
           <li><a class="anchor-link" href="#sub2">Apply the time-independant Schrödinger equation</a></li>
           <li><a class="anchor-link" href="#sub3">Use boundary conditions</a></li>
           <li><a class="anchor-link" href="#sub4">Normalize to find the solutions</a></li>
@@ -92,7 +92,7 @@
       <div class="anchor" id="sub1"></div>
       <p>
         For a particle trapped in an infinite square well, the potential 
-        energy <math><mi>V</mi></math> is:
+        energy \(V\) is:
       </p>
       <div class="math">
         $$V=\left\{
@@ -116,8 +116,8 @@
       <div class="anchor" id="sub2"></div>
       <p>
         The <b>time-independant Schrödinger equation</b> is the form of the 
-        Schrödinger equation that we will use here to find the <b>energy eigenvalues <math><msub><mi>E</mi><mi>n</mi></msub></math></b> and 
-        <b>energy eigenfunctions <math><msub><mi>ψ</mi><mi>n</mi></msub></math></b> of the trapped particle. We start with:
+        Schrödinger equation that we will use here to find the <b>energy eigenvalues \(E_n\)</b> and 
+        <b>energy eigenfunctions \(\psi_n\)</b> of the trapped particle. We start with:
       </p>
       <div class="math">
         $$-\frac{\hbar^2}{2m}\frac{\partial^2 \psi_n}{\partial x^2}+V\psi_n=E_n\psi_n$$
@@ -125,7 +125,7 @@
       <p>
         And insert the potential energy \(V\)
         that we previously specified. 
-        We get the following, for the region inside the well <math><mrow><mn>0</mn><mo>&le;</mo></mrow><mrow><mi>x</mi><mo>&le;</mo></mrow><mrow><mi>L</mi></mrow></math>:
+        We get the following, for the region inside the well \(0\le x\le L\):
       </p>
       <div class="math">
         $$-\frac{\hbar^2}{2m}\frac{\partial^2 \psi_n}{\partial x^2}=E_n\psi_n$$
@@ -147,7 +147,7 @@
       <div class="anchor" id="sub3"></div>
       <p>
         Boundary conditions are the values that we expect for wavefunctions at the edges 
-        of the well. Because the potential is infinite at <math><mrow><mi>x</mi><mo>=</mo></mrow><mrow><mn>0</mn></mrow></math> and <math><mrow><mi>x</mi><mo>=</mo></mrow><mrow><mi>a</mi></mrow></math>, the particle 
+        of the well. Because the potential is infinite at \(x=0\) and \(x=L\), the particle 
         can not possibly be found at the well's edges. We get:
       </p>
       <div class="math">
@@ -170,7 +170,7 @@
       <div class="anchor" id="sub4"></div>
       <p>
         Normalization is a recurring technique in quantum mechanics to find the coefficients 
-        of eigenfunctions. As we know, <math><mrow><mi>|</mi><mi>ψ</mi><msup><mi>|</mi><mn>2</mn></msup></mrow></math> is a probability density function. This 
+        of eigenfunctions. As we know, \(|\psi|^2\) is a probability density function. This 
         means that integrating over all values of x must equal to 1.
       </p>
       <div class="math">
@@ -228,7 +228,7 @@
       <div class="graph-container">
         <div id="plot2" class="graph"></div>
         <div class="math" id="graph-expression"></div>
-        <div id="invalid-expression" style="text-align: center;display: none;color: red; margin:1.7rem 0;">
+        <div id="invalid-expression" class="invalid-expression">
           Invalid expression
         </div>
         <div class="slider-container">

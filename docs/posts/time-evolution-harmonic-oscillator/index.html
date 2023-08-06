@@ -10,6 +10,14 @@
 
       gtag('config', 'G-SEFVBN2ML1');
     </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/banana.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,10 +36,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=PT+Sans&display=swap" rel="stylesheet"> 
-    <script type="module" crossorigin src="/assets/post4-8a1c06c9.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/about-87a2c365.js">
+    <script type="module" crossorigin src="/assets/post4-20ffb123.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/about-d901c400.js">
     <link rel="modulepreload" crossorigin href="/assets/Graph1D-612edaa8.js">
-    <link rel="stylesheet" href="/assets/navbar-b8d1aea4.css">
+    <link rel="stylesheet" href="/assets/navbar-7f9d5153.css">
   </head>
   <body>
     <nav class="navbar">
@@ -76,36 +84,34 @@
         <a href="https://en.wikipedia.org/wiki/Hooke%27s_law">Hooke's law</a> 
         potential:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>V</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>k</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></math>
+      <div class="math">
+        $$V=\frac{1}{2}kx^2$$
       </div>
       <p>
-        With <math><mi>k</mi></math> the spring constant. Simple harmonic 
+        With \(k\) the spring constant. Simple harmonic 
         oscillators are often studied in classical physics through 
         pendulums and springs. The 
         quantum version of such an oscillator has the same potential, 
         usually rewritten as:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>V</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><msup><mi>x</mi><mn>2</mn></msup></mrow></math>
+      <div class="math">
+        $$V=\frac{1}{2}m\omega^2x^2$$
       </div>
       <p>
-        With angular frequency <math><mi>ω</mi></math>. One can use the 
+        With angular frequency \(\omega\). One can use the 
         <a href="../schrodinger-equation/">Schrödinger equation</a> 
-        to find the energy eigenvalues 
-        <math><msub><mi>E</mi><mi>n</mi></msub></math>
-        and eigenfunctions 
-        <math><msub><mi>ψ</mi><mi>n</mi></msub></math>
+        to find the energy eigenvalues \(E_n\)
+        and eigenfunctions \(\psi_n\)
         of this potential. The energy eigenvalues have a beautifully 
         simple formula:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><msub><mi>E</mi><mi>n</mi></msub><mo>=</mo><mi>ℏ</mi><mi>ω</mi><mrow><mo fence="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      <div class="math">
+        $$E_n=\hbar\omega\left(n+\frac{1}{2}\right)$$
       </div>
       <p>
         There is something remarkable about this: energy levels in the 
         quantum harmonic oscillator are <b>evenly spaced</b>, with a 
-        separation of <math><mrow><mi>ℏ</mi><mi>ω</mi></mrow></math>.      
+        separation of \(\hbar\omega\).      
       </p>
       <p>
         However, we're not so lucky with energy eigenfunctions, there's no 
@@ -113,31 +119,31 @@
         simple recurrence relation for them that uses 
         <b>ladder operators</b>:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>|</mi><msub><mi>ψ</mi><mi>n</mi></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><mfrac><msup><mi>A</mi><mi>n</mi></msup><msqrt><mrow><mi>n</mi><mo form="postfix" stretchy="false">!</mo></mrow></msqrt></mfrac><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo></mrow></math>
+      <div class="math">
+        $$|\psi_n\rangle=\frac{A^n}{\sqrt{n!}}|\psi_0\rangle$$
       </div>
       <p>
-        <math><mi>A</mi></math> is the so-called <b>raising operator</b>, 
+        \(A\) is the so-called <b>raising operator</b>, 
         with formula:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>A</mi><mo>=</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mrow><mo fence="true" form="prefix">(</mo><msqrt><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mi>ℏ</mi></mfrac></msqrt><mi>x</mi><mo>−</mo><msqrt><mfrac><mi>ℏ</mi><mrow><mi>m</mi><mi>ω</mi></mrow></mfrac></msqrt><mfrac><mrow><mi mathvariant="normal">d</mi></mrow><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi></mrow></mfrac><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      <div class="math">
+        $$A=\frac{1}{\sqrt{2}}\left(\sqrt{\frac{m\omega}{\hbar}}x-\sqrt{\frac{\hbar}{m\omega}}\frac{\mathrm{d}}{\mathrm{d}x}\right)$$
       </div>
       <p>
         Starting from the ground-state wavefunction and using the 
         formulae above, we can calculate the first few energy eigenkets:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><msup><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mrow><mi>π</mi><mi>ℏ</mi></mrow></mfrac><mo fence="true" form="postfix">)</mo></mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></msup><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mi>m</mi><mi>ω</mi><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>ℏ</mi></mrow></mfrac></mrow></msup></mrow></math>
+      <div class="math">
+        $$|\psi_0\rangle=\left(\frac{m\omega}{\pi\hbar}\right)^{\frac{1}{4}}e^{-\frac{m\omega x^2}{2\hbar}}$$
       </div>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>|</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><msup><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mrow><mi>π</mi><mi>ℏ</mi></mrow></mfrac><mo fence="true" form="postfix">)</mo></mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></msup><msqrt><mfrac><mrow><mn>2</mn><mi>m</mi><mi>ω</mi></mrow><mi>ℏ</mi></mfrac></msqrt><mi>x</mi><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mi>m</mi><mi>ω</mi><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>ℏ</mi></mrow></mfrac></mrow></msup></mrow></math>
+      <div class="math">
+        $$|\psi_1\rangle=\left(\frac{m\omega}{\pi\hbar}\right)^{\frac{1}{4}}\sqrt{\frac{2m\omega}{\hbar}}xe^{-\frac{m\omega x^2}{2\hbar}}$$
       </div>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>|</mi><msub><mi>ψ</mi><mn>2</mn></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><msup><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mrow><mi>π</mi><mi>ℏ</mi></mrow></mfrac><mo fence="true" form="postfix">)</mo></mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></msup><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mn>2</mn><mi>m</mi><mi>ω</mi></mrow><mi>ℏ</mi></mfrac><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn><mo fence="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mi>m</mi><mi>ω</mi><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>ℏ</mi></mrow></mfrac></mrow></msup></mrow></math>
+      <div class="math">
+        $$|\psi_2\rangle=\left(\frac{m\omega}{\pi\hbar}\right)^{\frac{1}{4}}\frac{1}{\sqrt{2}}\left(\frac{2m\omega}{\hbar}x^2-1\right)e^{-\frac{m\omega x^2}{2\hbar}}$$
       </div>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>|</mi><msub><mi>ψ</mi><mn>3</mn></msub><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><msup><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mrow><mi>π</mi><mi>ℏ</mi></mrow></mfrac><mo fence="true" form="postfix">)</mo></mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></msup><mfrac><mn>1</mn><msqrt><mn>3</mn></msqrt></mfrac><mrow><mo fence="true" form="prefix">(</mo><mn>2</mn><msup><mrow><mo fence="true" form="prefix">(</mo><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mi>ℏ</mi></mfrac><mo fence="true" form="postfix">)</mo></mrow><mfrac><mn>3</mn><mn>2</mn></mfrac></msup><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>3</mn><msqrt><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mi>ℏ</mi></mfrac></msqrt><mi>x</mi><mo fence="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mi>m</mi><mi>ω</mi><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>ℏ</mi></mrow></mfrac></mrow></msup></mrow></math>
+      <div class="math">
+        $$|\psi_3\rangle=\left(\frac{m\omega}{\pi\hbar}\right)^{\frac{1}{4}}\frac{1}{\sqrt{3}}\left(2\left(\frac{m\omega}{\hbar}\right)^{\frac{3}{2}}x^3-3\sqrt{\frac{m\omega}{\hbar}}x\right)e^{-\frac{m\omega x^2}{2\hbar}}$$
       </div>
       <p>
         It's important to note that every even eigenket is an even function, 
@@ -161,8 +167,8 @@
         As always, probability density functions that describe base 
         states are independant of time. But it doesn't mean that 
         energy eigenfunctions themselves don't vary with time! Their factor of 
-        <math><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mi>n</mi></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup></math>
-         makes them complex functions, with real and complex parts that 
+        \(e^{-i\frac{E_n}{\hbar}t}\) 
+        makes them complex functions, with real and complex parts that 
         oscillate with time. The following graph shows what it looks like:
       </p>
       
@@ -177,22 +183,22 @@
       </div>
       <p>
         In the graph above, 
-        <math><msub><mi>x</mi><mn>0</mn></msub></math> 
+        \(x_0\) 
         stands for the <b>natural length</b> 
         of the harmonic oscillator, with formula:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><msqrt><mfrac><mrow><mi>m</mi><mi>ω</mi></mrow><mi>ℏ</mi></mfrac></msqrt></mrow></math>
+      <div class="math">
+        $$x_0=\sqrt{\frac{m\omega}{\hbar}}$$
       </div>
       <p>
         You can see that the higher the excited state, the 
         faster the oscillation! This is 
         due to the fact that energy eigenvalues 
-        <math><msub><mi>E</mi><mi>n</mi></msub></math>
-        grow linearly with <math><mi>n</mi></math>. However, 
+        \(E_n\) 
+        grow linearly with \(n\). However, 
         in comparison, eigenkets in the infinitely deep square well 
         oscillate much faster, due the factor of 
-        <math><msup><mi>n</mi><mn>2</mn></msup></math> 
+        \(n^2\) 
         in the energy eigenvalues of the well. You can compare the 
         oscillation of eigenkets in the harmonic oscillator with 
         <a href="../time-dependance-well-1d/">the time-dependance of eigenkets for a particle in a box</a>.    
@@ -206,41 +212,37 @@
         Superposition states are a <b>normalized sum of eigenkets</b>, with 
         potentially different coefficients for each eigenket. For example, 
         a simple superposition state 
-        <math><mrow><mi>|</mi><mi>ψ</mi><mo form="postfix" stretchy="false">⟩</mo></mrow></math>
+        \(|\psi\rangle\)
         could be made with an equal weight of 
-        <math><mrow><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo></mrow></math>
-        and 
-        <math><mrow><mi>|</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo form="postfix" stretchy="false">⟩</mo></mrow></math>:
+        \(|\psi_0\rangle\) and \(|\psi_1\rangle\)
       </p>
-      
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>|</mi><mi>ψ</mi><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mrow><mo fence="true" form="prefix">(</mo><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo><mo>+</mo><mi>|</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo form="postfix" stretchy="false">⟩</mo><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      <div class="math">
+        $$|\psi\rangle=\frac{1}{\sqrt{2}}\left(|\psi_0\rangle+|\psi_1\rangle\right)$$
       </div>
       <p>
         To find the time-dependance of superposition states, just 
         add to each eigenket a factor of 
-        <math><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mi>n</mi></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup></math>.
-        For our superposition state 
-        <math><mrow><mi>|</mi><mi>ψ</mi><mo form="postfix" stretchy="false">⟩</mo></mrow></math>
+        \(e^{-i\frac{E_n}{\hbar}t}\).
+        For our superposition state \(\psi\)
         in a harmonic oscillator, this results in:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>|</mi><mi>ψ</mi><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mrow><mo fence="true" form="prefix">(</mo><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mn>0</mn></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup><mo>+</mo><mi>|</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo form="postfix" stretchy="false">⟩</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mn>1</mn></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      <div class="math">
+        $$|\psi(t)\rangle=\frac{1}{\sqrt{2}}\left(|\psi_0\rangle e^{-i\frac{E_0}{\hbar}t}+|\psi_1\rangle e^{-i\frac{E_1}{\hbar}t}\right)$$
       </div>
       <p>
         Using this, we can obtain the time-dependance of the 
         probability density function that represents that state:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><msup><mi>ψ</mi><mo>*</mo></msup><mi>ψ</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo fence="true" form="prefix">(</mo><msubsup><mi>ψ</mi><mn>0</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>ψ</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msub><mi>ψ</mi><mn>0</mn></msub><msub><mi>ψ</mi><mn>1</mn></msub><mrow><mo fence="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mfrac><mi>t</mi><mi>ℏ</mi></mfrac><mrow><mo fence="true" form="prefix">(</mo><msub><mi>E</mi><mn>1</mn></msub><mo>−</mo><msub><mi>E</mi><mn>0</mn></msub><mo fence="true" form="postfix">)</mo></mrow></mrow></msup><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><mi>t</mi><mi>ℏ</mi></mfrac><mrow><mo fence="true" form="prefix">(</mo><msub><mi>E</mi><mn>1</mn></msub><mo>−</mo><msub><mi>E</mi><mn>0</mn></msub><mo fence="true" form="postfix">)</mo></mrow></mrow></msup><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      <div class="math">
+        $$\psi^*\psi=\frac{1}{2}\left(\psi_0^2+\psi_1^2+\psi_0\psi_1\left(e^{i\frac{t}{\hbar}\left(E_1-E_0\right)}+e^{-i\frac{t}{\hbar}\left(E_1-E_0\right)}\right)\right)$$
       </div>
       <p>
         Where we can replace the ugly coefficient on the right using 
         the <a href="https://proofwiki.org/wiki/Cosine_Exponential_Formulation">exponential form of cosine</a> 
         to get:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><msup><mi>ψ</mi><mo>*</mo></msup><mi>ψ</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo fence="true" form="prefix">(</mo><msubsup><mi>ψ</mi><mn>0</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>ψ</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><mn>2</mn><msub><mi>ψ</mi><mn>0</mn></msub><msub><mi>ψ</mi><mn>1</mn></msub><mrow><mi>cos</mi><mo>⁡</mo></mrow><mrow><mo fence="true" form="prefix">(</mo><mfrac><mi>t</mi><mi>ℏ</mi></mfrac><mrow><mo fence="true" form="prefix">(</mo><msub><mi>E</mi><mn>1</mn></msub><mo>−</mo><msub><mi>E</mi><mn>0</mn></msub><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      <div class="math">
+        $$\psi^*\psi=\frac{1}{2}\left(\psi_0^2+\psi_1^2+2\psi_0\psi_1\cos\left(\frac{t}{\hbar}\left(E_1-E_0\right)\right)\right)$$
       </div>
       <p>
         A much nicer equation! This shows that time-dependant 
@@ -254,12 +256,13 @@
 
       <div class="graph-container">
         <div id="plot2" class="graph"></div>
-        <div id="expression-container" class="expression-container">          
+        <!-- <div id="expression-container" class="expression-container">          
           <div class="math-block" id="graph-expression">
             <math display="block" style="display:block math;"><mrow><msup><mi>ψ</mi><mo>*</mo></msup><mi>ψ</mi><mo>=</mo><msup><mrow><mo fence="true" form="prefix">|</mo><mn id="aTot"></mn><mrow><mo fence="true" form="prefix">(</mo><mrow id="expr1"><mn id="a1"></mn><msub><mi>ψ</mi><mn>0</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo></mrow><mo id="plus1">+</mo><mrow id="expr2"><mn id="a2"></mn><msub><mi>ψ</mi><mn>1</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo></mrow><mo id="plus2">+</mo><mrow id="expr3"><mn id="a3"></mn><msub><mi>ψ</mi><mn>2</mn></msub><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">|</mo></mrow><mn>2</mn></msup></mrow></math>
           </div>
-          <div id="invalid-expression" style="text-align: center;display: none;color: red; padding:10px 0;">Invalid expression</div>
-        </div>
+        </div> -->
+        <div class="math" id="graph-expression"></div>
+        <div id="invalid-expression" class="invalid-expression">Invalid expression</div>
         
 
         <div class="slider-container-line">
