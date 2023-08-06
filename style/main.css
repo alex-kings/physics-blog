@@ -1,9 +1,4 @@
 /* Styling for standard posts */
-@font-face {
-  font-family: "myfont";
-  src: url("/fonts/STIXTwoMath-Regular.woff2") format('woff');
-  font-display: swap;
-}
 *{
   --color-main: rgb(0, 0, 138);
   --color-secondary: rgb(0,0,200);
@@ -34,13 +29,6 @@ a:hover {
 	margin:4rem auto;
 	padding: 0 1rem;
 	max-width: 600px;
-}
-math{
-  font-family: 'myfont', sans-serif;}
-.math-block {
-  font-size: 1.4em;
-  padding-top:0.6rem;
-  padding-bottom:0.3rem;
 }
 .illustration {
   width:100%;
