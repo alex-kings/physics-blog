@@ -64,21 +64,6 @@ graph2.redraw();
 const graphExpr = document.getElementById("graph-expression");
 const invalidExpr = document.getElementById("invalid-expression");
 
-// Set the normalizes amplitude
-function setAtot() {
-    if(sliderA1.value === "0" && sliderA2.value === "0" && sliderA3.value === "0"){
-        invalidExpr.style.display = "block";
-        graphExpr.style.display = "none";
-    }
-    else {
-        invalidExpr.style.display = "none";
-        graphExpr.style.display = "block";
-    }
-    let s = Math.sqrt(parseFloat(sliderA1.value)**2 + parseFloat(sliderA2.value)**2 + parseFloat(sliderA3.value)**2);
-    s = 1/s;
-    aTot.innerHTML = Number(s).toFixed(2);
-}
-
 // Inputs
 sliderA1.oninput = ()=>{ 
     graph2.redraw();
