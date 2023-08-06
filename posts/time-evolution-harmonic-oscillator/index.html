@@ -218,28 +218,27 @@
       <p>
         To find the time-dependance of superposition states, just 
         add to each eigenket a factor of 
-        <math><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mi>n</mi></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup></math>.
-        For our superposition state 
-        <math><mrow><mi>|</mi><mi>ψ</mi><mo form="postfix" stretchy="false">⟩</mo></mrow></math>
+        \(e^{-i\frac{E_n}{\hbar}t}\).
+        For our superposition state \(\psi\)
         in a harmonic oscillator, this results in:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><mi>|</mi><mi>ψ</mi><mo form="prefix" stretchy="false">(</mo><mi>t</mi><mo form="postfix" stretchy="false">)</mo><mo form="postfix" stretchy="false">⟩</mo><mo>=</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mrow><mo fence="true" form="prefix">(</mo><mi>|</mi><msub><mi>ψ</mi><mn>0</mn></msub><mo form="postfix" stretchy="false">⟩</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mn>0</mn></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup><mo>+</mo><mi>|</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo form="postfix" stretchy="false">⟩</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><msub><mi>E</mi><mn>1</mn></msub><mi>ℏ</mi></mfrac><mi>t</mi></mrow></msup><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      <div class="math">
+        $$|\psi(t)\rangle=\frac{1}{\sqrt{2}}\left(|\psi_0\rangle e^{-i\frac{E_0}{\hbar}t}+|\psi_1\rangle e^{-i\frac{E_1}{\hbar}t}\right)$$
       </div>
       <p>
         Using this, we can obtain the time-dependance of the 
         probability density function that represents that state:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><msup><mi>ψ</mi><mo>*</mo></msup><mi>ψ</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo fence="true" form="prefix">(</mo><msubsup><mi>ψ</mi><mn>0</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>ψ</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msub><mi>ψ</mi><mn>0</mn></msub><msub><mi>ψ</mi><mn>1</mn></msub><mrow><mo fence="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mfrac><mi>t</mi><mi>ℏ</mi></mfrac><mrow><mo fence="true" form="prefix">(</mo><msub><mi>E</mi><mn>1</mn></msub><mo>−</mo><msub><mi>E</mi><mn>0</mn></msub><mo fence="true" form="postfix">)</mo></mrow></mrow></msup><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><mi>t</mi><mi>ℏ</mi></mfrac><mrow><mo fence="true" form="prefix">(</mo><msub><mi>E</mi><mn>1</mn></msub><mo>−</mo><msub><mi>E</mi><mn>0</mn></msub><mo fence="true" form="postfix">)</mo></mrow></mrow></msup><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      <div class="math">
+        $$\psi^*\psi=\frac{1}{2}\left(\psi_0^2+\psi_1^2+\psi_0\psi_1\left(e^{i\frac{t}{\hbar}\left(E_1-E_0\right)}+e^{-i\frac{t}{\hbar}\left(E_1-E_0\right)}\right)\right)$$
       </div>
       <p>
         Where we can replace the ugly coefficient on the right using 
         the <a href="https://proofwiki.org/wiki/Cosine_Exponential_Formulation">exponential form of cosine</a> 
         to get:
       </p>
-      <div class="math-block">
-        <math display="block" style="display:block math;"><mrow><msup><mi>ψ</mi><mo>*</mo></msup><mi>ψ</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo fence="true" form="prefix">(</mo><msubsup><mi>ψ</mi><mn>0</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>ψ</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><mn>2</mn><msub><mi>ψ</mi><mn>0</mn></msub><msub><mi>ψ</mi><mn>1</mn></msub><mrow><mi>cos</mi><mo>⁡</mo></mrow><mrow><mo fence="true" form="prefix">(</mo><mfrac><mi>t</mi><mi>ℏ</mi></mfrac><mrow><mo fence="true" form="prefix">(</mo><msub><mi>E</mi><mn>1</mn></msub><mo>−</mo><msub><mi>E</mi><mn>0</mn></msub><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow><mo fence="true" form="postfix">)</mo></mrow></mrow></math>
+      <div class="math">
+        $$\psi^*\psi=\frac{1}{2}\left(\psi_0^2+\psi_1^2+2\psi_0\psi_1\cos\left(\frac{t}{\hbar}\left(E_1-E_0\right)\right)\right)$$
       </div>
       <p>
         A much nicer equation! This shows that time-dependant 
