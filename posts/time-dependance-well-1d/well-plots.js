@@ -169,7 +169,7 @@ function drawExpression() {
         invalidExpr.style.display = "none";
         graphExpr.style.display = "block";
     }
-    let s = 1/(Math.sqrt(amp1**2 + amp2**2 + amp3**2));
+    let s = 1/(amp1**2 + amp2**2 + amp3**2);
     let aTot = Number(s).toFixed(2);
 
     let plus1 = "+";
@@ -225,7 +225,8 @@ function drawExpression() {
         else a3 = Math.abs(amp3);
     }
     // Render expression
-    katex.render(`\\psi=${aTot}\\left(${show1?a1+"\\sin\\left(\\frac{\\pi x}{L}\\right)":""}${plus1}${show2?a2+"\\sin\\left(\\frac{2\\pi x}{L}\\right)":""}${plus2}${show3?a3+"\\sin\\left(\\frac{3\\pi x}{L}\\right)":""}\\right)`,
+    // katex.render(`\\psi=${aTot}\\left(${show1?a1+"\\sin\\left(\\frac{\\pi x}{L}\\right)":""}${plus1}${show2?a2+"\\sin\\left(\\frac{2\\pi x}{L}\\right)":""}${plus2}${show3?a3+"\\sin\\left(\\frac{3\\pi x}{L}\\right)":""}\\right)`,
+    katex.render(`|\\psi|^2=${aTot}\\left|${show1?a1+"\\sin\\left(\\frac{\\pi x}{L}\\right)":""}${plus1}${show2?a2+"\\sin\\left(\\frac{2\\pi x}{L}\\right)":""}${plus2}${show3?a3+"\\sin\\left(\\frac{3\\pi x}{L}\\right)":""}\\right|^2`,
     document.getElementById("graph-expression"),{
         throwOnError:false,
         displayMode:true
