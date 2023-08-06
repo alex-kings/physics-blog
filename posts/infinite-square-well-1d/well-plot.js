@@ -165,7 +165,7 @@ function drawExpression() {
         else a3 = Math.abs(amp3);
     }
     // Render expression
-    katex.render(`\\psi=${aTot}\\left(${show1?`${a1}\\sin\\left(\\frac{\\pi x}{L}\\right)`:""}${plus1}${show2?`${a2}\\sin\\left(\\frac{2\\pi x}{L}\\right)`:""}${plus2}${show3?`${a3}\\sin\\left(\\frac{3\\pi x}{L}\\right)`:""}\\right)`,
+    katex.render(`\\psi=${aTot}\\left(${show1?a1+"\\sin\\left(\\frac{\\pi x}{L}\\right)":""}${plus1}${show2?a2+"\\sin\\left(\\frac{2\\pi x}{L}\\right)":""}${plus2}${show3?a3+"\\sin\\left(\\frac{3\\pi x}{L}\\right)":""}\\right)`,
     document.getElementById("graph-expression"),{
         throwOnError:false,
         displayMode:true

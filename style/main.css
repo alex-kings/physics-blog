@@ -147,6 +147,12 @@ p {
   overflow: auto hidden;
   font-size: 1.1em;
 }
+.invalid-expression {
+  text-align: center;
+  display: none;
+  color: red;
+  margin:1.7rem 0;
+}
 
 @media screen and (max-width:700px){
   .math-block {
