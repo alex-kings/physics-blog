@@ -99,9 +99,9 @@ function drawExpression() {
 
     let plus1 = "+";
     let plus2 = "+";
-    let a1 = amp1;
-    let a2 = amp2;
-    let a3 = amp3;
+    let a1;
+    let a2;
+    let a3;
     let show1 = true;
     let show2 = true;
     let show3 = true;

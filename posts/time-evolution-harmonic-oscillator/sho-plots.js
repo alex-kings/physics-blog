@@ -90,104 +90,100 @@ graph2.animate();
 /**
  * Change expression.
  */
-const aTot = document.getElementById("aTot");
-const a1 = document.getElementById("a1");
-const a2 = document.getElementById("a2");
-const a3 = document.getElementById("a3");
-const expr1 = document.getElementById("expr1")
-const expr2 = document.getElementById("expr2")
-const expr3 = document.getElementById("expr3")
-const plus1 = document.getElementById("plus1");
-const plus2 = document.getElementById("plus2");
 const graphExpr = document.getElementById("graph-expression");
 const invalidExpr = document.getElementById("invalid-expression");
 
-// Set the normalizes amplitude
-function setAtot() {
+// Draw the math expression
+function drawExpression() {
+    // Rest
+    const amp1 = parseFloat(sliderA1.value);
+    const amp2 = parseFloat(sliderA2.value);
+    const amp3 = parseFloat(sliderA3.value);
+
+    // Atot
     if(sliderA1.value === "0" && sliderA2.value === "0" && sliderA3.value === "0"){
         invalidExpr.style.display = "block";
         graphExpr.style.display = "none";
+        return;
     }
     else {
         invalidExpr.style.display = "none";
         graphExpr.style.display = "block";
     }
-    let s = Math.sqrt(parseFloat(sliderA1.value)**2 + parseFloat(sliderA2.value)**2 + parseFloat(sliderA3.value)**2);
-    s = 1/s;
-    aTot.innerHTML = Number(s).toFixed(2);
-}
+    let s = 1/(amp1**2 + amp2**2 + amp3**2);
+    let aTot = Number(s).toFixed(2);
 
-// Display the amplitude labels
-function displayLabels() {
-    const amp1 = parseFloat(sliderA1.value);
-    const amp2 = parseFloat(sliderA2.value);
-    const amp3 = parseFloat(sliderA3.value);
-
+    let plus1 = "+";
+    let plus2 = "+";
+    let a1;
+    let a2;
+    let a3;
+    let show1 = true;
+    let show2 = true;
+    let show3 = true;
     // Display expressions
-    if(amp1 === 0) expr1.style.display = "none";
-    else expr1.style.display = "block";
-    if(amp2 === 0) expr2.style.display = "none";
-    else expr2.style.display = "block";
-    if(amp3 === 0) expr3.style.display = "none";
-    else expr3.style.display = "block";
+    if(amp1===0)show1=false;
+    if(amp2==-0)show2=false;
+    if(amp3===0)show3=false;
 
     // Display sign of "plus" signs
-    if(amp2 === 0) plus1.innerHTML = (amp3 < 0 ? "−" : "+");
-    else plus1.innerHTML = (amp2 < 0 ? "−" : "+");
-    plus2.innerHTML = (amp3 < 0 ? "−" : "+");
+    if(amp2 === 0) {
+        if(amp3 < 0) plus1 = "-";
+    } 
+    else if(amp2 < 0) plus1 = "-";
+    if(amp3 < 0) plus2 = "-";
 
     // Display "plus" signs
-    if(amp1 === 0) plus1.style.display = "none";
-    else plus1.style.display = "block";
-    if(amp2 === 0) plus2.style.display = "none";
-    else plus2.style.display = "block";
+    if(amp1 === 0) plus1 = "";
+    if(amp2 === 0) plus2 = "";
     if(amp3 === 0) {
-        if(amp2 === 0) plus1.style.display = "none";
-        else plus2.style.display = "none";
+        if (amp2 === 0) plus1 = ""; 
+        else plus2 = "";
     }
-
     // Display amplitudes
     // a1
-    if(amp1 === 1) a1.innerHTML = "";
-    else if(amp1 === -1) a1.innerHTML = "-";
-    else a1.innerHTML = amp1;
+    if(amp1 === 1) a1 = "";
+    else if(amp1 === -1) a1 = "-";
+    else a1 = amp1;
     // a2
     if(amp1 === 0) {
-        if(amp2 === 1) a2.innerHTML = "";
-        else if (amp2 === -1) a2.innerHTML = "-";
-        else a2.innerHTML = amp2;
+        if(amp2 === 1) a2 = "";
+        else if(amp2 === -1) a2 = "-";
+        else a2 = amp2;
     }
     else {
-        if(amp2 === 1 || amp2 === -1) a2.innerHTML = ""; 
-        else a2.innerHTML = Math.abs(amp2);
+        if(amp2 === 1 || amp2 === -1) a2 = "";
+        else a2 = Math.abs(amp2);
     }
     // a3
     if(amp2 === 0 && amp1 === 0) {
-        if(amp3 === 1) a3.innerHTML = "";
-        else if(amp3 === -1) a3.innerHTML = "-";
-        else a3.innerHTML = amp3;
+        if(amp3 === 1) a3 = "";
+        else if(amp3 === -1) a3 = "-";
+        else a3 = amp3;
     }
     else {
-        if(amp3 === 1 || amp3 === -1) a3.innerHTML = "";
-        else a3.innerHTML = Math.abs(amp3);
+        if(amp3 === 1 || amp3 === -1) a3 = "";
+        else a3 = Math.abs(amp3);
     }
+    // Render expression
+    katex.render(`|\\psi|^2=${aTot}\\left|${show1?a1+"\\psi_0(t)":""}${plus1}${show2?a2+"\\psi_1(t)":""}${plus2}${show3?a3+"\\psi_2(t)":""}\\right|^2`,
+    document.getElementById("graph-expression"),{
+        throwOnError:false,
+        displayMode:true
+    })
 }
-
-displayLabels();
-setAtot();
+// Initialise
+drawExpression();
 
 // Initialise formula
 sliderA1.oninput = ()=>{ 
-    displayLabels();
-    setAtot();
+    drawExpression();
 }
 sliderA2.oninput = ()=>{ 
-    displayLabels();
-    setAtot();
+    drawExpression();
 }
 sliderA3.oninput = ()=>{ 
-    displayLabels();
-    setAtot();
+    drawExpression();
 }
 
 document.getElementById("btnT0").onclick=()=>{
