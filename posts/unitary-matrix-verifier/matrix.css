@@ -1,0 +1,12 @@
+.matrix {
+    display: flex;
+    flex-direction: column;
+}
+.matrix-row {
+    display: flex;
+}
+.matrix-cell {
+    padding: .5rem;
+    width: 5rem;
+    font-size: 1.2rem;
+}

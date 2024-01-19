@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEFVBN2ML1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SEFVBN2ML1');
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/banana.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unitary Matrix Verifier</title>
+
+    <meta name="description" content="Check whether your matrix is unitary.">
+    <meta property="og:title" content="Unitary Matrix Verifier">
+    <meta property="og:description" content="Check whether your matrix is unitary.">
+    <meta property="og:image" content="https://physicsmonkey.com/posts/time-evolution-harmonic-oscillator/harmonic-oscillator-wavefunctions.webp">
+    <meta property="og:url" content="https://physicsmonkey.com/posts/time-evolution-harmonic-oscillator/">
+    <link rel="canonical" href="https://physicsmonkey.com/posts/unitary-matrix-verifier/">
+
+    <link href="../../style/main.css" type="text/css" rel="stylesheet">
+    <link href="../../style/navbar.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="./matrix.css" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=PT+Sans&display=swap" rel="stylesheet"> 
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-main">
+        <a href="../../">
+          <img alt="PhysicsMonkey.com logo" height="48" width="48" class="logo" src="/banana.svg">
+        </a>
+        <ul class="nav-ul">
+          <li class="nav-li"><a class="nav-a" href="../../">Home</a></li>
+          <li class="nav-li"><a class="nav-a" href="../../about/">About</a></li>
+          <li class="nav-li"><a class="nav-a" href="../../contact/">Contact</a></li>
+        </ul>
+      </div>
+      <a href="../../" class="nav-a" id="website-name-label">
+        PhysicsMonkey.com
+      </a>
+    </nav>
+
+    <div class="main">
+			<h1>Unitary Matrix Verifier</h1>
+      <p class="post-date">Posted on <time datetime="2024-01-19">19/01/2024</time></p>
+			<p>
+        A matrix \(U\) is <b>unitary</b> if its inverse is equal to its conjugate transpose, i.e. if 
+        \(U^{\dagger}U=UU^{\dagger}=I\).
+      </p>
+
+      <h2>Check if your matrix is unitary</h2>
+      <div class="matrix-container">
+        <div class="matrix">
+          <div class="matrix-row">
+            <input class="matrix-cell" id="11" type="text">
+            <input class="matrix-cell" id="12" type="text">
+            <input class="matrix-cell" id="13" type="text">
+          </div>
+          <div class="matrix-row">
+            <input class="matrix-cell" id="21" type="text">
+            <input class="matrix-cell" id="22" type="text">
+            <input class="matrix-cell" id="23" type="text">
+          </div>
+          <div class="matrix-row">
+            <input class="matrix-cell" id="31" type="text">
+            <input class="matrix-cell" id="32" type="text">
+            <input class="matrix-cell" id="33" type="text">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script type="module" src="unitary-matrix.js" defer></script>
+  </body>
+</html>
