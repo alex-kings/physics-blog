@@ -1,0 +1,13 @@
+.matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.matrix > input {
+    min-width: 100%;
+}
+.matrix-cell {
+    padding: .5rem;
+    width: 5rem;
+    font-size: 1.2rem;
+}

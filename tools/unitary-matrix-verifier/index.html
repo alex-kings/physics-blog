@@ -57,32 +57,28 @@
 
     <div class="main">
 			<h1>Unitary Matrix Verifier</h1>
-      <p class="post-date">Posted on <time datetime="2024-01-19">19/01/2024</time></p>
 			<p>
-        A matrix \(U\) is <b>unitary</b> if its inverse is equal to its conjugate transpose, i.e. if 
+        A matrix \(U\) is <b>unitary</b> if its inverse is equal to its conjugate transpose:  
         \(U^{\dagger}U=UU^{\dagger}=I\).
       </p>
-
       <h2>Check if your matrix is unitary</h2>
-      <div class="matrix-container">
-        <div class="matrix">
-          <div class="matrix-row">
-            <input class="matrix-cell" id="11" type="text">
-            <input class="matrix-cell" id="12" type="text">
-            <input class="matrix-cell" id="13" type="text">
-          </div>
-          <div class="matrix-row">
-            <input class="matrix-cell" id="21" type="text">
-            <input class="matrix-cell" id="22" type="text">
-            <input class="matrix-cell" id="23" type="text">
-          </div>
-          <div class="matrix-row">
-            <input class="matrix-cell" id="31" type="text">
-            <input class="matrix-cell" id="32" type="text">
-            <input class="matrix-cell" id="33" type="text">
-          </div>
-        </div>
+      <div>
+        <label for="dimension-input">matrix dimensions</label>
+        <input id="dimension-input" type="number" min="2" max="9" value="3">
+        <button id="dimension-btn">go!</button>
       </div>
+      <div class="matrix" id="matrix">
+        <input id="0" type="text">
+        <input id="1" type="text">
+        <input id="2" type="text">
+        <input id="3" type="text">
+        <input id="4" type="text">
+        <input id="5" type="text">
+        <input id="6" type="text">
+        <input id="7" type="text">
+        <input id="8" type="text">
+      </div>
+      <button id="check-btn">check</button>
 
     </div>
     <script type="module" src="unitary-matrix.js" defer></script>
