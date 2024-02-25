@@ -7,12 +7,13 @@
 // const {evaluate } = create({
 // evaluateDependencies
 // }, {})
-import { complex, conj, evaluate, matrix, multiply} from "mathjs";
+import { conj, evaluate, matrix, multiply} from "mathjs";
 
 const matrixGrid = document.getElementById("matrix");
 const dimInput = document.getElementById("dimension-input");
 const dimBtn = document.getElementById("dimension-btn");
 const checkBtn = document.getElementById("check-btn");
+const globalFactorInput = document.getElementById("global-factor-input");
 let dim = 3;
 
 // CHANGE OF DIMENSIONS
@@ -38,27 +39,18 @@ document.addEventListener("keydown",(event)=>{
 
 // Verify if matrix is unitary
 checkBtn.addEventListener("click",()=>{
-    let matA = [];
-    let matB = [];
-    for(let i = 0; i < dim; i++) {
-        matA.push([]);
-        matB.push([]);
-    }
-    for(let i = 0; i < dim; i++) {
-        for(let j = 0; j < dim; j++) {
-            let num = evaluate(document.getElementById(`${i}${j}`).value);
-            matA[i][j] = num;
-            matB[j][i] = conj(num);
-        }
-    }  
-    matA = matrix(matA);
-    matB = matrix(matB);
+    let [matA, matB] = getMatrices();
+
+    console.log(matA.toTex())
+
+    let globalFactor = evaluate(globalFactorInput.value);
+    
     let matC = multiply(matA, matB);
-    console.log(matC);
-    console.log(dim);
+    matC = multiply(matC, globalFactor * globalFactor);
     console.log(checkIdentity(matC));
 })
 
+// Check if the given matrix is the identity
 function checkIdentity(mat) {
     for(let i = 0; i < dim; i++) {
         for(let j = 0; j < dim; j++) {
@@ -69,4 +61,25 @@ function checkIdentity(mat) {
         }
     }
     return true;
+}
+
+// Obtain the matrices from user inputs
+function getMatrices() {
+    let matA = [];
+    let matB = [];
+    for(let i = 0; i < dim; i++) {
+        matA.push([]);
+        matB.push([]);
+    }
+    for(let i = 0; i < dim; i++) {
+        for(let j = 0; j < dim; j++) {
+            let num = evaluate(document.getElementById(`${i}${j}`).value);
+            if(!num) {
+                return null;
+            }
+            matA[i][j] = num;
+            matB[j][i] = conj(num);
+        }
+    }  
+    return [matrix(matA),matrix(matB)];
 }

@@ -62,10 +62,14 @@
         \(U^{\dagger}U=UU^{\dagger}=I\).
       </p>
       <h2>Check if your matrix is unitary</h2>
-      <div>
-        <label for="dimension-input">matrix dimensions</label>
-        <input id="dimension-input" type="number" min="2" max="9" value="3">
-        <button id="dimension-btn">go!</button>
+      <div class="mb flex-container gap-sm flex-col bg-dark txt-light p-sm rounded">
+        <b>Options</b>
+        <div class="flex-container gap">
+          <label>Dimension</label>
+          <input id="dimension-input" type="number" min="2" max="9" value="3">
+        </div>
+        <input class="txt-center" type="text" id="global-factor-input" placeholder="Global factor">
+        <button id="dimension-btn">Set</button>
       </div>
       <div class="matrix" id="matrix">
         <input id="00" type="text">
@@ -79,6 +83,18 @@
         <input id="22" type="text">
       </div>
       <button id="check-btn">check</button>
+
+      <div class="output-mat">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
 
     </div>
     <script type="module" src="unitary-matrix.js" defer></script>
